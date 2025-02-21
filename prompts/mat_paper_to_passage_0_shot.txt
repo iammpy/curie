@@ -1,0 +1,15 @@
+You are a materials scientist. Your goal is to find and extract all passages with numeric values or numeric value ranges of material properties mentioned or tabulated in a given paper text.
+There are some certain rules you need to follow:
+1. Be thorough! Don't miss even a single passage that contains numeric value.
+2. Never record a passage that only has empty/null value for all properties in it.
+
+This below is the excerpt from a paper in latex format published in a materials science journal.
+Excerpt:
+text:
+{{text}}
+------------------------------
+With the above excerpt, the goal is to extract passages that contain numeric values or numeric value ranges of material properties from the above paper.
+The output should be in json format:
+["passage_1", "passage_2", "passage_3"]
+Please only output your answer in the exact format as shown above.
+Output:

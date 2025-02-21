@@ -1,0 +1,84 @@
+A materials scientist would like to reproduce the DFT calculations from a paper.
+They want detailed information about each of the DFT calculations in the paper.
+Output a list of the distinct DFT parameters with fields including, \
+but not limited to, "software", "functional", "k-points-grid", "pseudopotentials", \
+"basis_set", "energy_cutoff", "energy_convergence", "force_convergence", "relaxed_nuclei", \
+"relaxed_unit_cell", "spin", "hubbard_U". \
+If a structure is relaxed, please set "relaxed_nuclei" or "relaxed_unit_cell" \
+to 1.0 (corresponding to true). \
+If spin is involved in the calculation, set "spin" to 1.0 \
+Include the units in these fields if applicable. \
+If any information is relevant but missing, input "NaN" in the field. \
+If any information is irrelevant and missing, input "NaN" in the field. \
+Make sure to write your output in JSON format. \
+Include any related information to the that has not been covered into the "other_information" field.
+
+Use the following format:
+[
+ {
+   "function_name":"short_function_description",
+   "software": "Specify which software was used, e.g. vasp, gaussian, castep, qe, dmol, orca, wein2k",
+   "functional": "functional name",
+   "k-points": "k-point grid as [x,y,z]",
+   "energy_cutoff": "energy cutoff in eV if mentioned, else NaN",
+   "energy_convergence": "energy convergence if mentioned, else NaN",
+   "force_convergence": "force convergence if mentioned, else NaN",
+   "relaxed_nuclei": "1.0 if nuclei is mentioned to be relaxed, 0.0 if mentioned to be fixed, else NaN",
+   "relaxed_unit_cell": "1.0 if it is mentioned to be relaxed, 0.0 if if mentioned not relaxed or else NaN ",
+   "spin": "1.0 if spin considered, 0.0 if not considered, else NaN",
+   "hubbard_U": "NaN if not mentioned",
+   "other_information": "Any other relevant information for the calculation."
+ },
+ ...
+]
+
+Here is an example excerpt, and the output:
+Example excerpt:
+We performed the projector augmented wave (PAW) based spin-polarized simulations using the Vienna
+ab initio Simulation Package (VASP) [40], [41]. The STO has 5 atoms (1 Sr, 1 Ti and 3 O) in its
+unit cell. We considered a 2x2x2 supercell consisting of 40 atoms for all simulations presented in
+this article. The electronic configuration of STO is divided into valence and core to facilitate
+the PAW. We considered 10 electrons of Sr (4s24p65p2), 10 electrons of Ti (3p63d24s2) and 6
+electrons of O (2s22p4) as valence electrons (in total 26 valence electrons) and the rest were
+modelled as frozen core. We replaced the 3d-TM Ti with 5d-TM Pt in case of the Pt-doped STO.
+We used 6 × 6 × 6 Monkhorst Pack grid k-points mesh to sample the Brillouin zone (BZ). The kinetic
+energy cutoff for plane waves was 540 eV.
+
+To understand the electronic properties of undoped STO, we simulated the
+spin-polarized total density of states (TDOS) within a 14 eV energy window centred at the Fermi
+level (E_F) for HSE06 functional as displayed in Fig. 1(a, b). The atomic density of states (DOS)
+confirms the dominance of O and Ti atoms in contributing to the electronic states near VBM and CBm
+respectively as displayed in Fig. 1(a). For the electronic band structure (BS), we
+considered the high symmetry points Γ, R, X and M in the Brillouin zone (BZ) of the cubic STO
+within the energy range from −8 to 8 eV centred at E_F, see Fig. 2. The HSE06 produced band gaps of
+both direct (3.66 eV at Γ ) and indirect (3.25 eV at R) nature which are in excellent agreement
+with the experimental observations of direct (indirect) band gap of 3.75 eV (3.25 eV) found in Ref. [4].
+Pt-doped STO was found to be metallic.
+
+Example output:
+{
+  "function_name":"create_dft_parameters_hse06",
+  "software": "vasp",
+  "functional": "HSE06",
+  "k-points": "[6,6,6]",
+  "energy_cutoff": 540.0,
+  "energy_convergence": "NaN",
+  "force_convergence": "None",
+  "relaxed_nuclei": 0.0,
+  "relaxed_unit_cell": "NaN",
+  "spin": 1.0,
+  "hubbard_U": "NaN",
+  "other_information": "None"
+}
+---
+
+Here is the paper:
+
+{{text}}
+
+---
+
+Using the specified format, extract and \
+list out the details of all the DFT calculations in the paper.
+
+Answer:

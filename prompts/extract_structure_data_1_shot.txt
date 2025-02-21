@@ -1,0 +1,42 @@
+A materials scientist would like to reproduce the DFT calculations from a paper.
+They want to identify the input structures, and gather as much information about the structures as possible. \
+
+Make sure to identify all input structures, and output a list of the distinct input structures information with fields \
+"id", "common_name", "scientific_name", "type", "composition", "description", "vacuum_x", "vacuum_y", "vacuum_z", "supercell", "cas_number", "lattice_a", "lattice_b", "lattice_c", "space group", "orientation", "mp_id", "isomer_name". \
+The "id" field is just a string of format "structure_metadata_{number}", where {number} starts from 1 and indicates the order the structure appears in the excerpt. \
+The "description" field should capture all relevant information that is not captured by the other fields. Make sure to write your output as a list of dictionaries, NOT A BULLETED LIST. \
+The "common_name" field should have the common name of the material and "scientific_name" should have the formal scientific name of the material. \
+The "type" field should point out whether the material is a molecule, a protein, a bulk crystal structure, a thin film or something else. \
+If the structure has vacuum around it, please include the thickness of vacuum layer in three directions with units in these fields: "vacuum_x", "vacuum_y", "vacuum_z". \
+The fields "lattice_a", "lattice_b", "lattice_c" correspond to the lattice parameters of the unit cell. Include units in these fields as well. Leave them blank if lattice parameters are missing. \
+The "supercell" field should tell how many times the unit cell is repeated in the [x, y, z] directions, like "2x2x2". \
+If the text indicates the material structure is from material project and provides a "mp_id", please include that in the field "mp_id".
+If the structure has multiple isomers and the text mentions which is used, please indicate that in the field "isomer_name". \
+If any information is relevant but missing, input "UNKNOWN" in the field. If any information is irrelevant and missing, input None in the field. \
+The "description" field should capture all relevant information that is not captured by the other fields. Make sure to write your output as a list of dictionaries, NOT A BULLETED LIST.
+
+This is an example excerpt and the output:
+Example excerpt:
+We performed the projector augmented wave (PAW) based spin-polarized simulations using the Vienna
+ab initio Simulation Package (VASP) [40], [41]. The STO has 5 atoms (1 Sr, 1 Ti and 3 O) in its
+unit cell. We considered a 2x2x2 supercell consisting of 40 atoms for all simulations presented in
+this article. The electronic configuration of STO is divided into valence and core to facilitate
+the PAW. We considered 10 electrons of Sr (4s24p65p2), 10 electrons of Ti (3p63d24s2) and 6
+electrons of O (2s22p4) as valence electrons (in total 26 valence electrons) and the rest were
+modelled as frozen core. In cases of doped STO, we considered Pt-5d96s1, S-3s23p4 and Se-4s24p6 as
+valence electrons. We replaced the 3d-TM Ti with 5d-TM Pt in case of the Pt-doped STO.
+
+Example output:
+[
+{"id": "structure_metadata_1", "common_name": "STO", "scientific_name": "Strontium titanate", "type": "crystal", "composition": "SrTiO3", "description": "pure SrTiO3", "vacuum_x": None, "vacuum_y": None, "vacuum_z": None, "supercell": "[2,2,2]", "cas_number": "12060-59-2", "lattice_a": None, "lattice_b": None, "lattice_c": None, "space group": None, "orientation": None, "mp_id": None, "isomer_name": None},
+{"id": "structure_metadata_2", "common_name": "Pt-doped STO", "scientific_name": "Platinum doped Strontium titanate", "type": "crystal", "composition": "UNKNOWN", "description": "replaced the 3d-TM Ti with 5d-TM Pt in case of the Pt-doped STO", "vacuum_x": None, "vacuum_y": None, "vacuum_z": None, "supercell": "[2,2,2]", "cas_number": "12060-59-2", "lattice_a": None, "lattice_b": None, "lattice_c": None, "space group": None, "orientation": None, "mp_id": None, "isomer_name": None}
+]
+
+
+Here is the paper:
+
+{{text}}
+
+---
+Identify the input structures, and gather as much information about the structures as possible. \
+Use the format from the example output.

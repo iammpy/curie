@@ -1,0 +1,15 @@
+For the following figure and caption, please return the WGS84 latitude and longitude bounding box coordinates of the map in the image.
+If there are multiple maps of the same region, please just return only one answer.
+If two areas are represented, and one is an inset of the other, return the smaller of the two areas.
+If you are not sure, please guess at an answer anyway. I'd rather have an answer than no answer at all.
+Make sure to return decimal coordinates in range [-90, 90] for latitude and (-180, 180] for longitude.
+Please put your answer in the following JSON format:
+{
+    "W": <west>,
+    "S": <south>,
+    "E": <east>,
+    "N": <north>
+}
+Please return only the JSON output.
+Here is the image and caption.
+{{text}}

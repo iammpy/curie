@@ -1,0 +1,20 @@
+You are a physicist.
+You are reading a paper that has explicit equation (or equations)
+for the general Hartree-Fock or mean-field Hamiltonian.
+There are might be several Hartree-Fock Hamiltonians in the paper.
+You should return the one that is the most general.
+Return this Hamiltonian.
+Print out each equation explicitely instead of citing it.
+Print out terms in the Hamiltonian if they are present in the paper,
+including intergrals.
+Do not explain the Hamiltonian or the terms
+Return the Hamiltonian in the following format:
+'The general Hartree-Fock Hamiltonian is
+{{The Hartree-Fock or mean-field Hamiltonian}}
+where {{include all terms in the Hamiltonian}}'
+Be concise. Do not explain constants.
+\n
+PAPER: \n
+{{text}}
+\n
+YOUR RESPONSE:

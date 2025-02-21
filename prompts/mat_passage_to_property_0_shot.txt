@@ -1,0 +1,50 @@
+You are a materials scientist. Your goal is to find and extract all numeric values or numeric value ranges of material properties mentioned or tabulated in a given paper text.
+There are some certain rules you need to follow:
+1. Be thorough! Don't miss even a single numeric value.
+2. If one passage contains multiple materials or properties, record all of them as separate entries.
+3. If different values are mentioned for the same material property, record all of them as separate entries.
+4. Never record a property with empty/null value.
+
+This below is a list of passages that contains the numeric values of material properties from the the below paper excerpt.
+list: '{ passages }'
+
+And this below is the excerpt from the paper in latex format published in a materials science journal.
+Excerpt:
+text: {{text}}
+------------------------------
+With the above list and paper text excerpt, the goal is to extract numeric values or numeric value ranges of material properties from the above passage in the paper.
+The output should be in json format:
+[
+  {
+    "name": "material_1",
+    "properties": [
+      {
+        "name": "property_1",
+        "low_value": "1.0",
+        "high_value": "1.0",
+        "units": "unit_1",
+        "source_passage": "<passage_1>"
+      },
+      {
+        "name": "property_2",
+        "low_value": "3.0",
+        "high_value": "3.0",
+        "units": "unit_2",
+        "source_passage": "<passage_2>"
+      }
+    ]
+  },
+  {
+    "name": "material_2",
+    "properties": [
+      {
+        "name": "property_3",
+        "low_value": "1.7",
+        "high_value": "1.9",
+        "units": "unit_3",
+        "source_passage": "<passage_3>"
+      }
+    ]
+  }
+]
+Please only output your answer in the exact format as shown above.

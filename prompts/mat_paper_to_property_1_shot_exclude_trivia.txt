@@ -1,0 +1,59 @@
+You are a materials scientist. Your goal is to find and extract all numeric values or numeric value ranges of material properties mentioned or tabulated in a given paper text.
+
+The output should be in json format:
+[
+  {
+    "material": "<material name>",
+    "material_descriptor": "<material descriptor>",
+    "material_source_passage": "<source passage from which the material name and descriptor were identified>",
+    "material_source_table": "<source table from which the material name and descriptor were identified>",
+    "property_name": "<property name>",
+    "property_descriptor": "<property descriptor>",
+    "property_source_passage": "<source passage from which material name, property and property descriptor were identified>",
+    "property_source_table": "<source table from which material name, property and property descriptor were identified>",
+    "low_value" : "<low value>",
+    "high_value": "<high value>",
+    "value_units": "<value units>",
+    "value_source_passage": "<source passage from which material property values were identified>",
+    "value_source_table": "<source table from which material property values were identified>",
+  }, ...
+]
+
+An example of the output is as follows:
+[
+  {
+    "material":"HfO<sub>2<\/sub>",
+    "material_descriptor":"films\natomic layer deposition\nThickness 9.80 nm",
+    "material_source_passage":"Figure 2a shows the refractive index n as a function of photon energy for all samples as deduced from the analysis of the SE results. The n value for HfO<sub>2<\/sub> measured at 550-nm (2.26 eV) wavelength is 1.84, which is similar with the previous report [20].",
+    "material_source_table":"1",
+    "property_name":"refractive index\nn\nindex of refraction",
+    "property_descriptor":"Wavelength 550 nm\nphoton energy 2.26 eV\nGaussian dispersion model",
+    "property_source_passage":"Figure 2a shows the refractive index n as a function of photon energy for all samples as deduced from the analysis of the SE results. The n value for HfO<sub>2<\/sub> measured at 550-nm (2.26 eV) wavelength is 1.84, which is similar with the previous report [20].",
+    "property_source_table":"",
+    "low_value":"1.84",
+    "high_value":"1.84",
+    "value_units":"",
+    "value_source_passage":"Figure 2a shows the refractive index n as a function of photon energy for all samples as deduced from the analysis of the SE results. The n value for HfO<sub>2<\/sub> measured at 550-nm (2.26 eV) wavelength is 1.84, which is similar with the previous report [20].",
+    "value_source_table":"",
+  }, ...
+]
+
+There are some certain rules you need to follow:
+1. Be thorough! Don't miss even a single numeric value.
+2. Avoid null low_value and high_value. Simply skip the entry if you cannot extract the numeric value.
+3. If a value is only extractable from a figure, not text or table, simply skip that entry.
+4. Make sure whatever low_value and high_value actually exists in the sourcepassage or refered table.
+5. If one passage contains multiple materials or properties, record all of them as separate entries.
+6. If different values are mentioned for the same material property, record all of them as separate entries.
+7. Material, property, and value may or may not be mentioned in the same passage.
+8. Only extract real physical or chemical properties that are important and relevant. Do not include trivia in your output, such as geometries.
+
+This below is the excerpt from a paper in latex format published in a materials science journal.
+Excerpt:
+text:
+{{text}}
+------------------------------
+With the above excerpt, the goal is to extract numeric values or numeric value ranges of material properties from the above paper.
+
+Please only output your answer in the exact format as shown above without any prefix.
+Output:

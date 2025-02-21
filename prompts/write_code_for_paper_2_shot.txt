@@ -1,0 +1,1129 @@
+I am a computational materials scientist, and I would like to reproduce the DFT calculations from a paper. Write python code to reproduce all DFT calculations from a paper. You have access to the library ase, and any DFT software used in the paper. Whenever possible, make the code modular by writing functions for each step of the calculation (i.e. set up the unit cell, run DFT, find the total energy from the DFT calculation, plot the band structure, ...) and calling the functions, instead of writing one long body of code. Make sure all input structures, DFT calculations, and calculation outputs such as energies, density of states or band gap are accounted for. Here are some examples.
+Paper:
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\title{Charge-spin correlation in van der Waals antiferromagenet $\mathrm{NiPS}_{3}$ }
+
+
+\author{So Yeun Kim, ${ }^{1,2}$ Tae Yun Kim,,$^{2,3}$ Luke J. Sandilands, ${ }^{1,2}$ Soobin Sinn, ${ }^{1,2}$ Min-Cheol Lee, ${ }^{1,2}$\\
+Jaeseok Son, ${ }^{1,2}$ Sungmin Lee, ${ }^{1,2}$ Ki-Young Choi, ${ }^{1,2}$ Wondong Kim, ${ }^{4}$ Byeong-Gyu Park, ${ }^{5}$ C. Jeon, ${ }^{6}$\\
+Hyeong-Do Kim, ${ }^{1,2}$ Cheol-Hwan Park, ${ }^{2,3}$ Je-Geun Park,, $2 \ddagger$ S. J. Moon, ${ }^{1 *}$ and T. W. Noh,, $2 \dagger$\\
+${ }^{1}$ Center for Correlated Electron Systems, Institute for Basic Science (IBS), Seoul 08826, Republic of Korea\\
+${ }^{2}$ Department of Physics \& Astronomy, Seoul National University (SNU), Seoul 08826, Republic of Korea\\
+${ }^{3}$ Center for Theoretical Physics, SNU, Seoul 08826, Republic of Korea\\
+${ }^{4}$ Korea Research Institute of Standards and Science (KRISS), Daejeon 34113, Republic of Korea\\
+${ }^{5}$ Pohang Accelerator Laboratory, Pohang University of Science and Technology (POSTECH), Pohang 37673, Republic of Korea\\
+${ }^{6}$ Advanced Nano-Surface Group, Korea Basic Science Institute (KBSI), Daejeon 34133, Republic of Korea\\
+${ }^{7}$ Department of Physics, Hanyang University, Seoul 04763, Republic of Korea}
+\date{}
+
+
+\DeclareUnicodeCharacter{2021}{$\ddagger$}
+
+\begin{document}
+\maketitle
+
+
+\begin{abstract}
+Strong charge-spin coupling is found in a layered transition-metal trichalcogenide $\mathrm{NiPS}_{3}$, a van der Waals antiferromagnet, from our study of the electronic structure using several experimental and theoretical tools: spectroscopic ellipsometry, x-ray absorption and photoemission spectroscopy, and density-functional calculations. $\mathrm{NiPS}_{3}$ displays an anomalous shift in the optical spectral weight at the magnetic ordering temperature, reflecting a strong coupling between the electronic and magnetic structures. X-ray absorption, photoemission and optical spectra support a self-doped ground state in $\mathrm{NiPS}_{3}$. Our work demonstrates that layered transition-metal trichalcogenide magnets are a useful candidate for the study of correlated-electron physics in two-dimensional magnetic material.
+\end{abstract}
+
+PACS numbers: 71.20.-b, \href{http://75.50.Ee}{75.50.Ee}, \href{http://78.20.Ci}{78.20.Ci}
+
+It is a fundamental question of modern condensed matter physics how the three-dimensional (3D) physics that we are familiar with breaks down upon reducing the dimension. It is generally believed that in one-dimensional physical systems, dimensional fluctuations will become stronger and ultimately destroy any long-range order. However, the same question for two dimensions is nontrivial and extremely hard to solve.
+
+For this goal of new physics, layered van der Waals $(\mathrm{vdW})$ materials, such as graphene and transition metal (TM) dichalcogenides, have attracted much attention over the last decade [1]3. A remarkable advantage of these materials is that they can easily be mechanically exfoliated to produce two-dimensional (2D) crystals [1]3. The intriguing collective quantum phenomena found in $2 \mathrm{D}$ vdW materials include charge density waves and superconductivity 4 8. These observations open a new window of opportunity for novel device applications through the manipulation of collective quantum states in atomically thin $2 \mathrm{D}$ phases [3, 6, 9. Despite the extensive study of vdW materials, it is striking that there have been very few studies of magnetic $2 \mathrm{D}$ vdW materials.
+
+Only recently has attention been focused on new magnetic $2 \mathrm{D}$ vdW materials of ternary transition-metal trichalcogenide (TMTC) families, such as $\mathrm{Cr} B \mathrm{Te}_{3}(B=$ Si or Ge) and $T M \mathrm{PX}_{3}(T M=3 d \mathrm{TMs} ; X=$ chalcogens $)$ 10. 12, 13. These TMTC bulk samples exhibit various magnetic orderings: ferromagnetic (FM), zig-zag antiferromagnetic (AF), Néel AF, and stripy AF 12, 13. Moreover, all three key magnetic Hamiltonians, i.e., Ising, XY, and Heisenberg types, are realized in $T M \mathrm{P}_{3}$ [14 17. Of further interest, long-range magnetic ordering has recently been reported to persist even in the monolayer limit, e.g., $\mathrm{FePS}_{3}$ and $\mathrm{CrGeTe}_{3}$ [10, 11, 15. Thus, it has become clear that the TMTC families, i.e., the lay- ered $\mathrm{vdW}$ magnets, are a fertile playground for exploring rich and intriguing phenomena related to 2D magnetism, which will ultimately pave the way to novel applications in spintronics.
+
+Compared with other nonmagnetic vdW materials, these new magnetic vdW materials offer another distinct and fundamental opportunity, namely insight into strongly correlated electronic systems in the 2D limit. Over the past few decades, researchers have attempted to unravel correlation physics using 2D materials [18 20; e.g., oxide ultrathin films produced by pulsed laser deposition (PLD) and molecular beam epitaxy (MBE), where a variety of emergent phenomena are reported to take place [21, 22. With magnetism being an intrinsic property of TMTC, it is natural for us to expect to see some correlation physics, even in the 2D limit of those materials. It is well-known that in magnetic TM oxides, electron-electron correlation plays a central role in magnetic interactions, including superexchange and double exchange mechanisms [23, 24]. For instance, many $3 d$ TM oxides exhibit AF ordering as a consequence of the superexchange processes associated with $d-d$ hopping, whose amplitude is directly related to the correlation interaction energy. To date, the electron correlation effects in TMTC remain largely unexplored experimentally, despite their potential importance.
+
+In this Letter, we report on the electronic structure of bulk $\mathrm{NiPS}_{3}$ single crystal, a TMTC antiferromagnet in which the electronic and spin (or magnetic) structures are closely related to one another. Using optical spectroscopy techniques we observed clear anomalies in the optical spectral weight at the Néel temperature, driven mainly by the magnetic ordering, which is a hallmark of correlated electronic systems [25, 26]. Subsequent $x-$ ray absorption and photoemission studies also showed, (a) Zig-zag AF\\
+\includegraphics[max width=\textwidth, center]{2023_09_22_cc792b66f9a5779f9798g-2_256_1060_215_625}
+
+(b) $\mathrm{H} / / \mathrm{ab}$
+
+\begin{center}
+\includegraphics[max width=\textwidth]{2023_09_22_cc792b66f9a5779f9798g-2_222_618_606_999}
+\end{center}
+
+(d) $2.63-5.00 \mathrm{eV}$
+
+\begin{center}
+\includegraphics[max width=\textwidth]{2023_09_22_cc792b66f9a5779f9798g-2_664_1060_627_999}
+\end{center}
+
+FIG. 1. (color online). (a) Schematic diagram of the zigzag antiferromagnetic ordering. The honeycomb lattice of $\mathrm{Ni}$ ions is shown by black lines, with the spin depicted as an arrow in each site. (b) The magnetic susceptibility $(\chi)$ of $\mathrm{NiPS}_{3}$ measured under in-plane bias fields (lower panel) and its first derivative with respect to $T$ (upper panel). (c)-(d) The spectral weight $\omega_{p}^{2}$ and its first derivative (upper panel) obtained for the energy range of (c) 1.52-2.62 eV and (d) 2.63-5.00 eV. The Néel temperature of $\mathrm{NiPS}_{3}\left(T_{N} \sim 154 \mathrm{~K}\right)$ is represented as a red vertical line in panels (b) $(\mathrm{d})$.
+
+together with cluster model calculations, that $\mathrm{NiPS}_{3}$ is a self-doped negative charge transfer (NCT) insulator. That is, the ligand (sulfur atoms) has a strong holelike character due to a NCT energy, unlike more conventional systems. Such an intriguing electronic and magnetic ground state was also confirmed by density functional theory (DFT) with Coulomb interaction $(U)$ calculations. Our studies identify $\mathrm{NiPS}_{3}$ as a unique vdW magnet showing clear evidence of strong correlation and NCT behavior.
+
+High-quality single crystals of $\mathrm{NiPS}_{3}$ were grown by a chemical vapor transport method, as described in Ref. 27. 28. For the optical measurements, we used a 55- $\mu$ mthick single crystal sample and an M-2000 ellipsometer (J. A. Woollam Co.). In addition, we carried out the DFT $+U$ calculations using the Quantum Espresso package 31 38] (for details on the DFT method, see Supplemental Materials (a-1) 30$]$.
+
+$\mathrm{NiPS}_{3}$ is one of the transition-metal phosphorous trichalcogenides $\left(T M \mathrm{P}_{3}\right)$ with an AF long-range ordering at $154 \mathrm{~K}$. It has a monoclinic structure with $\mathrm{C}_{2 h}^{2}$ symmetry and features edge-sharing $\mathrm{NiS}_{6}$ octahedra arranged on a honeycomb lattice [27, 39. At the center of the honeycomb lattice, two $\mathrm{P}$ atoms are located above
+
+and below the TM plane. They are then connected to the $\mathrm{S}$ atoms like a dumbbell, forming a $\left(\mathrm{P}^{2} \mathrm{~S}^{6}\right)^{4-}$ bipyramid structure 39,40 . It is known that the magnetic moments of Ni ions are aligned in a so-called zig-zag pattern; i.e., chains of ferromagnetically coupled spins are arranged antiferromagnetically, as shown in Fig. 1(a) 32. Our in-plane magnetic susceptibility $\chi(T)$ shows an AF magnetic anomaly at the Néel temperature $\left(T_{N}\right.$ $\sim 154 \mathrm{~K}$ ) [Fig. $1(\mathrm{~b})]$
+
+The optical conductivity spectra $\sigma_{1}(\omega)$ show that $\mathrm{NiPS}_{3}$ is an insulator with an optical gap of about $1.8$ $\mathrm{eV}[$ Fig. 2(a)]. At the same time, there are strong narrow absorption peaks in the visible-ultraviolet energy regions, near $2.2,3.5$, and $4.6 \mathrm{eV}$ [labeled $\mathrm{A}, \mathrm{B}$, and $\mathrm{C}$, respectively, in Fig. 2(a)]. Below the gap, there exists two additional weak peaks near $1.1$ and $1.7 \mathrm{eV}$ denoted as $\alpha$ and $\beta$, respectively [see the inset of Fig. 2(a)]. For comparison, $\mathrm{NiO}$, which has the same formal valence of $\mathrm{Ni}(+2)$ as $\mathrm{NiPS}_{3}$, is reported to have weak on-site $d-d$ transitions at $1.13$ and $1.75 \mathrm{eV}$ [41]. Due to the similarities in the energy positions and strengths of the peaks, it is most likely that the $\alpha$ and $\beta$ peaks are the on-site $d-d$ transitions, a transition within one Ni ion. It should be noted that the hybridization of Ni $3 d$ orbitals with $\mathrm{S}$ $3 p$ can provide a much larger bandwidth than that with $\mathrm{O} 2 p$ in $\mathrm{NiO}$. Nonetheless, the narrowness of the $\mathrm{A}, \mathrm{B}$, and $\mathrm{C}$ peaks, in addition to the existence of the $\alpha$ and $\beta$ peaks, suggest the presence of well-localized Ni $3 d$ orbital states near the Fermi surface $\left(E_{F}\right)$ in the electronic structure.
+
+When we measure the temperature dependence of the optical conductivity of $\mathrm{NiPS}_{3}$, it displays strong temperature variations. For example, Fig. 2(b) shows the difference curve of $\sigma_{1}(\omega)$ at various temperatures after subtracting off the $400 \mathrm{~K}$ spectrum. Note that peak A shows strong enhancement in intensity while peaks B and $\mathrm{C}$ sharpen without much change in intensity upon cooling. To quantify the temperature evolution, we calculated the squares of the plasma frequency $\omega_{p}^{2}: \omega_{p}^{2}(T)$ $=8 \int \sigma_{1}(\omega, T) d \omega$, 42 , which we refer to as the spectral weight $(S W)$. The optical sum rule is satisfied when we integrate up to $4.2 \mathrm{eV}$, implying the clear $S W$ shifts from peak A to peaks B and C (see Supplemental Materials (b) 30]). At the same time, satisfaction of the optical sum rule indicates that most of the temperature-dependent changes in the electronic structure should occur near the Fermi level, $E_{F}$.
+
+When we further examined the temperature dependence, we found clear anomalies in the $S W$ changes of the main peaks occurring at $T_{N}$. Figures $1(\mathrm{c})$ and $1(\mathrm{~d})$ show the $S W$ changes in the energy ranges of $1.52-2.63$ $\mathrm{eV}$ and of 2.63-5.00 eV, respectively. The former represents the $S W$ changes of peak A, and the latter represents those of peaks $B$ and C. The lower panel of Fig. 1 (c) shows that the $\omega_{p}^{2}(T)$ of peak A increased with decreasing temperature, with a kink structure at $E_{F}$. The anomaly was seen more clearly in the first derivative of
+
+\begin{center}
+\includegraphics[max width=\textwidth]{2023_09_22_cc792b66f9a5779f9798g-3_173_1122_213_1002}
+\end{center}
+
+FIG. 2. (color online). (a) Real part of the optical conductivity $\sigma_{1}(\omega)$ of $\mathrm{NiPS}_{3}$ measured between 10 and $400 \mathrm{~K}$. The three main optical transitions are labeled A, B, and C. Two weak on-site $d-d$ transitions $(\alpha$ and $\beta$ ) are located below 2 $\mathrm{eV}$. The inset shows the $\alpha$ and $\beta$ transitions in detail. (b) Difference spectra $\sigma_{1}(\omega, T)-\sigma_{1}(\omega, 400 K)$. Fabry-Pérot interference fringes are observed in a narrow energy range near $1.4$ $\mathrm{eV}$ and below $0.9 \mathrm{eV}$, where the sample becomes transparent; these are not shown.
+
+$\omega_{p}^{2}$, as plotted on the upper panel. A similar feature was also observed in the temperature evolution of the $S W$ of peaks B and C, as shown in Fig. 1(d). Thus, the observation of $S W$ anomalies at $E_{F}$ constitutes the compelling evidence of strong coupling between the electronic and spin structures in $\mathrm{NiPS}_{3}$.
+
+Conventionally, most ground states of strongly correlated compounds can be categorized via the ZaanenSawatzky-Allen (ZSA) classification scheme 43, 44. Depending on the relative size of on-site $U$ and chargetransfer energy $(\Delta)$, the insulating ground state can be classified as either Mott-Hubbard or charge transfer insulators. In the former, the lowest energy charge fluctuation occurs between inter-site TM ions $\left(d^{n} d^{n}\right) \rightarrow$ $\left(d^{n+1} d^{n-1}\right)$ with an energy cost of $U$, and in the latter, between ligand and TM ions $\left(d^{n} p^{6} \rightarrow d^{n+1} p^{5}\right)$ with $\Delta$ (see Supplemental Materials (d) [30]. However, there is a less-explored region in the ZSA scheme, where compounds can have NCT energy $(\Delta<0)$. In this region, electrons of the ligand $p$-orbital transfer to the TM $d$ levels in the ground state, creating holes at the ligands without external doping. Because of this, they are often referred to as "self-doped" [45]. The ligand hole can naturally make an important contribution to the conductivity and magnetism [46]. To some extent, the nature of the self-doped state is analogous to the ground state of the Zhang-Rice singlet states found in hole-doped cuprates [47, 48].
+
+Indeed, this interpretation of the self-doped ground state agrees with XAS and XPS results of $\mathrm{NiPS}_{3}$. We obtained the $\mathrm{Ni} L_{2,3}$ edge XAS spectra of bulk $\mathrm{NiPS}_{3}$ which was subsequently analyzed using a cluster model (see Supplemental Materials (e-2) [30]). At the $L_{3}$ edge, $\mathrm{NiPS}_{3}$ show a main peak near $851 \mathrm{eV}$, which are clearly distinguished from that of compounds with large positive $\Delta$ values, such as $\mathrm{NiO}(\Delta \sim 4.6 \mathrm{eV})$ or $\mathrm{NiCl}_{2}(\Delta \sim$ $3.6 \mathrm{eV})$, where the main peak shows clear splitting [49. We simulated the $\mathrm{Ni} L_{2,3}$ edge XAS spectra using cluster model and found the $\mathrm{NiPS}_{3}$ belongs to the regime of $\Delta \leq$ $0 \mathrm{eV}$ (see Supplemental Materials (e-3) [30]). In addition, the Ni $2 p_{3 / 2}$ core XPS spectrum is found to be nearly identical to that of $\mathrm{NiGa}_{2} \mathrm{~S}_{4}$, a first reported NCT sulfide [50, 55] (see Supplemental Materials (e-2) [30]). The $\mathrm{NiS}_{6}$ cluster model used on $\mathrm{NiGa}_{2} \mathrm{~S}_{4}$ also reproduces the Ni $2 p_{3 / 2}$ XPS spectrum of $\mathrm{NiPS}_{3}$ well, using the parameters of $\Delta=-1.0$ and $U=5.0 \mathrm{eV}$. Note the calculated ground state is given as $\Psi_{g}=\alpha\left|d^{8}\right\rangle+\beta\left|d^{9} \underline{L}\right\rangle+\gamma\left|d^{10} \underline{L}^{2}\right\rangle$, where $\underline{L}$ indicates a ligand (sulfur) hole, with $\alpha^{2}=0.25$, $\beta^{2}=0.60$ and $\gamma^{2}=0.15$. Above findings support $\mathrm{NiPS}_{3}$ should have a self-doped ground state with dominant $d^{9} \underline{L}$ character, and demonstrate $\mathrm{NiPS}_{3}$ as the only known example of a magnetically ordered vdW material with an NCT insulating state.
+
+To gain further insight, we performed DFT $+U$ calculations. We used a magnetic ground state with a zig-zag $\mathrm{AF}$ ordering [Fig. 1(a)] and an effective $U$ value of $4 \mathrm{eV}$. The solid line in Fig. 3(a) shows the theoretical calculation of in-plane $\sigma_{1}(\omega)$ after rescaling the data, in a way that satisfies the sum rule, to match the energy position of the first transition peak (see Supplemental Materials (a-2) 30]. The theoretical $\sigma_{1}(\omega)$ reproduced most of the key features found in our experimental data.
+
+The DFT $+U$ calculations also support our interpretation of the self-doped NCT ground state for $\mathrm{NiPS}_{3}$. Figure 3(b) shows the projected density of states (PDOS) for $\mathrm{Ni}, \mathrm{P}$, and $\mathrm{S}$ orbitals in $\mathrm{NiPS}_{3}$; as shown by the dashed curve, the P $3 p$ states are located mostly above $2 \mathrm{eV}$ or below $-5 \mathrm{eV}$, and show a strong hybridization with the S $3 p$ orbitals as a result of covalent bonding in the $\mathrm{P}_{2} \mathrm{~S}_{6}$ bipyramids [39, 40. On the other hand, the PDOS for $\mathrm{Ni}$ and $\mathrm{S}$ orbitals is much higher near $E_{F}$ than that of P $3 p$ [Fig. 3(b)]. Thus, the valence bands near $E_{F}$ are mainly $\mathrm{S} 3 p$ orbital states, and the occupied Ni $3 d$ orbital states are located mostly at lower energies. Narrow Ni $3 d$ bands hybridized with the $\mathrm{S} 3 p$ show up at $\sim 1.3$ $\mathrm{eV}$ above $E_{F}$. The $\mathrm{S} 3 p$ orbitals are located at higher energies than most Ni $d$ orbitals, which indicates charge transfer from $\mathrm{S}$ to $\mathrm{Ni}$ ions in the ground state, and is consistent with the NCT picture [46]. Thus, the ground state is expected to have strong contributions from $d^{9} \underline{L}$ and $d^{10} \underline{L}^{2}$ configurations, in addition to $d^{8}$.\\
+\includegraphics[max width=\textwidth, center]{2023_09_22_cc792b66f9a5779f9798g-4_176_960_215_999}
+
+FIG. 3. (color online). (a) Real part of the optical conductivity $\sigma_{1}(\omega)$ obtained from experiments conducted at $10 \mathrm{~K}$ (circle) and from DFT $+U$ after a stretch in the energy axis by $1.39$ and a proper renormalization satisfying the sum rules [27. (b) Projected density of states (PDOS) for Ni (gray oblique lines), S (yellow), and $\mathrm{P}$ (dashed line) obtained from DFT $+U$ calculations.
+
+The total number of $d$-electrons from the PDOS analysis of our DFT $+U$ was larger than expected from the formal valence, which is consistent with a self-doped NCT ground state. While $\mathrm{Ni}^{2+}$ ion in the formal valence is expected to have an occupation number of 8 , we obtained $8.6$ from our PDOS analysis. Such an increase in the occupation number was also found in a DFT study of $\mathrm{Cs}_{2} \mathrm{Au}_{2} \mathrm{Cl}_{6}$, which showed a larger occupation number of $d$-electrons than expected from the formal valence because $\Delta<0$ [56].
+
+The picture of the self-doped ground state also finds support from the magnetic properties. According to our DFT $+U$ calculations, the theoretical value of the ordered magnetic moment is $1.24 \mu_{B}$ per Ni ions, as opposed to the formal value of $2 \mu_{B}$. This reduction in the magnetic moment can be easily understood using the results of our cluster calculations. As mentioned earlier, the ground state consists of three configurations, each with different spin numbers: $d^{8}\left(S_{N i}=1\right), d^{9} \underline{L}\left(S_{N i}=1 / 2\right)$, and $d^{10} \underline{L}^{2}$ $\left(S_{N i}=0\right)$. In addition, our calculations show that four S ions in each $\mathrm{NiS}_{6}$ octahedron have spin polarizations $\left(0.15 \mu_{B}\right)$ aligned in the same direction as the spin of the central Ni ion. The remaining $\mathrm{S}$ positioned in the middle of two adjacent FM chains, as well as the $\mathrm{P}$ ions, are nonmagnetic (see Supplemental Materials (a-3) 30]. Here, we would like to point out that a recent neutron diffraction experiment on $\mathrm{NiPS}_{3}$ also reported a large reduction in the Ni moment with an experimental ordered moment of $1.05 \mu_{B}$ [32]. We speculate that this reduction in the magnetic moment of $\mathrm{Ni}$ ions, consistently supported by our theory and experiment, is a natural consequence of the charge transfer energy being negative.
+
+Let us revisit the temperature-dependent $S W$ anomaly, shown in Figs. 1(c) and 1(d), within the simple cluster picture. In the $d^{9} \underline{L}$ state, the lowest energy transition, peak A, is expected to be enhanced when the neighboring $\mathrm{Ni}$ ions are bonded antiferromagnetically. The corresponding ground state should be composed of $t_{2 g}{ }^{6} e_{g}{ }^{3}$ electrons at Ni $3 d$ orbitals and one hole at S $3 p$ orbitals $(\underline{L})$; i.e., $t_{2 g}{ }^{6} e_{g}{ }^{3} \underline{L}$, with the ${ }^{3} A_{2 g}$ symmetry [50] (see Supplemental Materials (f) [30]). According to the $\mathrm{NiS}_{6}$ cluster model, the lowest-energy ionization state was found to have ${ }^{2} E_{g}$ symmetry [50, 57, and the corresponding state is clearly seen in XPS valence spectra (see Supplemental Materials (e-4) [30]. This suggests that peak A could be assigned as an inter-site transition between $\mathrm{NiS}_{6}$ clusters that transfer an electron between two $t_{2 g}{ }^{6} e_{g}{ }^{3} \underline{L}\left({ }^{3} A_{2 g}\right)$ clusters. These transitions would split the ground state into a low spin $t_{2 g}{ }^{6} e_{g}{ }^{2} \underline{L} / t_{2 g}{ }^{6} e_{g}{ }^{3} \underline{L}^{2}$ state on one site and a low spin $t_{2 g}{ }^{6} e_{g}{ }^{3} / t_{2 g}{ }^{6} e_{g}{ }^{4} \underline{L}$ state on the other site. Considering spin conservation, such transitions may be allowed between AF-bonded clusters, but forbidden between FM-bonded clusters.
+
+Therefore, the temperature-dependent $S W$ and its anomaly should arise from the increased AF bonds in zig-zag-ordered honeycomb lattice. At the temperature above $T_{N}$, there will be no preference between $\mathrm{AF}$ and FM bonds of $\mathrm{NiS}_{6}$ clusters. Below $T_{N}$, however, the number of $\mathrm{AF}$ and FM bonds will differ: For the nearest neighboring $\mathrm{Ni}$ ions (with exchange interaction $J_{1}$ ), there will be $2 \mathrm{FM}$ and a AF bonds; for the secondnearest $\left(J_{2}\right), 2 \mathrm{FM}$ and $4 \mathrm{AF}$ bonds; and for the thirdnearest $\left(J_{3}\right), 3 \mathrm{AF}$ bonds only. Recent calculations on the monolayer of the $\mathrm{NiPS}_{3}$ predicted that $J_{3}$ is nearly four times larger than $J_{1}$, while the value of $J_{2}$ is very small [58, 59]. Likewise, the dominant strength of $J_{3}$ is consistent with the increased number of AF bonds below $T_{N}$, and consequently the increased intensity of peak A. The $S W$, therefore, should reflect the degree of AF correlation present at a given temperature, which is consistent with $S W$ anomalies observed across $T_{N}$ in the experiments [Fig. 1(c)].
+
+In summary, we investigated the electronic structures of $\mathrm{NiPS}_{3}$, one of the layered vdW antiferromagnets. Our results showed strong charge-spin coupling; i.e., a close relationship between the electronic structure and the magnetic ordering. We also found that $\mathrm{NiPS}_{3}$ is a rare self-doped NCT insulator; i.e., a strong hole-character is present in the ground state. Our findings provide a basis to explore a novel material class of vdW magnets, which could lead to rich and intriguing phenomena related to 2D magnetism and enable new applications in novel spintronic devices.
+
+We gratefully acknowledge insightful discussions with K. W. Kim, K. Burch and B. C. Park. This work was supported by Institute for Basic Science (IBS) in Ko- rea (Grant No. IBS-R009-D1, IBS-R009-G1). S. J. Moon was supported by Basic Science Research Program through the National Research Foundation of Korea (NRF) funded by the Ministry of Science, ICT and Future Planning (Grant No. 2014R1A2A1A11054351 and 2017R1A2B4009413). T. Y. Kim and C. -H. Park were supported by Korean NRF-2016R1A1A1A05919979. Experiments at PLS-II were supported in part by MSIP and POSTECH. The STXM experiment was supported by the National Council of Science \& Technology grant (Grant No. CAP-16-01-KIST and NRF2016K1A3A7A09005335). W. Kim specially thanks to N. Kim and H. Shin for their supporting for STXM measurement at PLS-II.
+
+E-mail address:
+
+*soonjmoon@hanyang.ac.kr
+
+$\dagger$ \href{mailto:twnoh@snu.ac.kr}{twnoh@snu.ac.kr}
+
+‡jgpark10@snu.ac.kr
+
+[1] K. S. Novoselov, D. Jiang, F. Schedin, T. J. Booth, V. V Khotkevich, S. V Morozov, and A. K. Geim, Proc. Natl. Acad. Sci. 102, 10451 (2005).
+
+[2] K. S. Novoselov, A. K. Geim, S. V. Morozov, D. Jiang, Y. Zhang, S. V. Dubonos, I. V. Grigorieva, and A. A. Firsov, Scinece 306, 666 (2004).
+
+[3] A. K. Geim, and I. V Grigorieva, Nature 499, 419 (2014).
+
+[4] X. Xi, L. Zhao, Z. Wang, H. Berger, L. Forr, J. Shan, and K. F. Mak Nat. Nanotechnol. 10, 765 (2015).
+
+[5] K. F. Mak, K. He, J. Shan, and T. F. Heinz, Nat. Nanotechnol. 7, 496 (2012).
+
+[6] K. S. Novoselov, A. Mishchenko, A. Carvalho, and A. H. Castro Neto, Science 353, 461 (2016).
+
+[7] M. V. Sadavskii, Physics-Uspekhi 59, 947 (2016).
+
+[8] A. H. Castro Neto, Phys. Rev. Lett. $8 \mathbf{6}, 4382$ (2001).
+
+[9] X. Li and J. Yang, Natl. Sci. Rev. 3, 365 (2016).
+
+[10] C. Gong, L. Li, Z. Li, H. Ji, A. Stern, Y. Xia, T. Cao, C. Wang, Y. Wang, Z. Q. Qiu, R. J. Cava, S. G. Louie, and J. Xia, Nature 546, 265 (2017).
+
+[11] Additionally, the ferromagnetism in monolayer was reported in $\mathrm{CrI}_{3}$ compound; see Bevin Huang, Genevieve Clark, Efrén Navarro-Moratalla, Dahlia R. Klein, Ran Cheng, Kyle L. Seyler, Ding Zhong, Emma Schmidgall, Michael A. McGuire, David H. Cobden, Wang Yao, Di Xiao, Pablo Jarillo-Herrero, and Xiaodong Xu, Nature 546, 270 (2017).
+
+[12] N. Sivadas, M. W. Daniels, R. H. Swendsen, S. Okamoto, and D. Xiao, Phys. Rev. B 91, 235425 (2015).
+
+[13] B. L. Chittari, Y. Park, D. Lee, M. Han, and A. H. Macdonald, Phys. Rev. B 94, 184428 (2016).
+
+[14] A. R. Wildes, K. C. Rule, R. I. Bewley, M. Enderle, and T. J. Hicks, J. Phys. Condens. Matter 24, 416004 (2012).
+
+[15] J.-U. Lee, S. Lee, J. H. Ryoo, S. Kang, T. Y. Kim, P. Kim, C.-H. Park, J. Park, and H. Cheong, Nano Lett. 16, 7433 (2016).
+
+[16] A. R. Wildes, B. Roessli, B. Lebech, and K. W. Godfrey, J. Phys. Condens. Matter 10, 6417 (1998).
+
+[17] J. Park, J. Phys. Condens. Matter 28, 301001 (2016).
+
+[18] D. Neilson, A. Perali, and M. Zarenia, J. Phys. Conf. Ser 702, 012008 (2016) . [19] J. Sabio, J. Nilsson, and A. H. Castro Neto, Phys. Rev. B 78, 075410 (2008).
+
+[20] J. Crossno, J. K. Shi, K. Wang, X. Liu, A. Harzheim, A. Lucas, S. Sachdev, P. Kim, T. Taniguchi, K. Watanebe, T. A. Ohki, and K. C. Fong, Science 351, 1058 (2016).
+
+[21] J. H. Ngai, F. J. Walker, and C. H. Ahn, Annu. Rev. Mater. Res. 44, 1 (2014).
+
+[22] P. Zubko, S. Gariglio, M. Gabay, P. Ghosez, and J.M. Triscone, Annu. Rev. Condens. Matter Phys. 2, 141 (2011).
+
+[23] D. I. Khomskii, Basic Aspects of the Quantum Theory of Solids (Cambridge University Press, New York, 2010).
+
+[24] D. I. Khomskii, Transition Metal Compounds (Cambridge University Press, New York, 2014), 1st ed..
+
+[25] D. N. Basov, R. D. Averitt, D. Van Der Marel, M. Dressel, and K. Haule, Rev. Mod. Phys. 83, 471 (2011).
+
+[26] Millis, A. J., Optical Conductivity and Correlated Electron Physics, edited by D. Baeriswyl and L. Degiorgi, Strong Interactions in Low Dimensions, (Kluwer Academic Publishers, Dordrecht, 2004), pp. 195-236.
+
+[27] C. T. Kuo, M. Neumann, K. Balamurugan, H. J. Park, S. Kang, H. W. Shiu, J. H. Kang, B. H. Hong, M. Han, T. W. Noh, and J. G. Park, Sci. Rep. 6, 20904 (2016).
+
+[28] We subsequently checked the stoichiometry using a scanning electron microscope (COXI EM30; COXEM), equipped with an energy-dispersive x-ray spectrometer (Bruker Quantax 100), which was followed by magnetic susceptibility measurements obtained with a SQUIDVSM (MPMS 3; Quantum Design).
+
+[29] E. Stavitski and F. M. F. de Groot, Micron 41, 687 (2010).
+
+[30] See Supplemental Materials
+
+[31] S. L. Dudarev, G. A. Botton, S. Y. Savrasov, C. J. Humphreys, and A. P. Sutton, Phys. Rev. B 57, 1505 (1998).
+
+[32] A. R. Wildes, V. Simonet, E. Ressouche, G. J. McIntyre, M. Avdeev, E. Suard, S. A. J. Kimber, D. Lanon, G. Pepe, B. Moubaraki, and T. J. Hicks, Phys. Rev. B 92, 224408 (2015).
+
+[33] D. R. Hamann, Phys. Rev. B 88, 85117 (2013).
+
+[34] M. Schlipf and F. Gygi, Comput. Phys. Commun. 196, $36(2015)$.
+
+[35] J. P. Perdew, K. Burke, and M. Ernzerhof, Phys. Rev. Lett. 77, 3865 (1996).
+
+[36] A. Marini, C. Hogan, M. Gruning, and D. Varsano, Comput. Phys. Commun. 180, 1392 (1996).
+
+[37] Z. H. Levine and D. C. Allen, Phys. Rev. B 63, 1719 (1996).
+
+[38] P. Giannozzi, S. Baroni, N. Bonini, M. Calandra, R. Car, C. Cavazzoni, D. Ceresoli, G. L. Chiarotti, M. Cococcioni, I. Dabo, A. D. Corso, S. Fabris, G. Fratesi, S. de Gironcoli, R. Gebauer, U. Gerstmann, C. Gougoussis, A. Kokalj, M. Lazzeri, L. Martin-Samos, N. Marzari, F. Mauri, R. Mazzarello, S. Paolini, A. Pasquarello, L. Paulatto, C. Sbraccia, S. Scandolo, G. Sclauzero, A. P. Seitsonen, A. Smogunov, P. Umari, and R. M. Wentzcovitch, J. Phys. Condens. Matter 21, 395502 (2009).
+
+[39] R. Brec, Solid State Ionics 22, 3 (1986).
+
+[40] M. Piacentini, V. Grasso, S. Santangelo, M. Fanfoni, S. Modesti, and A. Savoia, Solid State Commun. 51, 467 (1984).
+
+[41] R. Newman and R. Chrenko, Phys. Rev. 114, 1507 (1959).
+
+[42] M. Dressel and G. Gruner, Electrodynamics of Solids: Optical Properties of Electrons in Matter (Cambridge University Press, New Yok, 2002).
+
+[43] J. Zaanen, G. A. Sawatzky, and J. W. Allen, Phys. Rev. Lett. 55, 418 (1985).
+
+[44] A. E. Bocquet, T. Mizokawa, T. Saitoh, H. Namatame, and A. Fujimori, Phys. Rev. B 46, 3771 (1992).
+
+[45] M. A. Korotin, V. I. Anisimov, D. I. Khomskii, and G. A. Sawatzky, Phys. Rev. Lett. 80, 4305 (1998).
+
+[46] G. Sawatzky, R. Green, J. van den Brink, E. Koch, and E. Pavarini, The Explicit Role of Anion States in HighValence Metal Oxides, Modeling and Simulation 6, 420 (2016).
+
+[47] C. Monney, V. Bisogni, K. J. Zhou, R. Kraus, V. N. Strocov, G. Behr, S. L. Drechsler, H. Rosner, S. Johnston, J. Geck, and T. Schmitt, Phys. Rev. B 94, 165118 (2016).
+
+[48] D. Choudhury, P. Rivero, D. Meyers, X. Liu, Y. Cao, S. Middey, M. J. Whitaker, S. Barraza-Lopez, J. W. Freeland, M. Greenblatt, and J. Chakhalian, Phys. Rev. B 92, 201108 (2015).
+
+[49] G. van der Laan, J. Zaanen, G. A. Sawatzky, R. Karnatak, and J.-M. Esteva, Phys. Rev. B 33, 4253 (1986).
+
+[50] K. Takubo, T. Mizokawa, J. Y. Son, Y. Nambu, S. Nakatsuji, and Y. Maeno, Phys. Rev. Lett. 99, 037203 (2007).
+
+[51] S. Nakatsuji, Y. Nambu, H. Tonomura, O. Sakai, S. Jonas, C. Broholm, H. Tsunetsugu, Y. Qiu, and Y. Maeno, Science 309, 1697 (2005).
+
+[52] J. P. Perdew, Int. J. Quantum Chem. 28, 497 (1985).
+
+[53] X. Li, T. Cao, Q. Niu, J. Shi, and J. Feng, Proc. Natl. Acad. Sci. 110, 3738 (2013).
+
+[54] M. Bernasconi, G. L. Marra, G. Benedek, L. Miglio, M. Jouanne, C. Julien, M. Scagliotti, and M. Balkanski, Phys. Rev. B 38, 12089 (1988).
+
+[55] It seems that the lower electronegativity of chalcogen ions in TMTC can also drive the system into NCT regime, as in the cases of some TM oxides [44,47].
+
+[56] A. V Ushakov, S. V Streltsov, and D. I. Khomskii, J. Phys. Condens. Matter 23, 445601 (2011).
+
+[57] K. Takubo, T. Mizokawa, Y. Nambu, and S. Nakatsuji, Phys. Rev. B 79, 134422 (2009).
+
+[58] B. L. Chittari, Y. Park, D. Lee, M. Han, A. H. MacDonald, E. Hwang, and J. Jung, Phys. Rev. B 94, 184428 (2016).
+
+[59] The calculated exchange interaction strength value of bulk $\mathrm{NiPS}_{3}$ in our work also gave similar results for $J_{1}$, $J_{2}$ and $J_{3}$ as in the monolayer case [58.
+
+
+\end{document}
+---
+Output:
+```python
+from os import environ
+
+import numpy as np
+from ase import Atoms
+from ase.calculators.espresso import Espresso
+from ase.dft import DOS
+from ase.optimize import BFGS
+from pydantic import BaseModel
+from pymatgen.core.structure import Structure
+from pymatgen.ext.matproj import MPRester
+
+from annotations.models.QuantumEspressoParameters import \
+    QuantumEspressoParameters
+from annotations.models.StructureMetadata import StructureMetadata
+
+# Functions Code
+
+
+
+
+
+def download_mp_structure(
+    structure_metadata: StructureMetadata,
+) -> Atoms:
+    mp_id = structure_metadata.mp_id
+    api_key = environ.get("MP_API_KEY")
+    with MPRester(api_key) as mpr:
+        structure: Structure = mpr.get_structure_by_material_id(mp_id)
+
+    return structure
+
+
+def qe_geometric_relaxation(
+    atoms: Atoms, parameters: QuantumEspressoParameters
+) -> Atoms:
+    qe_keys = [
+        "pseudopotentials",
+        "kpts",
+        "ecutwfc",
+    ]
+    qe_dict = {
+        k: v for k, v in parameters.dict(exclude_none=True).items() if k in qe_keys
+    }
+    calc = Espresso(**qe_dict)
+    atoms.set_calculator(calc)
+    dyn = BFGS(atoms)
+    dyn.run(parameters.fmax)
+    return atoms
+
+
+def structure_to_atoms(structure: Structure) -> Atoms:
+    symbols = [site.specie.symbol for site in structure]
+    positions = np.array([site.coords for site in structure])
+    ase_atoms = Atoms(symbols=symbols, positions=positions)
+
+    return ase_atoms
+
+
+def get_dos(atoms: Atoms) -> tuple[list[float], list[float]]:
+    dos = DOS(atoms, width=0.1)
+    energies, weights = dos.get_energies(), dos.get_weights()
+
+    return energies, weights
+
+
+# Inputs Code
+
+
+
+class QuantumEspressoParameters(BaseModel):
+    pseudopotentials: str | None = None
+    kpts: str | None = None
+    ecutwfc: float | None = None
+    fmax: float | None = None
+
+
+
+class StructureMetadata(BaseModel):
+    id: str | None = None
+    name: str | None = None
+    type: str | None = None
+    composition: str | None = None
+    description: str | None = None
+    vacuum_x: float | None = None
+    vacuum_y: float | None = None
+    vacuum_z: float | None = None
+    supercell: str | None = None
+    cas_number: str | None = None
+    orientation: str | None = None
+    lattice_a: float | None = None
+    lattice_b: float | None = None
+    lattice_c: float | None = None
+    orientation: str | None = None
+    mp_id: str | None = None
+
+structure_metadata_NiPS3 = StructureMetadata.parse_raw('{"name": NaN, "type": NaN, "composition": "NiPS3", "description": "crystal lattice", "vacuum_x": NaN, "vacuum_y": NaN, "vacuum_z": NaN, "supercell": NaN, "cas_number": NaN, "lattice_a": NaN, "lattice_b": NaN, "lattice_c": NaN, "space group": NaN, "orientation": NaN, "mp_id": "mp-676040"}')
+
+qe_1 = QuantumEspressoParameters.parse_raw('{"pseudopotentials": NaN, "xc": "PBE", "kpts": "(6,6,6)", "ecutwfc": 120}')
+
+# Execution Code
+
+NiPS3_structure = download_mp_structure(structure_metadata_NiPS3)
+NiPS3_atoms = structure_to_atoms(NiPS3_structure)
+relaxed_atoms = qe_geometric_relaxation(NiPS3_atoms, qe_1)
+energies, weights = get_dos(relaxed_atoms)
+
+```
+
+Paper:
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+
+\title{Ni-CNT Chemical Sensor for $\mathrm{SF}_{6}$ Decomposition Components Detection: A Combined Experimental and Theoretical Study }
+
+
+\author{Yingang Gui $1, *$ (D), Xiaoxing Zhang ${ }^{3, *(\mathbb{D}}$, Peigeng Lv $^{2}$, Shan Wang ${ }^{2}$, Chao Tang ${ }^{1 \text { DID }}$\\
+and $\mathrm{Qu} \mathrm{Zhou}^{1} \mathrm{iD}$\\
+1 College of Engineering and Technology, Southwest University, Chongqing 400715, China;\\
+tangchao\_1981@163.com (C.T.); zhouqu@swu.edu.cn (Q.Z.)\\
+2 State Grid Chongqing Shiqu Power Supply Company, Chongqing 400015, China;\\
+13983772950@139.com (P.L.); shan102330@msn.com (S.W.)\\
+3 School of Electrical Engineering, Wuhan University, Wuhan 430072, China\\
+* Correspondence: yinganggui@swu.edu.cn (Y.G.); xiaoxing.zhang@outlook.com (X.Z.)}
+\date{}
+
+
+\def\AA{\mathring{\mathrm{A}}}
+
+\begin{document}
+\maketitle
+Received: 11 September 2018; Accepted: 12 October 2018; Published: 16 October 2018
+
+check for updates
+
+\begin{abstract}
+SF}_{6}$ decomposition components detection is a key technology to evaluate and diagnose the insulation status of $\mathrm{SF}_{6}$-insulated equipment online, especially when insulation defects-induced discharge occurs in equipment. In order to detect the type and concentration of $\mathrm{SF}_{6}$ decomposition components, a Ni-modified carbon nanotube (Ni-CNT) gas sensor has been prepared to analyze its gas sensitivity and selectivity to $\mathrm{SF}_{6}$ decomposition components based on an experimental and density functional theory (DFT) theoretical study. Experimental results show that a Ni-CNT gas sensor presents an outstanding gas sensing property according to the significant change of conductivity during the gas molecule adsorption. The conductivity increases in the following order: $\mathrm{H}_{2} \mathrm{~S}>\mathrm{SOF}_{2}>$ $\mathrm{SO}_{2}>\mathrm{SO}_{2} \mathrm{~F}_{2}$. The limit of detection of the Ni-CNT gas sensor reaches $1 \mathrm{ppm}$. In addition, the excellent recovery property of the Ni-CNT gas sensor makes it easy to be widely used. A DFT theoretical study was applied to analyze the influence mechanism of Ni modification on $\mathrm{SF}_{6}$ decomposition components detection. In summary, the Ni-CNT gas sensor prepared in this study can be an effective way to evaluate and diagnose the insulation status of $\mathrm{SF}_{6}$-insulated equipment online.
+\end{abstract}
+
+Keywords: $\mathrm{SF}_{6}$ decomposition components; carbon nanotube sensor; Ni modification; adsorption; DFT calculations
+
+\section{Introduction}
+Due to the strong insulation strength and electronegativity of $\mathrm{SF}_{6}$ gas, it has been widely used as filling gas in insulated equipment, such as $\mathrm{SF}_{6}$-insulated high-voltage switchgear (GIS), $\mathrm{SF}_{6}$-insulated transmission lines (GIL), and $\mathrm{SF}_{6}$-insulated circuit breakers (GCB) [1-3]. However, insulation defects inevitably occur in $\mathrm{SF}_{6}$-insulated equipment, which induces $\mathrm{SF}_{6}$ to decompose into various decomposition components: $\mathrm{SO}_{2}, \mathrm{H}_{2} \mathrm{~S}, \mathrm{SOF}_{2}$, and $\mathrm{SO}_{2} \mathrm{~F}_{2}$ under electric discharge [4-7]. In addition, the existence of insulation defects and $\mathrm{SF}_{6}$ decomposition dramatically reduce the insulation strength of $\mathrm{SF}_{6}$-insulated equipment [8]. A lot of methods have been studied to detect the insulation defects, including the ultra-high frequency method (UHF) [9,10], the transient earth voltage method (TEV) [11], the ultrasonic method [12],the gas chromatographic method [13], and the gas sensor detection method [14]. However, UHF, TEV, and the ultrasonic method are easily affected by interference signals, and the gas chromatographic method is an offline detection method. Because of the non-contact, high accuracy, and low detection limit features of gas sensors, the gas sensor detection method has been an effective way to realize the online detection of $S F_{6}$-insulated equipment based on $\mathrm{SF}_{6}$ decomposition components detection [15,16].
+
+One dimensional carbon nanotube (CNT) material has attracted extensive study due to its outstanding characteristics [17,18], such as large specific surface area and good electrical properties. It is demonstrated that CNTs shows excellent gas sensing performance to gases [19,20], making it an effective detection method used in environmental, industrial, and military fields [21,22]. Li et al. fabricated single-wall carbon nanotube (SWNT) based gas sensors on interdigitated gold electrodes; its detection limit reaches $44 \mathrm{ppb}$ for $\mathrm{NO}_{2}$ and $262 \mathrm{ppb}$ for nitrotoluene at room temperature [19]. Chopra et al. reported that multi-wall carbon nanotube (MWCNT) and polymer composites exhibited excellent sensitivity and selectivity to $\mathrm{NH}_{3}$ and $\mathrm{NO}_{2}$ at room temperature [23]. Surface modification based on metal particles can greatly improve the gas sensitivity and selectivity of CNTs. Penza et al. verified that the functionalization of $\mathrm{Pt}$ and $\mathrm{Pd}$ nanoclusters on the MWCNT surface significantly improved its detection limit to sub-ppm level upon $\mathrm{NO}_{2}, \mathrm{H}_{2} \mathrm{~S}, \mathrm{NH}_{3}$, and $\mathrm{CO}$ detection [24]. Although the development of CNT gas sensors has made a remarkable improvement in common gas detection, there are few reports about its application in the field of $\mathrm{SF}_{6}$ decomposition components detection.
+
+Here, Nickel functionalized CNTs (Ni-CNTs) are adopted as the gas sensing material to detect the characteristic $\mathrm{SF}_{6}$ decomposition components: $\mathrm{SO}_{2}, \mathrm{H}_{2} \mathrm{~S}, \mathrm{SOF}_{2}$ and $\mathrm{SO}_{2} \mathrm{~F}_{2}$. Experimentally, the Ni-CNT gas sensor is prepared by the drop-casting method, which significantly reduces the preparation cost and benefits for industrial-scale production. In addition, the gas sensing mechanism of Ni-CNTs to the characteristic $\mathrm{SF}_{6}$ decomposition components is studied by density functional theory (DFT) calculation. We conclude that the Ni-CNT gas sensor can be an effective way to detect the insulation defects and diagnose the running status of $\mathrm{SF}_{6}$-insulated equipment online.
+
+\section{Material and Methods}
+\subsection{Synthesis of Ni-CNT Gas Sensor}
+Ni-CNTs (inner diameter: 5-10 nm, external diameter: 10-20 nm, and length: 10-30 $\mu \mathrm{m}$ ) were bought from Aladdin Reagent Corporation (Shanghai, China). Figure 1a shows the interdigitated Cu electrodes; Cu electrodes (thickness: $30 \mu \mathrm{m}$, gap: $0.2 \mathrm{~mm}$ ) were fabricated on epoxy resin as a substrate of the Ni-CNT gas sensor. Ni-CNTs were dispersed in dimethylformamide (DMF) to form a solution of $0.025 \mathrm{mg} / \mathrm{mL}$ by the following steps: soak $6 \mathrm{~h}$, then ultrasonic treat $2 \mathrm{~h}$. The solution was sprayed onto the surface of the $\mathrm{Cu}$ electrodes at $80^{\circ} \mathrm{C}$ to accelerate the evaporation of DMF. As shown in Figure $1 \mathrm{~b}$, Ni-CNTs evenly distribute on the surface of the $\mathrm{Cu}$ electrodes, which benefits the gas molecule adsorption and desorption process.
+
+\begin{center}
+\includegraphics[max width=\textwidth]{2023_09_22_1af7e6342ebcf1ce3ea5g-02_1987_2256_432_916}
+\end{center}
+
+(a)
+
+\begin{center}
+\includegraphics[max width=\textwidth]{2023_09_22_1af7e6342ebcf1ce3ea5g-02_1983_2254_959_1622}
+\end{center}
+
+(b)
+
+Figure 1. (a) Interdigitated Cu electrodes, (b) the prepared Ni-modified carbon nanotube (Ni-CNT) gas sensor.
+
+\subsection{Material Characterization and Gas Sensing Measurement}
+Transmission electron microscopy (TEM) was tested by FEI Tecnai G2 F20 S-TWIN at $200 \mathrm{kV}$. The gas-sensing detection system was composed of standard gases $\left(\mathrm{SO}_{2}, \mathrm{H}_{2} \mathrm{~S}, \mathrm{SOF}_{2}\right.$, and $\left.\mathrm{SO}_{2} \mathrm{~F}_{2}\right)$, the gas distribution system, the gas sensing chamber, and an electrochemical workstation. The concentration of standard gases was $400 \mathrm{ppm}$ with $\mathrm{N}_{2}$ as the background gas. The standard gases were diluted to different concentrations: 1, 10, 50, 100, 200, 300, and $400 \mathrm{ppm}$ by the gas distribution system. Then, the diluted gases were led to the closed gas chamber. The resistance of the Ni-CNT gas sensor was measured by the electrochemical workstation at room temperature and ambient pressure. The gas response (GR) was defined by Equation (1). In which, $R_{i}$ is the initial electric resistance of the Ni-CNT gas sensor in dry synthesis air and $R_{f}$ is the resistance of the sensor in $\mathrm{SF}_{6}$ decomposition components' atmosphere. In addition, the sensitivity (S) of the Ni-CNT gas sensor was defined by Equation (2), where $C_{T}$ was the concentration of tested gas.
+
+\[
+\begin{aligned}
+G R & =\frac{R_{f}-R_{i}}{R_{i}} \times 100 \% \\
+S & =\frac{G \cdot R}{C_{T}} \times 100 \%
+\end{aligned}
+\]
+
+\subsection{DFT Calculation}
+The DFT calculations were performed using Dmol $^{3}$ package of materials studio. The structure of $(8,0) \mathrm{Ni}-\mathrm{CNTs}$ was built by substituting a carbon atom by one Ni atom. In addition, a $20 \times 20 \times 8.5 \AA$ periodic-boundary supercell was built to avoid the interference of adjacent cells. Then, the optimized adsorption structures of $\mathrm{SO}_{2}, \mathrm{H}_{2} \mathrm{~S}, \mathrm{SOF}_{2}$, and $\mathrm{SO}_{2} \mathrm{~F}_{2}$ on the surface of $\mathrm{Ni-CNTs}$ were calculated with different initial gas positions. The Perdew-Burke-Ernzerhof (PBE) function generalized gradient approximation was adopted to treat the exchange-correlation potential. The convergence criterion for energy and force was set at $10^{-5} \mathrm{Ha}$ and $2 \times 10^{-3} \mathrm{Ha} / \AA$ A, respectively. The Brillouin zone was sampled with $1 \times 1 \times 2$ Monkhorst-Pack mesh. The adsorption energy $\left(E_{a d s}\right)$ of the molecules adsorbed on Ni-CNTs was defined by the following Equation (3):
+
+\[
+E_{\text {ads }}=E_{\text {gas } / \text { surf }}-E_{\text {gas }}-E_{\text {surf }}
+\]
+
+where $E_{\text {gas/suf }}$ was the energy of gas adsorbed CNTs, $E_{\text {surf }}$ and $E_{\text {gas }}$ were the energy of isolated Ni-CNTs and molecules of $\mathrm{SF}_{6}$ decomposition components.
+
+The electron density distribution was obtained by Mulliken population analysis. The charge transfer $\left(Q_{t}\right)$ in the adsorption process was defined by Equation (4), where $Q_{i s o}$ and $Q_{a d s}$ were the respective total charge of gas molecules before and after adsorption.
+
+\[
+Q_{\mathfrak{t}}=Q_{\text {ads }}-Q_{\text {iso }}
+\]
+
+\section{Results and Discussion}
+\subsection{Preparation and Gas Sensing Property of Ni-CNT Gas Sensor}
+As per the formation mechanism of Ni-CNTs shown in Figure 2a, it is important to make sure that Ni particles evenly decorate onto the outside wall of intrinsic CNTs, which plays a key role to the gas-sensing properties of the prepared Ni-CNT gas sensor. As per the typical TEM images shown in Figure $2 b-d$ with different magnifications, Ni-CNTs evenly disperse on the surface of the prepared gas sensor. Hence, there will be large, hollow structures for gas diffusion among the Ni-CNTs, which not only increase the adsorption capacity, but reduce the adsorption and desorption time. Ni nanoparticles mainly distribute on the outside wall of CNTs due to the long length and closed structure of CNTs (about $30 \mu \mathrm{m}$ ). The small diameter of Ni-CNTs (about $20 \mathrm{~nm}$ ) signifies large curvature and high surface activity. Besides, the surface defects that existed on the surface of CNTs provide the adsorption sites for gas molecules. As a result, Ni nanoparticles evenly decorate on the surface of CNTs with their size distinctly smaller than the diameter of CNTs. Ni nanoparticles act as the active sites for gas molecule adsorption, which effectively enhances the gas-sensing properties of CNT-based sensors.
+
+\begin{center}
+\includegraphics[max width=\textwidth]{2023_09_22_1af7e6342ebcf1ce3ea5g-04_303_794_705_1351}
+\end{center}
+
+Figure 2. (a) The formation mechanism of Ni-CNTs, (b-d) structure characterization of Ni-CNTs.
+
+Considering the concentration range of $\mathrm{SF}_{6}$ decomposition components generated in $\mathrm{SF}_{6}$-insulated equipment reported in previous studies [4,25], a series of $\mathrm{SF}_{6}$ decomposition components concentrations, $1,10,50,100,200,300$, and $400 \mathrm{ppm}$, were prepared to analyze the gas-sensing performance of the $\mathrm{Ni}-\mathrm{CNT}$ gas sensor. As shown in Figure 3, the resistance of the gas sensor significantly reduces when it contacts $\mathrm{SF}_{6}$ decomposition components [26-29]. The Ni-CNT gas sensor presents a large gas response to $\mathrm{SF}_{6}$ decomposition components at room temperature and ambient pressure due to the catalytic property of evenly distributed Ni nanoparticles. Furthermore, the CNT sensor presents a fast gas response because of the large gas diffusion channel among Ni-CNTs, which also implies a fast gas-sensing recovery speed. The resistance rapidly reduces when the sensor just contacts the $\mathrm{SF}_{6}$ decomposition components, because the gas molecules quickly interact with the gas-sensing material on the surface of the Ni-CNT gas sensor. Meanwhile, the reduction speed gradually decreased as the gas diffusion rate sharply reduced with diffusion depth in the sensor film.\\
+\includegraphics[max width=\textwidth, center]{2023_09_22_1af7e6342ebcf1ce3ea5g-04_1502_2432_434_1624}
+
+Figure 3. Gas response of the Ni-CNT gas sensor to different concentrations of $\mathrm{SF}_{6}$ decomposition components: (a) $\mathrm{H}_{2} \mathrm{~S}$, (b) $\mathrm{SOF}_{2}$, (c) $\mathrm{SO}_{2}$, and (d) $\mathrm{SO}_{2} \mathrm{~F}_{2}$ at room temperature and ambient temperature.
+
+As shown in Figure 3, it takes about $10 \mathrm{~min}$ for the gas response to reach a steady state. The variation of gas response is greatly influenced by the concentration of $\mathrm{SF}_{6}$ decomposition components. For instance, the difference of gas response as the gas concentration increases from 300 to $400 \mathrm{ppm}$ is smaller than that of 200 to $300 \mathrm{ppm}$. Comparing the value of gas responses shown in Figure 3a-d under the same gas concentration, the variation of gas responses is placed in the following order: $\mathrm{H}_{2} \mathrm{~S}>\mathrm{SOF}_{2}>\mathrm{SO}_{2}>\mathrm{SO}_{2} \mathrm{~F}_{2}$. The largest value of gas response to $\mathrm{H}_{2} \mathrm{~S}$ is $-30.54 \%$ at the concentration of $400 \mathrm{ppm}$, and the value of the gas response still reached $-9.50 \%$ at the lowest concentration (1 ppm) as shown in Figure 3a. The high gas response mainly comes from the strong interaction between Ni-CNTs and $\mathrm{H}_{2} \mathrm{~S}$ molecules at the Ni atom functionalized sites, which contributes to the detection of the $\mathrm{H}_{2} \mathrm{~S}$ component up to sub-ppm level. According to Figure $3 \mathrm{~b}$, the gas response of the Ni-CNT gas sensor to $\mathrm{SOF}_{2}$ changes a little under different gas concentrations. The gas responses at $400 \mathrm{ppm}$ and $1 \mathrm{ppm}$ are $-8.04 \%$ and $-5.91 \%$, respectively. On the contrary, different concentrations of $\mathrm{SO}_{2}$ leads to a significant change of gas response, as shown in Figure 3c. The value of gas response increases from $-1.62 \%(1 \mathrm{ppm})$ to $-6.37 \%(400 \mathrm{ppm})$. Although Ni atom functionalization on the Ni-CNT surface enhances its adsorption to $\mathrm{SO}_{2} \mathrm{~F}_{2}$, the Ni-CNT gas sensor was still not sensitive to $\mathrm{SO}_{2} \mathrm{~F}_{2}$. As shown in Figure 3d, the gas responses to $\mathrm{SO}_{2} \mathrm{~F}_{2}$ are $-2.65 \%$ and $-0.7 \%$ at $400 \mathrm{ppm}$ and $1 \mathrm{ppm}$, respectively. In summary, the Ni-CNT gas sensor shows a high gas response to $\mathrm{SF}_{6}$ decomposition components, and its high gas-sensing selectivity can be used to identify the gas types of $\mathrm{SF}_{6}$ decomposition components produced in $\mathrm{SF}_{6}$-insulated equipment, making it suitable to detect the insulation defects and diagnose the running status of $\mathrm{SF}_{6}$ insulated equipment online.
+
+Table 1 shows the comparison of the limit of detection (LOD) for different sensors to $\mathrm{SF}_{6}$ decomposition components reported in recent studies, including the most studied gas-sensing material: CNTs, graphene, and $\mathrm{TiO}_{2}$ nanotubes. In this study, the highest gas response of the Ni-CNT sensor studied in this work reaches $-9.5 \%$ upon $1 \mathrm{ppm} \mathrm{H}_{2} \mathrm{~S}$ measurement, which was slightly higher than that of reported CNT-based gas sensors. Meanwhile, a $\mathrm{TiO}_{2}$-based gas sensor usually needs a high working temperature to receive a high gas response to $\mathrm{SF}_{6}$ decomposition components. It was reported that the LOD of Au-Graphene was only $50 \mathrm{ppm}$ with a gas response of $18.75 \%$ to $\mathrm{H}_{2} \mathrm{~S}$ [28]. Therefore, the Ni-CNT sensor obviously presents advantages in high gas response and low working temperature.
+
+Table 1. The limit of detection (LOD) of different gas sensors to $\mathrm{SF}_{6}$ decomposition components. RT represents room temperature. CNTs: carbon nanotubes.
+
+\begin{center}
+\begin{tabular}{ccccc}
+\hline
+Sensor & LOD $(\mathbf{p p m})$ & T $\left({ }^{\circ} \mathbf{C}\right)$ & Gas & Reference \\
+\hline
+Ni-CNTs & 1 & $\mathrm{RT}$ & $\mathrm{H}_{2} \mathrm{~S}$ & This work \\
+Sieve/CNTs & 10 & $\mathrm{RT}$ & $\mathrm{H}_{2} \mathrm{~S}$ & Zhang et al. [30] \\
+Pd-CNTs & 50 & $\mathrm{RT}$ & $\mathrm{H}_{2} \mathrm{~S}$ & Star et al. [31] \\
+Pt-TiO $\mathrm{STS}_{2} \mathrm{NTs}$ & 25 & 160 & $\mathrm{SO}_{2}$ & Jing et al. [32] \\
+Au-Graphene & 50 & $\mathrm{RT}$ & $\mathrm{H}_{2} \mathrm{~S}$ & Yu et al. [28] \\
+\hline
+\end{tabular}
+\end{center}
+
+To demonstrate the reusability of the prepared Ni-CNT gas sensor, we have done multiple measurements to obtain its response and recovery properties to different types of $\mathrm{SF}_{6}$ decomposition components at the same concentration (400 ppm). As shown in Figure 4 , the flow rate of $\mathrm{SF}_{6}$ decomposition components is 100 sccm during the gas-sensing process, and the $\mathrm{N}_{2}$ flow is used in the recovery process with a flow rate of $200 \mathrm{sccm}$. In addition, the illumination of UV light is applied to enhance the recovery process as it greatly increases the molecular vibration of $\mathrm{SF}_{6}$ decomposition components. Gas-in and $\mathrm{N}_{2}+\mathrm{UV}$ represent the flow of $\mathrm{SF}_{6}$ decomposition components $\left(\mathrm{SO}_{2}, \mathrm{H}_{2} \mathrm{~S}\right.$, $\mathrm{SOF}_{2}$, and $\mathrm{SO}_{2} \mathrm{~F}_{2}$ ) and the flow of pure $\mathrm{N}_{2}$ flow with UV illumination, respectively. Simultaneously, $\mathrm{N}_{2}$ flow transfers the desorbed gas from the surface of $\mathrm{Ni}-\mathrm{CNTs}$ and avoids re-adsorption. The $\mathrm{Ni}-\mathrm{CNT}$ gas sensor still keeps a good gas response to $\mathrm{SO}_{2}, \mathrm{H}_{2} \mathrm{~S}, \mathrm{SOF}_{2}$, and $\mathrm{SO}_{2} \mathrm{~F}_{2}$ after multiple gas adsorption and desorption detections, as the gas response changes little with measurement times. The value of gas response reduces from initially $-30.54 \%$ to $-28.13 \%$ upon $\mathrm{H}_{2} \mathrm{~S}$ detection. In addition, the change of gas response to $\mathrm{SOF}_{2}, \mathrm{SO}_{2}$, and $\mathrm{SO}_{2} \mathrm{~F}_{2}$ was $0.55 \%$ (from $-8.04 \%$ to $-7.49 \%$ ), $0.69 \%$ (from $-6.37 \%$ to $5.68 \%$ ), and $0.31 \%$ (from $-2.65 \%$ to $-2.34 \%$ ) after three lots of measurements, which is much less than the change of gas response to $\mathrm{H}_{2} \mathrm{~S}$.
+
+\begin{center}
+\includegraphics[max width=\textwidth]{2023_09_22_1af7e6342ebcf1ce3ea5g-06_437_1025_503_1553}
+\end{center}
+
+Figure 4. The gas response and recovery properties of the Ni-CNT gas sensor to $\mathrm{SF}_{6}$ decomposition components.
+
+Figure $5 \mathrm{a}$ shows the change of gas response with the increase of concentration of $\mathrm{SF}_{6}$ decomposition components. Upon $\mathrm{H}_{2} \mathrm{~S}$ and $\mathrm{SOF}_{2}$ detection, the gas response sharply enhances when gas concentration increases from 1 to $50 \mathrm{ppm}$, and then tends to linearly increase under high gas concentration of detected gases, from 50 to $400 \mathrm{ppm}$. This also demonstrates that the Ni-CNT sensor is sensitive to $\mathrm{H}_{2} \mathrm{~S}$ and $\mathrm{SOF}_{2}$. Upon $\mathrm{SO}_{2}$ and $\mathrm{SO}_{2} \mathrm{~F}_{2}$ detection, the increase of the gas response shows an exponential growth trend. Figure $5 \mathrm{~b}$ shows the change of sensitivity to $\mathrm{SF}_{6}$ decomposition components; the sensitivity presents an exponential attenuation from 1 to $400 \mathrm{ppm}$, because it tends to be saturated at a high gas concentration. The attenuation speed is listed in the following order: $\mathrm{H}_{2} \mathrm{~S}>\mathrm{SOF}_{2}>\mathrm{SO}_{2}>$ $\mathrm{SO}_{2} \mathrm{~F}_{2}$ at the same gas concentration.\\
+\includegraphics[max width=\textwidth, center]{2023_09_22_1af7e6342ebcf1ce3ea5g-06_1624_2144_338_1714}
+
+Figure 5. (a) The change of gas response, and (b) the change of sensitivity with the increase of concentration of $\mathrm{SF}_{6}$ decomposition components.
+
+\subsection{DFT Study of the Ni-CNT Gas Sensor}
+DFT study is used to analyze the adsorption properties of Ni-CNTs to $\mathrm{SF}_{6}$ decomposition components: $\mathrm{SO}_{2}, \mathrm{H}_{2} \mathrm{~S}, \mathrm{SOF}_{2}$, and $\mathrm{SO}_{2} \mathrm{~F}_{2}$. As Ni nanoparticles modified on the $\mathrm{CNT}$ surface always exist as clusters, single and double Ni atom-doped CNT structures are built to reflect the influence of Ni nanoparticles, represented by 1Ni-CNTs and 2Ni-CNTs. Figure 6 and Table 2 show the most stable adsorption structures and corresponding data for one gas molecule adsorption on Ni-CNTs. It is found that all the gas molecules tend to adsorb around Ni atoms due to its high adsorption activity. $\mathrm{SO}_{2}, \mathrm{H}_{2} \mathrm{~S}$, and $\mathrm{SOF}_{2}$ interact with Ni-CNTs with physisorption. Due to the polyvalent properties of the sulfur atom, the chemisorption between $\mathrm{SO}_{2} \mathrm{~F}_{2}$ and the $\mathrm{Ni}-\mathrm{CNT}$ surface leads to the structure break of $\mathrm{SO}_{2} \mathrm{~F}_{2}$ in the adsorption process, reducing the reusability of the CNT gas sensor as it impedes the gas molecule desorption. The $\mathrm{H}_{2} \mathrm{~S}$ molecule interacts with Ni-CNTs by sulfur atoms. The nearest adsorption distance for $\mathrm{H}_{2} \mathrm{~S}$ reduces from $2.33 \AA$ to $2.15 \AA$ when the doped Ni atoms increase from single to double. $\mathrm{SO}_{2}$ and $\mathrm{SOF}_{2}$ molecules interact with Ni-CNTs by oxygen atoms rather than sulfur atoms because the sulfur atom has already built a strong covalent bond with two oxygen atoms or two fluorine atoms. The nearest adsorption distance for $\mathrm{SO}_{2}$ and $\mathrm{SOF}_{2}$ on $2 \mathrm{Ni}-\mathrm{CNTs}$ are $1.88 \AA$ And 1.94 Å, respectively. The nearest distance from the $\mathrm{SO}_{2} \mathrm{~F}$ that breaks from $\mathrm{SO}_{2} \mathrm{~F}_{2}$ to Ni-CNTs is $1.86 \AA$ on 2Ni-CNTs. Except for $\mathrm{H}_{2} \mathrm{~S}$ adsorption, electrons transfer from Ni-CNTs to gas molecules in the adsorption process as $\mathrm{Ni}$ atoms act as the electron donor. The large adsorption energy for all of the gas molecules shows that Ni-doped CNTs are an effective gas-sensing material to detect the $\mathrm{SF}_{6}$ decomposition components.
+
+\begin{center}
+\includegraphics[max width=\textwidth]{2023_09_22_1af7e6342ebcf1ce3ea5g-07_902_1810_494_1573}
+\end{center}
+
+Figure 6. Optimized geometries of $\mathrm{SF}_{6}$ decomposition components adsorbed Ni-doped CNTs, distances in $\AA$.
+
+Table 2. Interaction distance $(d)$, adsorption energy $E_{\text {ads }}$, charge transfer $Q_{\mathrm{t}}$ of $S F_{6}$ decomposition components adsorbed Ni-doped CNTs.
+
+\begin{center}
+\begin{tabular}{cccc}
+\hline
+System & $d(\AA)$ & $Q_{\mathbf{t}}(\mathbf{e})$ & $E_{\text {ads }}(\mathbf{e V})$ \\
+\hline
+1Ni-CNTs/ $\mathrm{H}_{2} \mathrm{~S}^{2}$ & $2.33$ & $0.25$ & $-0.81$ \\
+1Ni-CNTs $/ \mathrm{SO}_{2}$ & $2.00$ & $-0.35$ & $-1.13$ \\
+1Ni-CNTs/ $\mathrm{SOF}_{2}$ & $2.06$ & $-0.06$ & $-0.49$ \\
+1Ni-CNTs $/ \mathrm{SO}_{2} \mathrm{~F}_{2}$ & $2.07$ & $-0.94$ & $-1.93$ \\
+2Ni-CNTs/H & $2.15$ & $0.19$ & $-3.05$ \\
+2Ni-CNTs/SO & $1.88$ & $-0.30$ & $-2.26$ \\
+2Ni-CNTs $/ \mathrm{SOF}_{2}$ & $1.94$ & $-0.26$ & $-2.83$ \\
+2Ni-CNTs/ $\mathrm{SO}_{2} \mathrm{~F}_{2}$ & $1.86$ & $-0.98$ & $0.97$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Generally, gas sensors detect the concentration of contacted gas by measuring the change of conductivity during the adsorption process. Density of states (DOS) is one of the effective ways to analyze the change of conductivity upon $\mathrm{SO}_{2}, \mathrm{H}_{2} \mathrm{~S}_{2}, \mathrm{SOF}_{2}$, and $\mathrm{SO}_{2} \mathrm{~F}_{2}$ adsorption. As shown in Figure 7 , the DOS around Fermi level for $\mathrm{H}_{2} \mathrm{~S}, \mathrm{H}_{2} \mathrm{~S}$, and $\mathrm{SOF}_{2}$ adsorptions obviously increase in different degrees, which leads to the corresponding change of conductivity. The change of conductivity has just verified that the Ni-CNT sensor shows a high gas response to $\mathrm{H}_{2} \mathrm{~S}, \mathrm{H}_{2} \mathrm{~S}$, and $\mathrm{SOF}_{2}$. Meanwhile, the inconspicuous change of DOS upon $\mathrm{SO}_{2} \mathrm{~F}_{2}$ adsorption slightly increases the conductivity of the adsorption system, which is consistent with the experimental study.\\
+\includegraphics[max width=\textwidth, center]{2023_09_22_1af7e6342ebcf1ce3ea5g-08_530_2486_366_1692}
+
+Figure 7. Density of states (DOS) of Ni-CNTs, 2Ni-CNTs, and gas adsorbed Ni-CNTs: (a1-d1) represent gas adsorption on Ni-CNTs, $(\mathbf{a 2}-\mathrm{d} 2)$ represent gas adsorption on $2 \mathrm{Ni}-\mathrm{CNTs}$. In DOS analysis, the change of conductivity upon $\mathrm{H}_{2} \mathrm{~S}$ adsorption is less than $\mathrm{SO}_{2}, \mathrm{SOF}_{2}$, and $\mathrm{SO}_{2} \mathrm{~F}_{2}$ adsorption, based on the calculation condition that the default temperature is $0 \mathrm{~K}$. However, the detection temperature has increased to ambient temperature, which distinctly enhances the reaction activity of the $\mathrm{S}$ atom. In addition, $\mathrm{S}$ in $\mathrm{H}_{2} \mathrm{~S}$ is much more active than that in $\mathrm{SO}_{2}, \mathrm{SOF}_{2}$, and $\mathrm{SO}_{2} \mathrm{~F}_{2}$ because it only builds two monovalences with $\mathrm{H}$ atoms. As a result, the change of conductivity for a single $\mathrm{H}_{2} \mathrm{~S}$ molecule is the largest among four gas molecule adsorptions in the experiment.
+
+\section{Conclusions}
+This study introduces Ni modification on the CNT surface for the sensitive and selective detection of $\mathrm{SF}_{6}$ decomposition components: $\mathrm{SO}_{2}, \mathrm{H}_{2} \mathrm{~S}, \mathrm{SOF}_{2}$, and $\mathrm{SO}_{2} \mathrm{~F}_{2}$. The TEM results show that Ni particles evenly distribute on the surface of CNTs. The prepared Ni-CNT gas sensor shows high gas sensitivity as its LOD reaches $1 \mathrm{ppm}$ to $\mathrm{SF}_{6}$ decomposition components. The sensitivity of the $\mathrm{Ni}-\mathrm{CNT}$ gas sensor is placed in the following order: $\mathrm{H}_{2} \mathrm{~S}>\mathrm{SOF}_{2}>\mathrm{SO}_{2}>\mathrm{SO}_{2} \mathrm{~F}_{2}$. In addition, the Ni-CNT gas sensor shows good gas-sensing recovery property, which makes it easy to be widely used. DFT theoretical study results verify that conductivity of the adsorption system significantly changes when $\mathrm{SF}_{6}$ decomposition components interact with Ni-CNTs. Thus, our finding is certainly beneficial to broaden the perspective of Ni-CNT gas sensor applications in evaluating and diagnosing the insulation status of $\mathrm{SF}_{6}$-insulated equipment online.
+
+Author Contributions: Y.G. and X.Z. proposed the project and analyzed the simulation results. Y.G. contributed to the experimental detection. C.T. and Q.Z. did DFT simulations. P.L. and S.W. did the analysis of the data and gave some revision of the manuscript. All authors read and approved the final manuscript.
+
+Funding: This study was supported by the National Key R\&D Program of China (Grant No. 2017YFB0902700, 2017YBF0902702), and the Fundamental Research Funds for the Central Universities (Grant No. SWU118030).
+
+Conflicts of Interest: The authors declare no conflict of interest.
+
+\section{References}
+\begin{enumerate}
+  \item Tang, J.; Xu, Z.R.; Zhang, X.X.; Sun, C.X. GIS partial discharge quantitative measurements using UHF microstrip antenna sensors. In Proceedings of the 2007 Annual Report-Conference on Electrical Insulation and Dielectric Phenomena, Vancouver, BC, Canada, 14-17 October 2007.
+
+  \item Völcker, O.; Koch, H. Insulation co-ordination for gas-insulated transmission lines (GIL). IEEE Trans. Power Delivery 2000, 16, 122-130. [CrossRef]
+
+  \item Liu, J.; Huang, G.M.; Ma, Z. A Novel intelligent high voltage SF6 circuit breaker. In Proceedings of the IEEE PES General Meeting, Providence, RI, USA, 25-29 July 2010.
+
+  \item Van Brunt, R.J. Production Rates for Oxyfluorides $\mathrm{SOF}_{2}, \mathrm{SO}_{2} \mathrm{~F}_{2}$, and $\mathrm{SOF}_{4}$ in $\mathrm{SF}_{6}$ Corona Discharges. Available online: \href{https://nvlpubs.nist.gov/nistpubs/jres/090/3/V90-3.pdf#page=13}{https://nvlpubs.nist.gov/nistpubs/jres/090/3/V90-3.pdf\#page=13} (accessed on 13 October 2018).
+
+  \item Walters, J.P. Spark discharge: Application multielement spectrochemical analysis. Science 1977, 198, 787-797. [CrossRef] [PubMed]
+
+  \item Sauers, I. By-product formation in spark breakdown of $\mathrm{SF}_{6} / \mathrm{O}_{2}$ mixtures. Plasma Chem. Plasma Process. 1988, 8, 247-262. [CrossRef]
+
+  \item Zhang, $X_{\text {.; Gui, }}$.; Dai, Z. A simulation of Pd-doped SWCNT used to detect $\mathrm{SF}_{6}$ decomposition components under partial discharge. Appl. Surf. Sci. 2014, 315, 196-202. [CrossRef]
+
+  \item Zeng, F.; Ju, T.; Zhang, X.; Pan, J. Influence regularity of trace $\mathrm{H}_{2} \mathrm{O}$ on $\mathrm{SF}_{6}$ decomposition characteristics under partial discharge of needle-plate electrode. IEEE Trans. Dielectr. Electr. Insul. 2015, 22, 287-295. [CrossRef]
+
+  \item Judd, M.D.; Yang, L.; Hunter, I.B.B. Partial discharge monitoring of power transformers using UHF sensors. Part I: sensors and signal interpretation. IEEE Electr. Insul. Mag. 2005, 21, 5-14. [CrossRef]
+
+  \item Judd, M.D.; Yang, L.; Hunter, I.B.B. Partial discharge monitoring for power transformer using UHF sensors. Part 2: field experience. IEEE Electr. Insul. Mag. 2005, 21, 5-13. [CrossRef] 11. Jennings, E.; Collinson, A. A partial discharge monitor for the measurement of partial discharges in a high voltage plant by the transient earth voltage technique. In Proceedings of the 1993 International Conference on Partial Discharge, Canterbury, UK, 28-30 September 1993.
+
+  \item Kweon, D.J.; Chin, S.B.; Kwak, H.R.; Kim, J.C. The analysis of ultrasonic signals by partial discharge and noise from the transformer. IEEE Trans. Power Delivery 2005, 20, 1976-1983. [CrossRef]
+
+  \item Tang, J.; Liu, F.; Zhang, X.X.; Meng, Q.H.; Zhou, J.B. Partial discharge recognition through an analysis of $\mathrm{SF}_{6}$ decomposition products part 1: Decomposition characteristics of $\mathrm{SF}_{6}$ under four different partial discharges. IEEE Trans. Dielectr. Electr. Insul. 2012, 19,29-36. [CrossRef]
+
+  \item Ding, W.D.; Hayashi, R.; Suehiro, J.; Zhou, G.; Imasaka, K.; Hara, M. Calibration methods of carbon nanotube gas sensor for partial discharge detection in SF/sub 6. IEEE Trans. Dielectr. Electr. Insul. 2006, 13, 353-361. [CrossRef]
+
+  \item Minagawa, T.; Kawada, M.; Yamauchi, S.; Kamei, M.; Nishida, C. Development of $\mathrm{SF}_{6}$ decomposition gas sensor. Surf. Coat. Technol. 2003, 169, 643-645. [CrossRef]
+
+  \item Hanabusa, K.; Takata, S.; Fujisaki, M.; Nomura, Y.; Suzuki, M. Fluorescent gelators for detection of explosives. Bull. Chem. Soc. Jpn. 2016, 89,1391-1401. [CrossRef]
+
+  \item Besteman, K.; Lee, J.O.; Wiertz, F.G.M.; Heering, H.A.; Dekker, C. Enzyme-coated carbon nanotubes as single-molecule biosensors. Nano Lett. 2003, 3, 727-730. [CrossRef]
+
+  \item Qi, P.; Vermesh, O.; Grecu, M.; Javey, A.; Wang, Q.; Dai, H.; Peng, S.; Cho, K.J. Toward large arrays of multiplex functionalized carbon nanotube sensors for highly sensitive and selective molecular detection. Nano Lett. 2003, 3, 347-351. [CrossRef]
+
+  \item Jing, L.; Lu, Y.; Ye, Q.; Cinke, M.; Han, J.; Meyyappan, M. Carbon nanotube sensors for gas and organic vapor detection. Nano Lett. 2003, 3, 929-933.
+
+  \item Komiyama, M.; Mori, T.; Ariga, K. Molecular imprinting: Materials nanoarchitectonics with molecular information. Bull. Chem. Soc. Jpn. 2018, 91, 1075-1111. [CrossRef]
+
+  \item Osica, I.; Imamura, G.; Shiba, K.; Ji, Q.; Shrestha, L.K.; Hill, J.P.; Kurzydłowski, K.J.; Yoshikawa, G.; Ariga, K. Highly Networked Capsular Silica-Porphyrin Hybrid Nanostructures as Efficient Materials for Acetone Vapor Sensing. ACS Appl. Mater. Interfaces 2017, 9, 9945–9954. [CrossRef] [PubMed]
+
+  \item Zhang, Y.; Yuan, S.; Day, G.; Wang, X.; Yang, X.; Zhou, H.C. Luminescent sensors based on metal-organic frameworks. Coord. Chem. Rev. 2018, 354, 28-45. [CrossRef]
+
+  \item Chopra, S.; Mcguire, K.; Gothard, N.; Rao, A.M.; Pham, A. Selective gas detection using a carbon nanotube sensor. Appl. Phys. Lett. 2003, 83, 2280-2282. [CrossRef]
+
+  \item Penza, M.; Rossi, R.; Alvisi, M.; Cassano, G.; Signore, M.A.; Serra, E.; Giorgi, R. Pt-and Pd-nanoclusters functionalized carbon nanotubes networked films for sub-ppm gas sensors. Sens. Actuators, B chem. 2008, 135, 289-297. [CrossRef]
+
+  \item Tang, J.; Rao, X.; Zeng, F.; Cai, W.; Cheng, L.; Zhang, C. Influence mechanisms of trace $\mathrm{H}_{2} \mathrm{O}$ on the generating process of $\mathrm{SF}_{6}$ spark discharge decomposition components. Plasma Chem. Plasma Process. 2017, 37, 1-16. [CrossRef]
+
+  \item Zhang, X.; Chen, Q.; Hu, W.; Zhang, J. A DFT study of $\mathrm{SF}_{6}$ decomposed gas adsorption on an anatase (101) surface. Appl. Surf. Sci. 2013, 286, 47-53. [CrossRef]
+
+  \item Zhang, X.; Chen, Q.; Tang, J.; Hu, W.; Zhang, J. Adsorption of $\mathrm{SF}_{6}$ decomposed gas on anatase (101) and (001) surfaces with oxygen defect: A density functional theory study. Sci. Rep. 2014, 4, 4762. [CrossRef] [PubMed]
+
+  \item Zhang, X.; Yu, L.; Wu, X.; Hu, W. Experimental sensing and density functional theory study of $\mathrm{H}_{2} \mathrm{~S}^{\mathrm{S}}$ and $\mathrm{SOF}_{2}$ adsorption on Au-modified graphene. Adv. Sci. 2015, 2, 1500101. [CrossRef] [PubMed]
+
+  \item Zhang, X.; Dong, X.; Gui, Y. Theoretical and experimental study on competitive adsorption of $\mathrm{SF}_{6}$ decomposed components on Au-modified anatase (101) surface. Appl. Surf. Sci. 2016, 387, 437-445. [CrossRef]
+
+  \item Zhang, X.; Luo, C.; Tang, J. Sensitivity characteristic analysis of adsorbent-mixed carbon nanotube sensors for the detection of $\mathrm{SF}_{6}$ decomposition products under PD conditions. Sensors 2013, 13, 15209. [CrossRef] [PubMed] 31. Star, A.; Joshi, V.; Skarupo, S.; Thomas, D.; Gabriel, J.C.P. Gas sensor array based on metal-decorated carbon Nanotubes. J. Phys. Chem. B 2006, 110, 21014-21020. [CrossRef] [PubMed]
+
+  \item Zhang, X.; Tie, J.; Zhang, J. A Pt-doped $\mathrm{TiO}_{2}$ nanotube arrays sensor for detecting SF decomposition $^{2}$ products. Sensors 2013,13, 14764. [CrossRef] [PubMed]
+
+\end{enumerate}
+
+(c) 2018 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (http:/ / \href{http://creativecommons.org/licenses/by/4.0/}{creativecommons.org/licenses/by/4.0/}).
+
+
+\end{document}
+---
+Output:
+```python
+from json import loads
+
+import ase
+import numpy as np
+from ase import Atoms
+from ase.dft import DOS
+from ase.optimize import BFGS
+from pydantic import BaseModel
+
+from annotations.models.DFTParametersGeneral import DFTParametersGeneral
+from annotations.models.Position import Position
+from annotations.models.StructureMetadata import StructureMetadata
+
+# Functions Code
+
+
+
+
+### Key maps
+
+vasp_map = {
+    "exchange_correlation_functional": "xc",
+    "kpoints": "kpts",
+    "pseudopotentials": "pp",
+    "energy_cutoff": "encut",
+    "energy_convergence_criterion": "ediff",
+}
+
+crystal_map = {
+    "exchange_correlation_functional": "xc",
+    "spin": "spinpol"
+    "basis_set": "basis",
+    "kpoints": "kpts",
+    "ase_otherkeys": "otherkeys"
+}
+
+gaussian_map = {
+    "exchange_correlation_functional": "xc",
+    "basis_set": "basis",
+    "ase_otherkeys": "extra"
+}
+
+siesta_map = {
+    "exchange_correlation_functional": "xc",
+    "basis_set": "basis_set",
+    "kpoints": "kpts",
+}
+
+qe_map = {
+    "pseudopotentials": "pseudopotentials",
+    "kpoints": "kpts",
+    "ase_otherkeys": "input_data",
+}
+
+mopac_map = {}
+
+cp2k_map = {
+    "basis_set": "basis_set",
+    "energy_cutoff": "cutoff",
+    "exchange_correlation_functional": "xc",
+    "pseudopotentials": "pseudo_potential",
+}
+
+dmol_map = {
+    "basis_set": "basis",
+    "exchange_correlation_functional": "functional",
+    "energy_convergence_criterion": "scf_density_convergence",
+    "pseudopotentials": "pseudopotential",
+    "spin": "spin_polarization",
+}
+
+key_maps = {"vasp": vasp_map, "crystal": crystal_map, "gaussian": gaussian_map, "siesta": siesta_map, "qe": qe_map, "mopac": mopac_map, "cp2k": cp2k_map, "dmol": dmol_map}
+
+### Kwarg Lists
+
+ase_vasp_kwargs = [
+    "command",
+    "restart",
+    "xc",
+    "setups",
+    "pp",
+    "kpts",
+    "gamma",
+    "reciprocal",
+    "charge",
+    "prec",
+    "encut",
+    "ediff",
+    "nbands",
+    "algo",
+    "ismear",
+    "sigma",
+    "nelm",
+]
+
+crystal_kwargs = [
+    "restart",
+    "xc",
+    "spinpol",
+    "guess",
+    "basis",
+    "kpts",
+    "isp",
+    "smearing",
+    "otherkeys"
+]
+
+gaussian_kwargs = [
+    "label",
+    "output_type",
+    "method",
+    "xc",
+    "basis",
+    "fitting_basis",
+    "charge",
+    "mult",
+    "basisfile",
+    "basis_set",
+    "extra",
+    "addsec",
+    "ioplist",
+    "spinlist",
+    "zefflist",
+    "qmomlist",
+    "nmagmlist",
+    "znuclist",
+    "radnuclearlist",
+]
+
+siesta_kwargs = [
+    "label",
+    "mesh_cutoff",
+    "xc",
+    "energy_shift",
+    "kpts",
+    "basis_set",
+    "spin",
+    "species",
+]
+
+qe_kwargs = ["pseudopotentials", "kpts", "input_data", "kspacing", "koffset"]
+
+mopac_kwargs = []
+
+cp2k_kwargs = [
+    "auto_write",
+    "basis_set",
+    "basis_set_file",
+    "charge",
+    "command",
+    "cutoff",
+    "debug",
+    "force_eval_method",
+    "inp",
+    "options",
+    "max_scf",
+    "multiplicity",
+    "poisson_solver",
+    "potential_file",
+    "pseudo_potential",
+    "stress_tensor",
+    "uks",
+    "xc",
+    "print_level",
+]
+
+dmol_kwargs = [
+    "symmetry",
+    "spin_polarization",
+    "charge",
+    "basis",
+    "pseudopotential",
+    "functional",
+    "scf_density_convergence",
+]
+
+ase_kwarg_lists = {"vasp": ase_vasp_kwargs, "crytsal": crystal_kwargs, "gaussian": gaussian_kwargs, "siesta": siesta_kwargs, "qe": qe_kwargs, "mopac": mopac_kwargs, "cp2k": cp2k_kwargs, "dmol": dmol_kwargs}
+
+
+### Caluclators
+
+ase_calculators = {
+    "vasp": ase.calculators.vasp.Vasp,
+    "crystal": ase.calculators.crystal.CRYSTAL,
+    "gaussian": ase.calculators.gaussian.Gaussian,
+    "siesta": ase.calculators.siesta.Siesta,
+    "qe": ase.calculators.espresso.Espresso,
+    "mopac": ase.calculators.mopac.MOPAC,
+    "cp2k": ase.calculators.cp2k.CP2K,
+    "dmol": ase.calculators.dmol.DMol3,
+}
+
+
+### Setup Functions
+
+
+def vasp_setup(input_kwargs: dict, dft_parameters: dict) -> dict:
+    hubbard_U_dict = dft_parameters.get("hubbard_U")
+    if hubbard_U_dict is not None:
+        ldau_luj = {}
+        for element, u_value in hubbard_U_dict.items():
+            ldau_luj[element] = {"L": 2, "U": u_value, "J": 0}
+
+        ldau_params = {
+            "LDAU": True,
+            "LDAUTYPE": 2,
+            "LDAUL": [ldau_luj[element]["L"] for element in hubbard_U_dict.keys()],
+            "LDAUU": [ldau_luj[element]["U"] for element in hubbard_U_dict.keys()],
+            "LDAUJ": [ldau_luj[element]["J"] for element in hubbard_U_dict.keys()],
+        }
+
+        input_kwargs = {**input_kwargs, **ldau_params}
+
+    if dft_parameters.get("relaxed_nuclei"):
+        input_kwargs["isif"] = 2
+
+        if dft_parameters.get("relaxed_unit_cell"):
+            input_kwargs["isif"] = 3
+
+    else:
+        input_kwargs["ibrion"] = -1
+
+    return input_kwargs
+
+
+def siesta_setup(input_kwargs: dict, dft_parameters: dict) -> dict:
+    manually_set_spin = dft_parameters.get("other_information").get("spin")
+    if manually_set_spin is not None:
+        input_kwargs["spin"] = manually_set_spin
+    elif dft_parameters.get("spin"):
+        input_kwargs["spin"] = "spin-orbit"
+    else:
+        input_kwargs["spin"] = "non-polarized"
+
+    return input_kwargs
+
+
+def qe_setup(input_kwargs: dict, dft_parameters: dict) -> dict:
+    input_data = input_kwargs.get("input_data")
+    if input_data is None:
+        input_data = {}
+
+    input_data["system"] = {
+        'ecutwfc': dft_parameters.get("energy_cutoff"),
+        'input_dft': dft_parameters.get("exchange_correlation_functional"),
+    }
+    input_data["control"] = {"convergence_threshold": dft_parameters.get("energy_convergence_criterion")}
+
+    if dft_parameters.get("hubbard_U") is not None:
+        input_data["system"]["Hubbard_U"] = dft_parameters.get("hubbard_U")
+        input_data["system"]["lda_plus_u"] = True
+
+    if dft_parameters.get("spin"):
+        input_data["system"]["nspin"] = 2
+
+    input_kwargs["input_data"] = input_data
+
+    return input_kwargs
+
+
+
+setup_functions = {"vasp": vasp_setup, "siesta": siesta_setup, "qe": qe_setup}
+
+
+### General Code
+
+JSON_FIELDS = ["kpoints", "hubbard_U", "ase_otherkeys", "other_information"]
+
+
+def dft_general(atoms: Atoms, dft_parameters: DFTParametersGeneral):
+    # Convert from pydantic to dict
+    dft_dict = dft_parameters.dict()
+
+    # Convert json strings to dict
+    for field_name in JSON_FIELDS:
+        if field_name in dft_parameters.keys():
+            dft_dict = loads(dft_parameters[field_name])
+
+    # Check to make sure the DFT code is supported by this function
+    code = dft_dict.get("code")
+    if (
+        code is None
+        or code not in key_maps
+        or code not in ase_kwarg_lists
+        or code not in ase_calculators
+    ):
+        key_map_codes = set(key_maps.keys())
+        ase_kwarg_codes = set(ase_kwarg_lists.keys())
+        ase_calculator_codes = set(ase_calculators.keys())
+        supported_codes = key_map_codes.intersection(ase_calculator_codes).intersection(
+            ase_kwarg_codes
+        )
+        raise ValueError(
+            f"DFT code name {code} is not suppported yet. Supported codes are: {str(supported_codes)}"
+        )
+
+    # Replace general keys with code-specific keys.
+    key_map = key_maps[code]
+    specific_dft_dict = {}
+    for general_key_name, value in key_map.items():
+        specific_key_name = key_map.get(general_key_name)
+        if specific_key_name is None:
+            specific_dft_dict[general_key_name] = value
+        else:
+            specific_dft_dict[specific_key_name] = value
+
+    # Prepare the inputs to the ASE calculator's __init__ by only keeping keys that the ASE calculator will accept as kwargs
+    kwarg_list = ase_kwarg_lists[code]
+    specific_kwarg_input_dict = {
+        k: v
+        for k, v in specific_dft_dict.dict(exclude_none=True).items()
+        if k in kwarg_list
+    }
+
+    # If dft-code-specific kwargs were entered into the sheet, include them here
+    additional_kwargs = dft_dict.get("other_information")
+    if additional_kwargs is not None:
+        specific_kwarg_input_dict = {**specific_kwarg_input_dict, **additional_kwargs}
+
+    # If there is any dft-code-specific setup for the inputs dictionary remaining, do it here
+    setup_function = setup_functions.get("code")
+    if setup_function is not None:
+        modified_input_dict = setup_function(
+            specific_kwarg_input_dict, specific_dft_dict
+        )
+    else:
+        modified_input_dict = specific_kwarg_input_dict
+
+    # Define and set the calculator
+    calculator = ase_calculators[code]
+    calc = calculator(**modified_input_dict)
+    atoms.set_calculator(calc)
+
+    # Run DFT
+    if dft_dict.get("relaxed_unit_cell"):
+        dyn = BFGS(atoms)
+        dyn.run(dft_dict.get("force_convergence_criterion"))
+    else:
+        atoms.get_potential_energy()
+
+    return atoms
+
+
+def add_adsorbate(
+    surface_atoms: Atoms, adsorbate_atoms: Atoms, position: Position | None
+) -> Atoms:
+    if position is not None:
+        position_array = np.array([position.x, position.y, position.z])
+    else:
+        max_z = max([atom.z for atom in surface_atoms])
+        new_z = max_z + 1.5
+        position_array = np.array([0.0, 0.0, new_z])
+    adsorbate_atoms.positions += position_array
+    combined_atoms = surface_atoms + adsorbate_atoms
+
+    return combined_atoms
+def get_adsorption_energy_float(system: float, bare: float, reference: float) -> float:
+    return system - bare - reference
+
+
+def structure_from_metadata(
+    metadata: StructureMetadata,
+) -> Atoms:
+    pass
+
+
+def get_dos(atoms: Atoms) -> dict[str, list[float]]:
+    dos = DOS(atoms, width=0.1)
+    energies, weights = dos.get_energies(), dos.get_weights()
+    output = {"energies": energies, "weights": weights}
+
+    return output
+
+
+def get_adsorbates_637cf34b4e2d7c20adab751f8b72b8a3d8c5a9f2() -> list[Atoms]:
+    pass
+
+
+def get_reference_energy(atoms: Atoms) -> float:
+    pass
+
+
+def get_band_structure(atoms: Atoms):
+    return atoms.calc.band_structure()
+
+
+def get_total_energy(atoms: Atoms) -> float:
+    return atoms.get_potential_energy()
+
+
+# Inputs Code
+
+
+
+class StructureMetadataGeneral(BaseModel):
+    id: str | None
+    common_name: str | None
+    scientific_name: str | None
+    type: str | None
+    composition: str | None
+    crystal_or_isolated: str | None
+    vacuum: str | None
+    supercell: str | None
+    cas_number: str | None
+    lattice_parameters: str | None
+    space_group: str | None
+    mp_id: str | None
+    isomer: str | None
+    cell_size: str | None
+    miller_indices: str | None
+    crystal_structure: str | None
+    additional_information: str | None
+
+
+
+class DFTParametersGeneral(BaseModel):
+    id: str | None
+    code: str | None
+    exchange_correlation_functional: str | None
+    kpoints: str | None
+    pseudopotentials: str | None
+    basis_set: str | None
+    energy_cutoff: float | None
+    force_convergence_criterion: float | None
+    energy_convergence_criterion: float | None
+    relaxed_nuclei: bool | None
+    relaxed_unit_cell: bool | None
+    spin: bool | None
+    hubbard_U: str | None
+    ase_otherkeys: str | None
+    other_information: str | None
+    notes: str | None
+
+structure_metadata_cnt_ni = StructureMetadataGeneral.parse_raw('{"common_name": "Ni-Carbon nanotube", "scientific_name": NaN, "type": "1d", "composition": NaN, "crystal_or_isolated": "1d", "vacuum": NaN, "supercell": NaN, "cell_size": "[20,20,8.5]", "cas_number": NaN, "lattice_parameters": NaN, "space_group": NaN, "mp_id": NaN, "isomer": NaN, "miller_indices": NaN, "crystal_structure": NaN, "additional_information": "they created a carbon nanotube and replaced one atom with Ni. They did not say how many carbon atoms were in the cell."}')
+
+dft_params_45 = DFTParametersGeneral.parse_raw('{"code": "dmol", "exchange_correlation_functional": "PBE", "kpoints": "[1,1,2]", "pseudopotentials": NaN, "basis_set": NaN, "energy_cutoff": NaN, "force_convergence_criterion": 0.0544228159, "energy_convergence_criterion": 0.0002721141, "relaxed_nuclei": NaN, "relaxed_unit_cell": NaN, "spin": NaN, "hubbard_U": NaN, "ase_otherkeys": NaN, "other_information": NaN, "notes": NaN}')
+
+structure_metadata_cnt_ni2 = StructureMetadataGeneral.parse_raw('{"common_name": "2Ni-Carbon nanotube", "scientific_name": NaN, "type": "1d", "composition": NaN, "crystal_or_isolated": "1d", "vacuum": NaN, "supercell": NaN, "cell_size": "[20,20,8.5]", "cas_number": NaN, "lattice_parameters": NaN, "space_group": NaN, "mp_id": NaN, "isomer": NaN, "miller_indices": NaN, "crystal_structure": NaN, "additional_information": "they created a carbon nanotube and replaced two atoms with Ni. They did not say how many carbon atoms were in the cell."}')
+
+# Execution Code
+
+adsorbate_structures = get_adsorbates_637cf34b4e2d7c20adab751f8b72b8a3d8c5a9f2()
+atoms_surface = structure_from_metadata(structure_metadata_cnt_ni)
+atoms_surface_2Ni = structure_from_metadata(structure_metadata_cnt_ni2)
+adsorbate_reference_energies = []
+for adsorbate_structures_entry in adsorbate_structures:
+    adsorbate_reference_energies_entry = get_reference_energy(adsorbate_structures_entry)
+    adsorbate_reference_energies.append(adsorbate_reference_energies_entry)
+
+relaxed_atoms_surface = dft_general(atoms_surface, dft_params_45)
+relaxed_atoms_surface_2Ni = dft_general(atoms_surface_2Ni, dft_params_45)
+surface_with_adsorbates = []
+for adsorbate_structures_entry in adsorbate_structures:
+    surface_with_adsorbates_entry = add_adsorbate(relaxed_atoms_surface, adsorbate_structures_entry)
+    surface_with_adsorbates.append(surface_with_adsorbates_entry)
+
+surface_energy = get_total_energy(relaxed_atoms_surface)
+surface_with_adsorbates_2Ni = []
+for adsorbate_structures_entry in adsorbate_structures:
+    surface_with_adsorbates_2Ni_entry = add_adsorbate(relaxed_atoms_surface_2Ni, adsorbate_structures_entry)
+    surface_with_adsorbates_2Ni.append(surface_with_adsorbates_2Ni_entry)
+
+surface_energy_2Ni = get_total_energy(relaxed_atoms_surface_2Ni)
+relaxed_surface_with_adsorbates = []
+for surface_with_adsorbates_entry in surface_with_adsorbates:
+    relaxed_surface_with_adsorbates_entry = dft_general(surface_with_adsorbates_entry, dft_params_45)
+    relaxed_surface_with_adsorbates.append(relaxed_surface_with_adsorbates_entry)
+
+relaxed_surface_with_adsorbates_2Ni = []
+for surface_with_adsorbates_2Ni_entry in surface_with_adsorbates_2Ni:
+    relaxed_surface_with_adsorbates_2Ni_entry = dft_general(surface_with_adsorbates_2Ni_entry, dft_params_45)
+    relaxed_surface_with_adsorbates_2Ni.append(relaxed_surface_with_adsorbates_2Ni_entry)
+
+system_energies = []
+for relaxed_surface_with_adsorbates_entry in relaxed_surface_with_adsorbates:
+    system_energies_entry = get_total_energy(relaxed_surface_with_adsorbates_entry)
+    system_energies.append(system_energies_entry)
+
+band_structure_1Ni = []
+for relaxed_surface_with_adsorbates_entry in relaxed_surface_with_adsorbates:
+    band_structure_1Ni_entry = get_band_structure(relaxed_surface_with_adsorbates_entry)
+    band_structure_1Ni.append(band_structure_1Ni_entry)
+
+dos_1Ni = []
+for relaxed_surface_with_adsorbates_entry in relaxed_surface_with_adsorbates:
+    dos_1Ni_entry = get_dos(relaxed_surface_with_adsorbates_entry)
+    dos_1Ni.append(dos_1Ni_entry)
+
+system_energies_2Ni = []
+for relaxed_surface_with_adsorbates_2Ni_entry in relaxed_surface_with_adsorbates_2Ni:
+    system_energies_2Ni_entry = get_total_energy(relaxed_surface_with_adsorbates_2Ni_entry)
+    system_energies_2Ni.append(system_energies_2Ni_entry)
+
+band_structure_2Ni = []
+for relaxed_surface_with_adsorbates_2Ni_entry in relaxed_surface_with_adsorbates_2Ni:
+    band_structure_2Ni_entry = get_band_structure(relaxed_surface_with_adsorbates_2Ni_entry)
+    band_structure_2Ni.append(band_structure_2Ni_entry)
+
+dos_2Ni = []
+for relaxed_surface_with_adsorbates_2Ni_entry in relaxed_surface_with_adsorbates_2Ni:
+    dos_2Ni_entry = get_dos(relaxed_surface_with_adsorbates_2Ni_entry)
+    dos_2Ni.append(dos_2Ni_entry)
+
+adsorption_energies = []
+for system_energies_entry, adsorbate_reference_energies_entry in zip(system_energies, adsorbate_reference_energies):
+    adsorption_energies_entry = get_adsorption_energy_float(system_energies_entry, surface_energy, adsorbate_reference_energies_entry):
+    adsorption_energies.append(adsorption_energies_entry)
+
+adsorption_energies_2Ni = []
+for system_energies_2Ni_entry, adsorbate_reference_energies_entry in zip(system_energies_2Ni, adsorbate_reference_energies):
+    adsorption_energies_2Ni_entry = get_adsorption_energy_float(system_energies_2Ni_entry, surface_energy_2Ni, adsorbate_reference_energies_entry):
+    adsorption_energies_2Ni.append(adsorption_energies_2Ni_entry)
+
+
+```
+
+This is the paper I'd like to write the python code for:
+Paper: {{text}}
+---
+Output:
+

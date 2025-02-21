@@ -1,0 +1,12 @@
+I am a computational materials scientist, and I would like to reproduce the DFT calculations from a paper. \
+Write python code to reproduce all DFT calculations from a paper. \
+You have access to the library ase, and any DFT software used in the paper. \
+Whenever possible, make the code modular by write functions for each step of the calculation \
+(i.e. set up the unit cell, run DFT, find the total energy from the DFT calculation, plot the band structure, ...) \
+and calling the functions, instead of writing one long body of code. \
+Make sure all input structures, DFT calculations, and calculation outputs such as energies, density of states or band gap are accounted for.
+---
+This is the paper I'd like to write the python code for:
+{{text}}
+---
+Output:

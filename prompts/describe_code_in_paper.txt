@@ -1,0 +1,123 @@
+Fill in a YAML file for the code described in the attached paper according to the prescription defined in the YAML template that starts on the next paragraph. Fields are to be filled only if they are directly relevant to the code introduced in the paper. Be sure to extract any quantitative data like thresholds and code rates. Above all, be concise! If you cannot explain something technical in detail, do not try to explain it. If something is not detailed in the paper, do not mention it.
+
+#######################################################
+## This is a code entry in the error correction zoo. ##
+##       https://github.com/errorcorrectionzoo       ##
+#######################################################
+
+# Use UTF-8 unicode encoding
+# AMS-TeX commands are rendered inside \( ... \) using MathJaX.
+# Allowed external bibliographic references are
+#    \cite{arXiv:#.#} or \cite{arXiv:quant-ph/#} (PREFERRED),
+#    \cite{doi:#}, or, as a last resort
+#    \cite{manual:{(enter citation line incl. author and year here)}}
+# External websites such as code tables, coding theory packages, github pages linked as
+#    \\url{https://example.com/example}
+#    \href{https://example.com/example}{link text}
+# Internal references to codes are
+#    \hyperref[code:code_id]{link text}
+# Delete instructional comments when submitting
+
+# code id, physical, logical are all lower case
+# physical or logical are one of the following: bits, q-ary_digits, matrices, rings, reals, spheres, qubits, qudits, galois, oscillators, spins, or categories
+code_id: no_spaces_lower_case
+physical: qubits
+logical: qubits
+
+# Only list if the code being described has specific parameters. These are typically in the form of (n,K,d) and [n,k,d] for classical codes, or ((n,K,d)) and [[n,k,d]] for quantum codes.
+Code_parameter: '((2^r-1,r,d))_{6}'
+
+# Apostrophes are denoted by two apostrophe characters, i.e., ''
+# Code title (SINGULAR) + first reference(s) (optional).
+name: 'Important-last-name favorite code'
+introduced: '\cite{doi:10.1070/RM1997v052n06ABEH002155}'
+
+# Anything applicable to a larger parent set of codes (see below) should go in
+# that entry instead of here.
+description: |
+  First paragraph is a short standalone description, containing no references to figures.
+
+  Subsequent paragraphs go into (possibly quantitative) details.
+
+  \subsection{Subsection headings work}
+  \paragraph{And so do paragraphs}
+# Only add subsections or paragraphs if the paper has long discussions about broad code classes.
+
+
+# Long fields such as this one can be written in other YML formats, such as the one using the pipe symbol
+# protection: |
+#   text...
+#   more text...
+protection: 'Protects against ... Pauli noise. Approximate code with parameters ... for noise model ... .'
+
+# This field starts a list of specific labeled subfields; do not leave it empty. If empty, comment out. Also, indentations are important!
+features:
+
+  # Do not include this if no specific encoders are mentioned.
+  encoders:
+    - 'Specific description of a process that makes the states, usually for quantum codes.'
+    - 'Unitary circuit of depth ... \cite{arxiv:old-paper}.'
+    - 'Measurement-based preparation ... with ancilla overhead of ... .'
+    - 'Leave discussion of fault tolerance to fault-tolerance field.'
+
+  # Not all fields are indexed by a dash
+  transversal_gates: 'Transversal ... gates \cite{doi:ok-paper}. Comment out if doesn''t apply.'
+
+  # Do not include this if no specific gates are mentioned.
+  general_gates:
+    - 'Universal gate set achieved by either additional ... gate.'
+    - 'Magic-state distillation protocols'
+    - 'kth \term{Clifford hierarchy} gates obtained by ... circuits'
+
+  # Do not include this if no specific decoders are mentioned.
+  decoders:
+    - 'Details about how syndrome measurements are done; discuss overhead, if applicable.'
+    - 'MWPM decoding algorithm \cite{doi:good-paper} with ... overhead.'
+    - 'Just-in-time decoder with ... \cite{arxiv:awesome-paper}.'
+
+  fault_tolerance:
+    - 'Transversal gates are fault-tolerant w.r.t. ... noise \cite{doi:ok-paper}'
+    - 'Other fault-tolerant gadgets (measurements, encoders, error correcting steps)'
+    - 'Noise-model-preserving gadgets, noise-biased gates, fault-tolerant flag error correction'
+    - 'Pieceable fault tolerance.'
+
+  code_capacity_threshold:
+    - '\(1.5%\) error-correction threshold against some noise with *noiseless* decoder of some complexity \cite{arxiv:paper}.'
+
+  threshold:
+    - '\(0.3\%\) error-correction threshold ... with *noisy* ... decoder of some complexity \cite{doi:good-paper}.'
+    - '\(10^{-5}\) computational threshold using concatenated scheme under ... noise with overhead of ... '
+
+# Include only if specific experimental or real-world realizations are reported.
+realizations:
+  # List and explain the different "domains" of realizations in list items.
+  - 'Code used in DVDs \cite{doi:####...}, 5G, etc.'
+  - 'Realized in trapped-ion quantum devices \cite{arXiv:####.#####}, etc.'
+
+# Only include notes if the specific technical items listed below are included in the paper.
+notes:
+  - 'Bounds on \(n\), \(k\), or \(d\) for this class, unless mentioned in description.'
+  - 'Links to code tables, github, GAP algebra packages, more papers \cite{arXiv:####.#####}.'
+
+# Include as many direct relations as were mentioned in the paper. The relations below are just examples.
+relations:
+  parents:
+    - code_id: code_id1
+      detail: 'The smallest code family that includes this code that is defined over the same physical space structure or alphabet.'
+  cousins:
+    - code_id: code_id2
+      detail: 'Codes that are directly relevant and described by a property shared by this code.'
+    - code_id: code_id3
+      detail: 'Code family of similar encoding but with different physical space structures (qudit vs. qubit surface code).'
+
+# Include footer below and change the date to today’s date in the prescribed format
+# Begin Entry Meta Information
+_meta:
+  # Change log - most recent first
+  changelog:
+    - user_id: VictorVAlbert
+      date: 'YYYY-MM-DD'
+
+Here is the paper
+
+{{text}}

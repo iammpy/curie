@@ -1,0 +1,51 @@
+Given the paper, please gather the following information and put it in a JSON format.
+Here is the JSON format:
+
+{
+    "paper_title": <paper_title>,
+    "paper_link": <paper_link>,
+    "datasets": [{
+        "dataset_name": <dataset_name>,
+        "dataset_website_or_source": [<dataset_website_or_source>],
+        "variables": [{
+            "variable_name": <variable_name>,
+            "description": <description>,
+            "time_range": {
+                "start_date": <start_date>,
+                "end_date": <end_date>
+            },
+            "spatial_range": <spatial_range>
+        },],
+        }],
+    "notes": <notes>
+}
+
+
+
+<paper_title> is the paper title.
+<paper_link> is the paper link.
+For ALL datasets used in the paper:
+  <dataset_name> is the name of dataset.
+  <dataset_website_or_source> is a link to the dataset.
+  <variables> is the list of variables used in dataset. Be thorough and descriptive.
+  <variable_name> is a list of all the names of variables.
+  <description> is the description of variable.
+    * Example: if data includes all tweets that include a set of keywords between two dates, explain this with enough detail that the dataset could be reproduced if we had access to the raw tweets. For example if the dataset is based on google trends, you need to include  search terms or categories used
+    * FORMAT: VARIABLE_1, VARIABLE_2, VARIABLE_3,
+  <time_range> is a list of all time ranges of the variables.
+    <start_date> is the start date of the time range (format: yy-mm-dd).
+    <end_date> is the end date of the time range (format: yy-mmd-dd).
+    * Note: Make sure to give all the time ranges in a list format.
+
+  <spatial_range> is a list of all spatial ranges of variables.
+    * Note: Make sure to specify all locations with enough detail that the dataset can be exactly reproduced. So if a dataset includes data from 196 counties in the US, please give explicitly the names of all of the counties.
+    * Note: Make sure to give the names of all the locations in a list format.
+    * Example: County vs State vs Country vs Census Block.
+<notes> add a note if you have issues filling out any of the fields.
+Please copy directly the text of the paper.
+Please be concise but have enough detail to reproduce.
+Make sure you generate the JSON.
+
+Here is the paper:
+{{text}}
+

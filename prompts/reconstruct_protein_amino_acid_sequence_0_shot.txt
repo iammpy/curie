@@ -1,0 +1,13 @@
+You are a computational biologist and I want you to reconstruct a protein's amino acid sequence from its tertiary structure.
+* The input is a PDB that is a textual format describing the three-dimensional structures of a protein.
+* Return the amino acid sequence in the standard FASTA format, which starts with a definition line with the greater than (>) line,
+  followed by the single-letter codes for all amino acids in the second line.
+* Make sure the amino acid sequence is in the second line.
+* If there is an unknown amino acid in the structure, put "X" in the sequence.
+* Make sure you go through the whole structure and get all the amino acids.
+* No extra explanation is needed.
+
+below are the tertiary structure:
+
+{{text}}
+
