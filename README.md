@@ -3,7 +3,7 @@ Example Code accompanying the paper
 
 **CURIE: Evaluating LLMs On Multitask Scientific Long Context Understanding and Reasoning**
 
-> **TL;DR:** we introduce CURIE (Scientific Long **C**ontext **U**nderstanding **R**easoning and **I**nformation **E**xtraction), benchmark with 10 tasks from 6 science domains specifically designed to that tests the ability of LLMs to assist scientists in realistic workflows.
+> **TL;DR:** we introduce CURIE (Scientific Long **C**ontext **U**nderstanding **R**easoning and **I**nformation **E**xtraction), benchmark with 10 tasks from 6 science domains specifically designed to test the ability of LLMs to assist scientists in realistic workflows.
 
 ## Data
 Our data is organized into eight domain-specific subfolders: "biogr", "dft", "pdb", "geo", "mpve", "qecc_65", "hfd", and "hfe".  Each subfolder contains two further subfolders: "ground_truth" and "inputs".  Within these, each data instance is stored in a JSON file named record_id.json, where record_id is a unique identifier. The "biogr" domain also includes image inputs as record_id.png files alongside the corresponding JSON.
