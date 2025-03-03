@@ -1,5 +1,5 @@
 
-Example Code accompanying the paper
+Evaluation Code accompanying the paper
 
 **CURIE: Evaluating LLMs On Multitask Scientific Long Context Understanding and Reasoning**
 
@@ -59,7 +59,7 @@ of the benchmark and evaluations.
 
 Code in this Github repository is licensed under a [APACHE 2.0 License](./LICENSE).
 
-## 🎓 Citing SPIQA
+## 🎓 Citing CURIE
 
 Coming soon...
 
