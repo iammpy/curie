@@ -19,6 +19,8 @@ Our data is organized into eight domain-specific subfolders: "biogr", "dft", "pd
 
 Ground truth data varies in structure and content across domains, but all files consistently include a record_id field matching the filename.  Input files have a uniform structure across all domains, containing both a record_id field and a text field representing the input text to LLMs.
 
+For the "biogr" (geo-referencing) task, for 114 of the 138 examples, we release additional data including the PDF papers that each image was taken from along with other metadata in this Github repo: [https://github.com/google-research/ecology-georeferencing](https://github.com/google-research/ecology-georeferencing)
+
 ## Running Inference.
 Example Colab notebook hat runs inference by iterating over all examples and prompts for all tasks is provided at code/curie_inference.ipynb.
 To execute it:
@@ -71,3 +73,5 @@ Coming soon...
   year={2025}
 }
 ```
+
+*This is not an officially supported Google product.*
