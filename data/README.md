@@ -9,15 +9,15 @@ The contents of this repository are structured as follows:
 
 ```bash
 data
-    ├── task
+    ├── domain
         ├── inputs
-        |   └── record_id.json
+        │   └── record_id.json
         └── ground_truth
             └── record_id.json
     └── difficulty_levels.json
 
 ```
-The data folder consists of a single forlder for each task. Under each task we
+The data folder consists of a single folder for each domain. Under each domain we
 have the `inputs` and `ground_truth` directories that contain the data for each
 single data point.
 
@@ -25,7 +25,7 @@ The `difficulty_levels.json` contains the difficulty level (`easy`, `medium`,
 `hard`) values for each record for each task.
 
 
-## 📁 Running notebooks on the data
+## 🧪 Running notebooks on the data
 
 To run the accompanying notebooks on the dataset, we recommend unzipping the
 data folder and uploading it to Google Drive and adding the path to the Folder
