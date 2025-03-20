@@ -1,7 +1,10 @@
+# CURIE: Evaluating LLMs On Multitask Scientific Long Context Understanding and Reasoning
 
 Evaluation Code accompanying the paper
 
-**CURIE: Evaluating LLMs On Multitask Scientific Long Context Understanding and Reasoning**
+[**CURIE: Evaluating LLMs On Multitask Scientific Long Context Understanding and Reasoning**](https://arxiv.org/abs/2503.13517)    
+[ICLR 2025](https://iclr.cc/Conferences/2025)    
+[arxiv](https://arxiv.org/abs/2503.13517)
 
 > **TL;DR:** we introduce CURIE (Scientific Long **C**ontext **U**nderstanding **R**easoning and **I**nformation **E**xtraction), benchmark with 10 tasks from 6 science domains specifically designed to test the ability of LLMs to assist scientists in realistic workflows.
 
@@ -76,13 +79,11 @@ Code in this Github repository is licensed under a [APACHE 2.0 License](./LICENS
 
 ## 🎓 Citing CURIE
 
-Coming soon...
-
 ```
-@article{cui2025curie,
-  title={{CURIE}: Evaluating {LLM}s on Multitask Scientific Long Context Understanding and Reasoning },
-  author={},
-  journal={ICLR 2025},
+@inproceedings{cui2025curie,
+  title={CURIE: Evaluating LLMs on Multitask Scientific Long-Context Understanding and Reasoning},
+  author={Cui, Hao and Shamsi, Zahra and Cheon, Gowoon and Ma, Xuejian and Li, Shutong and Tikhanovskaya, Maria and Norgaard, Peter Christian and Mudur, Nayantara and Plomecka, Martyna Beata and Raccuglia, Paul and others},
+  booktitle={The Thirteenth International Conference on Learning Representations}
   year={2025}
 }
 ```
