@@ -11,6 +11,14 @@ Evaluation Code accompanying the paper
 <img src="curie_dist.png" alt="CURIE benchmark encompasses 10 tasks, with a total of 580 input and solution pairs based on 429 research documents across six
 diverse scientific disciplines: materials science, theoretical condensed matter physics, quantum computing, geospatial analysis, biodiversity, and proteins – covering both experimental and theoretical aspects of scientific research. The average length of the input queries in CURIE is about 15k words, and the ground truth responses contain on average 954 words." style="zoom:67%;" />
 
+(a) CURIE benchmark encompasses 10 tasks, with a total of 580 input and solution
+pairs based on 429 research documents across six diverse scientific disciplines:
+materials science, theoretical condensed matter physics, quantum computing,
+geospatial analysis, biodiversity, and proteins – covering both experimental and
+theoretical aspects of scientific research. (b) The average length of the input
+queries in CURIE is about 15k words, and (c) the ground truth responses contain
+on average 954 words.
+
 ## 🗄️ Data
 
 Our data is organized into eight domain-specific subfolders: "biogr", "dft", "pdb", "geo", "mpve", "qecc_65", "hfd", and "hfe".  Each subfolder contains two further subfolders: "ground_truth" and "inputs".  Within these, each data instance is stored in a JSON file named record_id.json, where record_id is a unique identifier. The "biogr" domain also includes image inputs as record_id.png files alongside the corresponding JSON.
