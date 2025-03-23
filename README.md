@@ -8,13 +8,8 @@ Evaluation Code accompanying the paper
 
 > **TL;DR:** we introduce CURIE (Scientific Long **C**ontext **U**nderstanding **R**easoning and **I**nformation **E**xtraction), benchmark with 10 tasks from 6 science domains specifically designed to test the ability of LLMs to assist scientists in realistic workflows.
 
-<img src="curie_dist.png" alt="CURIE benchmark encompasses 10 tasks, with a
-total of 580 input and solution pairs based on 429 research documents across six
-diverse scientific disciplines: materials science, theoretical condensed matter
-physics, quantum computing, geospatial analysis, biodiversity, and proteins –
-covering both experimental and theoretical aspects of scientific research.
-The average length of the input queries in CURIE is about 15k words, and the
-ground truth responses contain on average 954 words." style="zoom:67%;" />
+<img src="curie_dist.png" alt="CURIE benchmark encompasses 10 tasks, with a total of 580 input and solution pairs based on 429 research documents across six
+diverse scientific disciplines: materials science, theoretical condensed matter physics, quantum computing, geospatial analysis, biodiversity, and proteins – covering both experimental and theoretical aspects of scientific research. The average length of the input queries in CURIE is about 15k words, and the ground truth responses contain on average 954 words." style="zoom:67%;" />
 
 ## 🗄️ Data
 
