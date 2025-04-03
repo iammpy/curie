@@ -4,7 +4,7 @@ Evaluation Code accompanying the paper
 
 [**CURIE: Evaluating LLMs On Multitask Scientific Long Context Understanding and Reasoning**](https://arxiv.org/abs/2503.13517)    
 [ICLR 2025](https://iclr.cc/Conferences/2025)    
-[arxiv](https://arxiv.org/abs/2503.13517)
+[Paper](https://arxiv.org/abs/2503.13517) | [Poster](extras/ICLR_2025_poster_CURIE.pdf ) | [Slides](extras/CURIE_ICLR2025_deck_shared.pdf)
 
 > **TL;DR:** we introduce CURIE (Scientific Long **C**ontext **U**nderstanding **R**easoning and **I**nformation **E**xtraction), benchmark with 10 tasks from 6 science domains specifically designed to test the ability of LLMs to assist scientists in realistic workflows.
 
