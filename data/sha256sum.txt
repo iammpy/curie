@@ -1,0 +1,4 @@
+# The SHA 256 sum generated using.
+# sha256sum data/data.zip
+ab634136a5466412f13fbe6c86a6bc283ba1e760a49e07d24356407c844c9c01  data/data.zip
+
