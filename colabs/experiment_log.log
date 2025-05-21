@@ -756,3 +756,167 @@
 2025-05-20 17:21:31,171 - __main__ - INFO - Completed processing for paper 2023_09_22_f8875eb68affb0a6cb2bg (74/74) in run 2.
 2025-05-20 17:21:31,174 - __main__ - INFO - Finished run 2.
 2025-05-20 17:21:31,174 - __main__ - INFO - All runs completed for DFT.
+2025-05-21 14:52:15,298 - __main__ - INFO - Starting processing 74 papers for DFT
+2025-05-21 14:52:15,298 - __main__ - INFO - Starting run 2
+2025-05-21 14:52:34,727 - __main__ - INFO - Completed processing for paper 2023_09_22_1a3a4803f9d9cec16d38g (1/74) in run 2.
+2025-05-21 14:53:17,373 - __main__ - INFO - Starting processing 74 papers for DFT
+2025-05-21 14:53:17,373 - __main__ - INFO - Starting run 2
+2025-05-21 14:53:33,487 - __main__ - INFO - Completed processing for paper 2023_09_22_1a3a4803f9d9cec16d38g (1/74) in run 2.
+2025-05-21 14:53:40,477 - __main__ - INFO - Completed processing for paper 2023_09_22_109a6cd5d015ce89e7f3g (2/74) in run 2.
+2025-05-21 14:53:42,027 - __main__ - INFO - Completed processing for paper 2023_09_22_b0501f9057db320b8ad9g (3/74) in run 2.
+2025-05-21 14:53:42,051 - __main__ - INFO - Completed processing for paper 2023_09_22_1af7e6342ebcf1ce3ea5g (4/74) in run 2.
+2025-05-21 14:53:45,739 - __main__ - INFO - Completed processing for paper 2023_09_22_77a765fcab6029c666b4g (5/74) in run 2.
+2025-05-21 14:53:45,999 - __main__ - INFO - Completed processing for paper 2023_09_22_8b46d7b3e561e7f28495g (6/74) in run 2.
+2025-05-21 14:53:50,122 - __main__ - INFO - Completed processing for paper 2023_09_22_9a007c3865721f379b39g (7/74) in run 2.
+2025-05-21 14:53:51,347 - __main__ - INFO - Completed processing for paper 2023_09_22_81b3dfeb3597db5200c5g (8/74) in run 2.
+2025-05-21 14:53:51,954 - __main__ - INFO - Completed processing for paper 2023_09_22_22c19cfc32d2575f9a52g (9/74) in run 2.
+2025-05-21 14:53:53,302 - __main__ - INFO - Completed processing for paper 2023_09_22_f7714e3a468c91c6f56ag (10/74) in run 2.
+2025-05-21 14:53:53,874 - __main__ - INFO - Completed processing for paper 2023_09_22_b2865949a80ad08a2835g (11/74) in run 2.
+2025-05-21 14:53:53,965 - __main__ - INFO - Completed processing for paper 2023_09_22_12cb692c6b82606615a6g (12/74) in run 2.
+2025-05-21 14:53:55,082 - __main__ - INFO - Completed processing for paper 2023_09_22_f752dc9d5ac72657e3f5g (13/74) in run 2.
+2025-05-21 14:53:55,696 - __main__ - INFO - Completed processing for paper 2023_09_22_799ee1c298d190145c70g (14/74) in run 2.
+2025-05-21 14:53:55,964 - __main__ - INFO - Completed processing for paper 2023_09_22_430c3ddffa99af6a2545g (15/74) in run 2.
+2025-05-21 14:53:56,842 - __main__ - INFO - Completed processing for paper 2023_09_22_1def59bea80d6e9f67ccg (16/74) in run 2.
+2025-05-21 14:53:56,862 - __main__ - INFO - Completed processing for paper 2023_09_22_efbe854b8da1545fbe9bg (17/74) in run 2.
+2025-05-21 14:53:57,483 - __main__ - INFO - Completed processing for paper 2023_09_22_5237e17b3b341fecc9d9g (18/74) in run 2.
+2025-05-21 14:53:58,370 - __main__ - INFO - Completed processing for paper 2023_09_22_900c617369212d6bc72fg (19/74) in run 2.
+2025-05-21 14:53:59,630 - __main__ - INFO - Completed processing for paper 2023_09_22_7c5bbe7e076779b790ccg (20/74) in run 2.
+2025-05-21 14:54:01,173 - __main__ - INFO - Completed processing for paper 2023_09_22_2d44dda253969d6ce7f6g (21/74) in run 2.
+2025-05-21 14:54:02,150 - __main__ - INFO - Completed processing for paper 2023_09_22_e06d11a6e698afe5f2d7g (22/74) in run 2.
+2025-05-21 14:54:03,947 - __main__ - INFO - Completed processing for paper 2023_09_22_2e9b1b9bffe7fd47b18fg (23/74) in run 2.
+2025-05-21 14:54:06,459 - __main__ - INFO - Completed processing for paper 2023_09_22_55f975d508230ef05caeg (24/74) in run 2.
+2025-05-21 14:54:07,094 - __main__ - INFO - Completed processing for paper 2023_09_22_995805c76f676dddab4fg (25/74) in run 2.
+2025-05-21 14:54:08,682 - __main__ - INFO - Completed processing for paper 2023_09_22_dd9f0f77c116dc99583ag (26/74) in run 2.
+2025-05-21 14:54:09,400 - __main__ - INFO - Completed processing for paper 2023_09_22_54050a76c33463a8157fg (27/74) in run 2.
+2025-05-21 14:54:10,528 - __main__ - INFO - Completed processing for paper 2023_09_22_2d35eebe2e85cecf4103g (28/74) in run 2.
+2025-05-21 14:54:12,497 - __main__ - INFO - Completed processing for paper 2023_09_22_d90e94cbd96e4b6ddb8bg (29/74) in run 2.
+2025-05-21 14:54:13,969 - __main__ - INFO - Completed processing for paper 2023_09_22_14ddd903c0b77b5e50c2g (30/74) in run 2.
+2025-05-21 14:54:19,344 - __main__ - INFO - Completed processing for paper 2023_09_22_49d6cc9c5e7a469afee0g (31/74) in run 2.
+2025-05-21 14:54:24,458 - __main__ - INFO - Completed processing for paper 2023_09_22_4ef39bb4116ac1dad9e9g (32/74) in run 2.
+2025-05-21 14:54:24,932 - __main__ - INFO - Completed processing for paper 2023_09_22_edae82c7fbe0c4062118g (33/74) in run 2.
+2025-05-21 14:54:26,401 - __main__ - INFO - Completed processing for paper 2023_09_22_2e5b7c3f50b6a643e33ag (34/74) in run 2.
+2025-05-21 14:54:27,705 - __main__ - INFO - Completed processing for paper 2023_09_22_d84d81c022c4b2981048g (35/74) in run 2.
+2025-05-21 14:54:29,999 - __main__ - INFO - Completed processing for paper 2023_09_22_cff3389f103b8f7971d0g (36/74) in run 2.
+2025-05-21 14:54:31,076 - __main__ - INFO - Completed processing for paper 2023_09_22_cc792b66f9a5779f9798g (37/74) in run 2.
+2025-05-21 14:54:31,180 - __main__ - INFO - Completed processing for paper 2023_09_22_84af4abb781aeead403eg (38/74) in run 2.
+2025-05-21 14:54:31,530 - __main__ - INFO - Completed processing for paper 2023_09_22_910aca2a500d3bf9bf47g (39/74) in run 2.
+2025-05-21 14:54:33,128 - __main__ - INFO - Completed processing for paper 2023_09_22_4eeeb89f0a6f52e58610g (40/74) in run 2.
+2025-05-21 14:54:34,620 - __main__ - INFO - Completed processing for paper 2023_09_22_bba019fc933fc84ad347g (41/74) in run 2.
+2025-05-21 14:54:36,622 - __main__ - INFO - Completed processing for paper 2023_09_22_cb81fee8faa69f4d7078g (42/74) in run 2.
+2025-05-21 14:54:37,801 - __main__ - INFO - Completed processing for paper 2023_09_22_433b6bb3bfc2391f7300g (43/74) in run 2.
+2025-05-21 14:54:38,783 - __main__ - INFO - Completed processing for paper 2023_09_22_13bcf90c3ef43f1413deg (44/74) in run 2.
+2025-05-21 14:54:39,716 - __main__ - INFO - Completed processing for paper 2023_09_22_24d7d9ed97e042af9f29g (45/74) in run 2.
+2025-05-21 14:54:39,793 - __main__ - INFO - Completed processing for paper 2023_09_22_0ce1b5ea9a8637db5435g (46/74) in run 2.
+2025-05-21 14:54:40,919 - __main__ - INFO - Completed processing for paper 2023_09_22_01b9cdba467fd7882e42g (47/74) in run 2.
+2025-05-21 14:54:45,149 - __main__ - INFO - Completed processing for paper 2023_09_22_980121c407cbdaa46afdg (48/74) in run 2.
+2025-05-21 14:54:46,160 - __main__ - INFO - Completed processing for paper 2023_09_22_e69f3d7ce6c4ff487115g (49/74) in run 2.
+2025-05-21 14:54:46,222 - __main__ - INFO - Completed processing for paper 2023_09_22_6ac063e0fb85cfc10dd0g (50/74) in run 2.
+2025-05-21 14:54:46,587 - __main__ - INFO - Completed processing for paper 2023_09_22_7dab45b11a3ede362147g (51/74) in run 2.
+2025-05-21 14:54:48,345 - __main__ - INFO - Completed processing for paper 2023_09_22_ddfb75e0fb765dc682bbg (52/74) in run 2.
+2025-05-21 14:54:51,199 - __main__ - INFO - Completed processing for paper 2023_09_22_a0271d2dc7b0f2506498g (53/74) in run 2.
+2025-05-21 14:54:51,285 - __main__ - INFO - Completed processing for paper 2023_09_22_9e2bc88db643c6ba8aa0g (54/74) in run 2.
+2025-05-21 14:54:52,358 - __main__ - INFO - Completed processing for paper 2023_09_22_70326f83ce0dcec87b50g (55/74) in run 2.
+2025-05-21 14:54:52,593 - __main__ - INFO - Completed processing for paper 2023_09_22_e8d1bc2fb9f3dce5f341g (56/74) in run 2.
+2025-05-21 14:54:53,942 - __main__ - INFO - Completed processing for paper 2023_09_22_7c76b066edb1f6f53739g (57/74) in run 2.
+2025-05-21 14:54:54,225 - __main__ - INFO - Completed processing for paper 2023_09_22_63a752c620bbc784200cg (58/74) in run 2.
+2025-05-21 14:54:54,440 - __main__ - INFO - Completed processing for paper 2023_09_22_984f5b905c02b6f21733g (59/74) in run 2.
+2025-05-21 14:54:55,762 - __main__ - INFO - Completed processing for paper 2023_09_22_9a591ebf98377fd0ebe2g (60/74) in run 2.
+2025-05-21 14:54:56,274 - __main__ - INFO - Completed processing for paper 2023_09_22_48fb54662c601e035a91g (61/74) in run 2.
+2025-05-21 14:54:58,634 - __main__ - INFO - Completed processing for paper 2023_09_22_8df0b56e310badc55de3g (62/74) in run 2.
+2025-05-21 14:55:02,569 - __main__ - INFO - Completed processing for paper 2023_09_22_1b00ed3a142a7a1b2582g (63/74) in run 2.
+2025-05-21 14:55:05,944 - __main__ - INFO - Completed processing for paper 2023_09_22_f8875eb68affb0a6cb2bg (64/74) in run 2.
+2025-05-21 14:55:06,712 - __main__ - INFO - Completed processing for paper 2023_09_22_e32d0198a1f3dddb5ba2g (65/74) in run 2.
+2025-05-21 14:55:09,501 - __main__ - INFO - Completed processing for paper 2023_09_22_87d405f182ae3706ea0cg (66/74) in run 2.
+2025-05-21 14:55:12,293 - __main__ - INFO - Completed processing for paper 2023_09_22_07b4d66e23971ccb85c0g (67/74) in run 2.
+2025-05-21 14:55:16,290 - __main__ - INFO - Completed processing for paper 2023_09_22_8181c4d6fa78a2ea82dag (68/74) in run 2.
+2025-05-21 14:55:24,611 - __main__ - INFO - Completed processing for paper 2023_09_22_7433a6c7542334063731g (69/74) in run 2.
+2025-05-21 14:55:28,316 - __main__ - INFO - Completed processing for paper 2023_09_22_14ab0a44fc8fc33fa338g (70/74) in run 2.
+2025-05-21 14:55:29,562 - __main__ - INFO - Completed processing for paper 2023_09_22_182e0132c513bc81a414g (71/74) in run 2.
+2025-05-21 14:55:29,925 - __main__ - INFO - Completed processing for paper 2023_09_22_67e874a3c664208e2d2fg (72/74) in run 2.
+2025-05-21 14:55:31,440 - __main__ - INFO - Completed processing for paper 2023_09_22_39b7d4444fd6ff852b12g (73/74) in run 2.
+2025-05-21 14:55:39,517 - __main__ - INFO - Completed processing for paper 2023_09_22_3ae1fab1e33569c30b8dg (74/74) in run 2.
+2025-05-21 14:55:39,522 - __main__ - INFO - Finished run 2.
+2025-05-21 14:55:39,522 - __main__ - INFO - All runs completed for DFT.
+2025-05-21 14:56:07,926 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-21 14:56:07,926 - __main__ - INFO - Starting run 2
+2025-05-21 14:57:30,953 - __main__ - INFO - Completed processing for paper 137261967 (1/17) in run 2.
+2025-05-21 14:57:42,108 - __main__ - INFO - Completed processing for paper 17645319 (2/17) in run 2.
+2025-05-21 14:58:33,337 - __main__ - INFO - Completed processing for paper 15804005 (3/17) in run 2.
+2025-05-21 14:58:39,449 - __main__ - INFO - Completed processing for paper 2837337 (4/17) in run 2.
+2025-05-21 14:58:44,664 - __main__ - INFO - Completed processing for paper 53384093 (5/17) in run 2.
+2025-05-21 14:58:47,017 - __main__ - INFO - Completed processing for paper 135893324 (6/17) in run 2.
+2025-05-21 14:58:51,994 - __main__ - INFO - Completed processing for paper 137362119 (7/17) in run 2.
+2025-05-21 14:59:04,304 - __main__ - INFO - Completed processing for paper 10222315 (8/17) in run 2.
+2025-05-21 14:59:05,315 - __main__ - INFO - Completed processing for paper 68518 (9/17) in run 2.
+2025-05-21 14:59:26,341 - __main__ - INFO - Completed processing for paper 11181068 (10/17) in run 2.
+2025-05-21 14:59:31,361 - __main__ - INFO - Completed processing for paper 97574650 (11/17) in run 2.
+2025-05-21 14:59:31,833 - __main__ - INFO - Completed processing for paper 53519111 (12/17) in run 2.
+2025-05-21 15:00:03,124 - __main__ - INFO - Completed processing for paper 11093908 (13/17) in run 2.
+2025-05-21 15:00:36,793 - __main__ - INFO - Completed processing for paper 12841719 (14/17) in run 2.
+2025-05-21 15:00:37,490 - __main__ - INFO - Completed processing for paper 6183251 (15/17) in run 2.
+2025-05-21 15:01:41,096 - __main__ - INFO - Completed processing for paper 55005437 (16/17) in run 2.
+2025-05-21 15:02:35,751 - __main__ - INFO - Completed processing for paper 317542 (17/17) in run 2.
+2025-05-21 15:02:35,754 - __main__ - INFO - Finished run 2.
+2025-05-21 15:02:35,754 - __main__ - INFO - All runs completed for MPVE.
+2025-05-21 16:04:20,482 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-21 16:04:20,482 - __main__ - INFO - Starting run 2
+2025-05-21 16:09:01,875 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-21 16:09:01,876 - __main__ - INFO - Starting run 2
+2025-05-21 16:09:20,968 - __main__ - INFO - Completed processing for paper 137261967 (1/17) in run 2.
+2025-05-21 16:09:28,851 - __main__ - INFO - Completed processing for paper 137362119 (2/17) in run 2.
+2025-05-21 16:09:40,425 - __main__ - INFO - Completed processing for paper 17645319 (3/17) in run 2.
+2025-05-21 16:09:43,392 - __main__ - INFO - Completed processing for paper 10222315 (4/17) in run 2.
+2025-05-21 16:09:44,138 - __main__ - INFO - Completed processing for paper 6183251 (5/17) in run 2.
+2025-05-21 16:09:48,754 - __main__ - INFO - Completed processing for paper 53384093 (6/17) in run 2.
+2025-05-21 16:09:49,860 - __main__ - INFO - Completed processing for paper 11093908 (7/17) in run 2.
+2025-05-21 16:09:49,874 - __main__ - INFO - Completed processing for paper 2837337 (8/17) in run 2.
+2025-05-21 16:10:02,465 - __main__ - INFO - Completed processing for paper 135893324 (9/17) in run 2.
+2025-05-21 16:14:05,825 - __main__ - INFO - Completed processing for paper 55005437 (10/17) in run 2.
+2025-05-21 16:15:18,833 - __main__ - INFO - Completed processing for paper 12841719 (11/17) in run 2.
+2025-05-21 16:16:10,512 - __main__ - INFO - Completed processing for paper 53519111 (12/17) in run 2.
+2025-05-21 16:16:15,383 - __main__ - INFO - Completed processing for paper 317542 (13/17) in run 2.
+2025-05-21 16:16:34,117 - __main__ - INFO - Completed processing for paper 68518 (14/17) in run 2.
+2025-05-21 16:16:38,406 - __main__ - INFO - Completed processing for paper 15804005 (15/17) in run 2.
+2025-05-21 16:16:40,269 - __main__ - INFO - Completed processing for paper 97574650 (16/17) in run 2.
+2025-05-21 16:16:40,800 - __main__ - INFO - Completed processing for paper 11181068 (17/17) in run 2.
+2025-05-21 16:16:40,803 - __main__ - INFO - Finished run 2.
+2025-05-21 16:16:40,803 - __main__ - INFO - All runs completed for MPVE.
+2025-05-21 16:34:58,053 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-21 16:34:58,053 - __main__ - INFO - Starting run 2
+2025-05-21 16:35:53,380 - __main__ - INFO - Completed processing for paper 137362119 (1/17) in run 2.
+2025-05-21 16:36:05,578 - __main__ - INFO - Completed processing for paper 135893324 (2/17) in run 2.
+2025-05-21 16:36:07,632 - __main__ - INFO - Completed processing for paper 6183251 (3/17) in run 2.
+2025-05-21 16:36:32,185 - __main__ - INFO - Completed processing for paper 17645319 (4/17) in run 2.
+2025-05-21 16:36:33,737 - __main__ - INFO - Completed processing for paper 68518 (5/17) in run 2.
+2025-05-21 16:36:37,187 - __main__ - INFO - Completed processing for paper 53384093 (6/17) in run 2.
+2025-05-21 16:37:03,000 - __main__ - INFO - Completed processing for paper 11181068 (7/17) in run 2.
+2025-05-21 16:37:06,540 - __main__ - INFO - Completed processing for paper 137261967 (8/17) in run 2.
+2025-05-21 16:37:07,427 - __main__ - INFO - Completed processing for paper 10222315 (9/17) in run 2.
+2025-05-21 16:37:19,317 - __main__ - INFO - Completed processing for paper 2837337 (10/17) in run 2.
+2025-05-21 16:37:59,508 - __main__ - INFO - Completed processing for paper 11093908 (11/17) in run 2.
+2025-05-21 16:38:03,231 - __main__ - INFO - Completed processing for paper 97574650 (12/17) in run 2.
+2025-05-21 16:38:07,361 - __main__ - INFO - Completed processing for paper 55005437 (13/17) in run 2.
+2025-05-21 16:38:56,927 - __main__ - INFO - Completed processing for paper 12841719 (14/17) in run 2.
+2025-05-21 16:40:19,038 - __main__ - INFO - Completed processing for paper 317542 (15/17) in run 2.
+2025-05-21 16:50:50,354 - __main__ - INFO - Completed processing for paper 15804005 (16/17) in run 2.
+2025-05-21 16:51:02,814 - __main__ - INFO - Completed processing for paper 53519111 (17/17) in run 2.
+2025-05-21 16:51:02,817 - __main__ - INFO - Finished run 2.
+2025-05-21 16:51:02,818 - __main__ - INFO - All runs completed for MPVE.
+2025-05-21 17:27:21,787 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-21 17:27:21,787 - __main__ - INFO - Starting run 2
+2025-05-21 17:28:48,524 - __main__ - INFO - Completed processing for paper 137261967 (1/17) in run 2.
+2025-05-21 17:28:58,167 - __main__ - INFO - Completed processing for paper 68518 (2/17) in run 2.
+2025-05-21 17:30:28,504 - __main__ - INFO - Completed processing for paper 11181068 (3/17) in run 2.
+2025-05-21 17:30:38,521 - __main__ - INFO - Completed processing for paper 137362119 (4/17) in run 2.
+2025-05-21 17:30:42,823 - __main__ - INFO - Completed processing for paper 15804005 (5/17) in run 2.
+2025-05-21 17:30:49,541 - __main__ - INFO - Completed processing for paper 53519111 (6/17) in run 2.
+2025-05-21 17:30:52,772 - __main__ - INFO - Completed processing for paper 12841719 (7/17) in run 2.
+2025-05-21 17:30:56,357 - __main__ - INFO - Completed processing for paper 6183251 (8/17) in run 2.
+2025-05-21 17:31:09,831 - __main__ - INFO - Completed processing for paper 2837337 (9/17) in run 2.
+2025-05-21 17:31:20,174 - __main__ - INFO - Completed processing for paper 97574650 (10/17) in run 2.
+2025-05-21 17:31:33,934 - __main__ - INFO - Completed processing for paper 17645319 (11/17) in run 2.
+2025-05-21 17:31:43,674 - __main__ - INFO - Completed processing for paper 135893324 (12/17) in run 2.
+2025-05-21 17:31:48,787 - __main__ - INFO - Completed processing for paper 11093908 (13/17) in run 2.
+2025-05-21 17:31:57,304 - __main__ - INFO - Completed processing for paper 10222315 (14/17) in run 2.
+2025-05-21 17:32:57,336 - __main__ - INFO - Completed processing for paper 55005437 (15/17) in run 2.
+2025-05-21 17:33:58,549 - __main__ - INFO - Completed processing for paper 53384093 (16/17) in run 2.

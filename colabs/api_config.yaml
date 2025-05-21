@@ -19,3 +19,20 @@ doubao-1.5-thinking-pro:
   max_retries: 3
   retry_delay: 2.0
   timeout: 600
+
+DeepSeek-R1-Distill-Qwen-7B:
+  base_url: http://10.20.4.5:8081/v1/chat/completions
+  temperature: 0.6
+  top_p: 0.95
+
+DeepSeek-R1-Distill-Qwen-32B:
+  base_url: http://10.20.4.5:8082/v1/chat/completions
+  temperature: 0.6
+  top_p: 0.95
+  
+gpt-4o-2024-11-20:
+  model_name: gpt-4o-2024-11-20
+  api_key: sk-7QEGm9ORx4pFQ6RD07zMeLTnVDphryy8vIVkGgOj60lEnHxu
+  base_url: https://api.apikey.vip/v1
+  timeout: 300
+  max_retries: 3
