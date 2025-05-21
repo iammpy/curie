@@ -1,0 +1,21 @@
+deepseek-r1:
+  model_name: ep-20250205151450-2s9x9
+  api_key: 30a70266-37d5-4210-b8a2-34d5fb629230
+  base_url: https://ark.cn-beijing.volces.com/api/v3/chat/completions
+  max_tokens: 16000
+  temperature: 0.6
+  top_p: 0.95
+  max_retries: 3
+  retry_delay: 2.0
+  timeout: 600
+
+doubao-1.5-thinking-pro:
+  model_name: ep-20250424154943-pqpjr
+  api_key: 30a70266-37d5-4210-b8a2-34d5fb629230
+  base_url: https://ark.cn-beijing.volces.com/api/v3/chat/completions
+  max_tokens: 16000
+  temperature: 0.6
+  top_p: 0.95
+  max_retries: 3
+  retry_delay: 2.0
+  timeout: 600

@@ -1,0 +1,758 @@
+2025-05-19 11:31:11,472 - __main__ - INFO - Starting processing 74 papers for DFT
+2025-05-19 11:31:11,472 - __main__ - INFO - Starting run 2
+2025-05-19 11:31:11,472 - __main__ - INFO - Processing paper 1/74 in run 2
+2025-05-19 11:31:13,444 - httpx - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 403 Forbidden"
+2025-05-19 11:31:18,496 - httpx - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 403 Forbidden"
+2025-05-19 11:31:23,463 - httpx - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 403 Forbidden"
+2025-05-19 11:31:23,464 - __main__ - ERROR - Error processing paper 2023_09_22_01b9cdba467fd7882e42g: status_code: 403, body: <!doctype html><meta charset="utf-8"><meta name=viewport content="width=device-width, initial-scale=1"><title>403</title>403 Forbidden
+2025-05-19 11:32:35,449 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 11:32:35,449 - __main__ - INFO - Starting run 2
+2025-05-19 11:32:35,449 - __main__ - INFO - Processing paper 1/17 in run 2
+2025-05-19 11:32:43,458 - __main__ - ERROR - Error processing paper 10222315: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 11:32:45,474 - __main__ - INFO - Processing paper 2/17 in run 2
+2025-05-19 11:32:53,501 - __main__ - ERROR - Error processing paper 11093908: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 11:32:55,522 - __main__ - INFO - Processing paper 3/17 in run 2
+2025-05-19 11:33:03,540 - __main__ - ERROR - Error processing paper 11181068: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 11:33:05,550 - __main__ - INFO - Processing paper 4/17 in run 2
+2025-05-19 11:33:13,575 - __main__ - ERROR - Error processing paper 12841719: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 11:33:15,597 - __main__ - INFO - Processing paper 5/17 in run 2
+2025-05-19 11:36:51,427 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 11:37:02,596 - __main__ - INFO - Starting run 2
+2025-05-19 11:38:20,481 - __main__ - INFO - Processing paper 1/17 in run 2
+2025-05-19 12:03:23,640 - __main__ - ERROR - Error processing paper 10222315: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:03:25,650 - __main__ - INFO - Processing paper 2/17 in run 2
+2025-05-19 12:03:33,666 - __main__ - ERROR - Error processing paper 11093908: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:03:35,684 - __main__ - INFO - Processing paper 3/17 in run 2
+2025-05-19 12:03:43,706 - __main__ - ERROR - Error processing paper 11181068: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:03:45,718 - __main__ - INFO - Processing paper 4/17 in run 2
+2025-05-19 12:03:53,727 - __main__ - ERROR - Error processing paper 12841719: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:03:55,733 - __main__ - INFO - Processing paper 5/17 in run 2
+2025-05-19 12:04:03,752 - __main__ - ERROR - Error processing paper 135893324: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:04:05,764 - __main__ - INFO - Processing paper 6/17 in run 2
+2025-05-19 12:04:13,787 - __main__ - ERROR - Error processing paper 137261967: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:04:15,802 - __main__ - INFO - Processing paper 7/17 in run 2
+2025-05-19 12:04:23,838 - __main__ - ERROR - Error processing paper 137362119: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:04:25,857 - __main__ - INFO - Processing paper 8/17 in run 2
+2025-05-19 12:04:33,884 - __main__ - ERROR - Error processing paper 15804005: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:04:35,892 - __main__ - INFO - Processing paper 9/17 in run 2
+2025-05-19 12:04:43,916 - __main__ - ERROR - Error processing paper 17645319: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:04:45,933 - __main__ - INFO - Processing paper 10/17 in run 2
+2025-05-19 12:04:53,952 - __main__ - ERROR - Error processing paper 2837337: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:04:55,966 - __main__ - INFO - Processing paper 11/17 in run 2
+2025-05-19 12:05:03,985 - __main__ - ERROR - Error processing paper 317542: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:05:06,005 - __main__ - INFO - Processing paper 12/17 in run 2
+2025-05-19 12:05:14,041 - __main__ - ERROR - Error processing paper 53384093: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:05:16,048 - __main__ - INFO - Processing paper 13/17 in run 2
+2025-05-19 12:05:24,066 - __main__ - ERROR - Error processing paper 53519111: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:05:26,077 - __main__ - INFO - Processing paper 14/17 in run 2
+2025-05-19 12:05:34,105 - __main__ - ERROR - Error processing paper 55005437: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:05:36,115 - __main__ - INFO - Processing paper 15/17 in run 2
+2025-05-19 12:05:44,135 - __main__ - ERROR - Error processing paper 6183251: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:05:46,151 - __main__ - INFO - Processing paper 16/17 in run 2
+2025-05-19 12:05:54,182 - __main__ - ERROR - Error processing paper 68518: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:05:56,192 - __main__ - INFO - Processing paper 17/17 in run 2
+2025-05-19 12:06:04,224 - __main__ - ERROR - Error processing paper 97574650: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:06:06,250 - __main__ - INFO - Starting run 3
+2025-05-19 12:06:06,251 - __main__ - INFO - Processing paper 1/17 in run 3
+2025-05-19 12:06:14,269 - __main__ - ERROR - Error processing paper 10222315: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:06:16,286 - __main__ - INFO - Processing paper 2/17 in run 3
+2025-05-19 12:06:24,304 - __main__ - ERROR - Error processing paper 11093908: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:06:26,326 - __main__ - INFO - Processing paper 3/17 in run 3
+2025-05-19 12:06:34,336 - __main__ - ERROR - Error processing paper 11181068: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:06:36,347 - __main__ - INFO - Processing paper 4/17 in run 3
+2025-05-19 12:06:44,363 - __main__ - ERROR - Error processing paper 12841719: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:06:46,388 - __main__ - INFO - Processing paper 5/17 in run 3
+2025-05-19 12:06:54,409 - __main__ - ERROR - Error processing paper 135893324: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:06:56,426 - __main__ - INFO - Processing paper 6/17 in run 3
+2025-05-19 12:07:04,448 - __main__ - ERROR - Error processing paper 137261967: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:07:06,464 - __main__ - INFO - Processing paper 7/17 in run 3
+2025-05-19 12:07:14,482 - __main__ - ERROR - Error processing paper 137362119: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:07:16,500 - __main__ - INFO - Processing paper 8/17 in run 3
+2025-05-19 12:07:24,519 - __main__ - ERROR - Error processing paper 15804005: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:07:26,537 - __main__ - INFO - Processing paper 9/17 in run 3
+2025-05-19 12:07:34,558 - __main__ - ERROR - Error processing paper 17645319: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:07:36,576 - __main__ - INFO - Processing paper 10/17 in run 3
+2025-05-19 12:07:44,598 - __main__ - ERROR - Error processing paper 2837337: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:07:46,611 - __main__ - INFO - Processing paper 11/17 in run 3
+2025-05-19 12:07:54,628 - __main__ - ERROR - Error processing paper 317542: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:07:56,635 - __main__ - INFO - Processing paper 12/17 in run 3
+2025-05-19 12:08:04,654 - __main__ - ERROR - Error processing paper 53384093: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:08:06,668 - __main__ - INFO - Processing paper 13/17 in run 3
+2025-05-19 12:08:14,691 - __main__ - ERROR - Error processing paper 53519111: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:08:16,699 - __main__ - INFO - Processing paper 14/17 in run 3
+2025-05-19 12:08:24,718 - __main__ - ERROR - Error processing paper 55005437: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:08:26,728 - __main__ - INFO - Processing paper 15/17 in run 3
+2025-05-19 12:08:34,742 - __main__ - ERROR - Error processing paper 6183251: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:08:36,755 - __main__ - INFO - Processing paper 16/17 in run 3
+2025-05-19 12:08:44,772 - __main__ - ERROR - Error processing paper 68518: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 12:08:46,788 - __main__ - INFO - Processing paper 17/17 in run 3
+2025-05-19 12:08:54,810 - __main__ - ERROR - Error processing paper 97574650: 'PaperProcessor' object has no attribute 'co_v2'
+2025-05-19 14:06:35,957 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 14:06:35,957 - __main__ - INFO - Starting run 2
+2025-05-19 14:06:35,957 - __main__ - INFO - Processing paper 1/17 in run 2
+2025-05-19 14:06:35,958 - __main__ - ERROR - Error processing paper 10222315: 'PaperProcessor' object has no attribute 'model_path'
+2025-05-19 14:06:43,279 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 14:06:43,279 - __main__ - INFO - Starting run 2
+2025-05-19 14:06:43,279 - __main__ - INFO - Processing paper 1/17 in run 2
+2025-05-19 14:06:43,279 - __main__ - ERROR - Error processing paper 10222315: 'PaperProcessor' object has no attribute 'model_path'
+2025-05-19 14:06:54,785 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 14:06:54,786 - __main__ - INFO - Starting run 2
+2025-05-19 14:06:54,786 - __main__ - INFO - Processing paper 1/17 in run 2
+2025-05-19 14:06:54,786 - __main__ - ERROR - Error processing paper 10222315: 'PaperProcessor' object has no attribute 'model_path'
+2025-05-19 14:08:56,255 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 14:08:56,256 - __main__ - INFO - Starting run 2
+2025-05-19 14:08:56,256 - __main__ - INFO - Processing paper 1/17 in run 2
+2025-05-19 14:09:40,873 - __main__ - ERROR - Error processing paper 10222315: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:10:48,098 - __main__ - INFO - Processing paper 2/17 in run 2
+2025-05-19 14:10:48,123 - __main__ - ERROR - Error processing paper 11093908: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:10:50,130 - __main__ - INFO - Processing paper 3/17 in run 2
+2025-05-19 14:10:50,167 - __main__ - ERROR - Error processing paper 11181068: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:10:52,179 - __main__ - INFO - Processing paper 4/17 in run 2
+2025-05-19 14:10:52,189 - __main__ - ERROR - Error processing paper 12841719: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:10:54,201 - __main__ - INFO - Processing paper 5/17 in run 2
+2025-05-19 14:10:54,216 - __main__ - ERROR - Error processing paper 135893324: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:10:56,222 - __main__ - INFO - Processing paper 6/17 in run 2
+2025-05-19 14:10:56,254 - __main__ - ERROR - Error processing paper 137261967: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:10:58,258 - __main__ - INFO - Processing paper 7/17 in run 2
+2025-05-19 14:10:58,277 - __main__ - ERROR - Error processing paper 137362119: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:00,295 - __main__ - INFO - Processing paper 8/17 in run 2
+2025-05-19 14:11:00,317 - __main__ - ERROR - Error processing paper 15804005: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:02,333 - __main__ - INFO - Processing paper 9/17 in run 2
+2025-05-19 14:11:02,340 - __main__ - ERROR - Error processing paper 17645319: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:04,352 - __main__ - INFO - Processing paper 10/17 in run 2
+2025-05-19 14:11:04,372 - __main__ - ERROR - Error processing paper 2837337: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:06,389 - __main__ - INFO - Processing paper 11/17 in run 2
+2025-05-19 14:11:06,412 - __main__ - ERROR - Error processing paper 317542: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:08,418 - __main__ - INFO - Processing paper 12/17 in run 2
+2025-05-19 14:11:08,425 - __main__ - ERROR - Error processing paper 53384093: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:10,435 - __main__ - INFO - Processing paper 13/17 in run 2
+2025-05-19 14:11:10,456 - __main__ - ERROR - Error processing paper 53519111: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:12,469 - __main__ - INFO - Processing paper 14/17 in run 2
+2025-05-19 14:11:12,493 - __main__ - ERROR - Error processing paper 55005437: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:14,503 - __main__ - INFO - Processing paper 15/17 in run 2
+2025-05-19 14:11:14,539 - __main__ - ERROR - Error processing paper 6183251: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:16,554 - __main__ - INFO - Processing paper 16/17 in run 2
+2025-05-19 14:11:16,578 - __main__ - ERROR - Error processing paper 68518: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:18,585 - __main__ - INFO - Processing paper 17/17 in run 2
+2025-05-19 14:11:18,595 - __main__ - ERROR - Error processing paper 97574650: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:20,596 - __main__ - INFO - Starting run 3
+2025-05-19 14:11:20,596 - __main__ - INFO - Processing paper 1/17 in run 3
+2025-05-19 14:11:20,611 - __main__ - ERROR - Error processing paper 10222315: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:22,629 - __main__ - INFO - Processing paper 2/17 in run 3
+2025-05-19 14:11:22,648 - __main__ - ERROR - Error processing paper 11093908: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:24,654 - __main__ - INFO - Processing paper 3/17 in run 3
+2025-05-19 14:11:24,665 - __main__ - ERROR - Error processing paper 11181068: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:26,668 - __main__ - INFO - Processing paper 4/17 in run 3
+2025-05-19 14:11:26,686 - __main__ - ERROR - Error processing paper 12841719: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:28,699 - __main__ - INFO - Processing paper 5/17 in run 3
+2025-05-19 14:11:28,706 - __main__ - ERROR - Error processing paper 135893324: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:30,710 - __main__ - INFO - Processing paper 6/17 in run 3
+2025-05-19 14:11:30,716 - __main__ - ERROR - Error processing paper 137261967: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:32,722 - __main__ - INFO - Processing paper 7/17 in run 3
+2025-05-19 14:11:32,729 - __main__ - ERROR - Error processing paper 137362119: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:35,477 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 14:11:35,477 - __main__ - INFO - Starting run 2
+2025-05-19 14:11:35,477 - __main__ - INFO - Processing paper 1/17 in run 2
+2025-05-19 14:11:35,486 - __main__ - ERROR - Error processing paper 10222315: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:37,499 - __main__ - INFO - Processing paper 2/17 in run 2
+2025-05-19 14:11:37,531 - __main__ - ERROR - Error processing paper 11093908: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:39,545 - __main__ - INFO - Processing paper 3/17 in run 2
+2025-05-19 14:11:39,557 - __main__ - ERROR - Error processing paper 11181068: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:41,578 - __main__ - INFO - Processing paper 4/17 in run 2
+2025-05-19 14:11:41,628 - __main__ - ERROR - Error processing paper 12841719: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:43,633 - __main__ - INFO - Processing paper 5/17 in run 2
+2025-05-19 14:11:43,642 - __main__ - ERROR - Error processing paper 135893324: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:45,655 - __main__ - INFO - Processing paper 6/17 in run 2
+2025-05-19 14:11:45,690 - __main__ - ERROR - Error processing paper 137261967: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:47,704 - __main__ - INFO - Processing paper 7/17 in run 2
+2025-05-19 14:11:47,711 - __main__ - ERROR - Error processing paper 137362119: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:50,382 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 14:11:50,383 - __main__ - INFO - Starting run 2
+2025-05-19 14:11:50,384 - __main__ - INFO - Processing paper 1/17 in run 2
+2025-05-19 14:11:50,394 - __main__ - ERROR - Error processing paper 10222315: 模型 'command-r-plus' 的配置信息未找到。
+2025-05-19 14:11:59,283 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 14:11:59,284 - __main__ - INFO - Starting run 2
+2025-05-19 14:11:59,284 - __main__ - INFO - Processing paper 1/17 in run 2
+2025-05-19 14:20:16,419 - __main__ - INFO - Processing paper 2/17 in run 2
+2025-05-19 14:20:34,001 - __main__ - ERROR - Error processing paper 11093908: cannot unpack non-iterable NoneType object
+2025-05-19 14:20:36,010 - __main__ - INFO - Processing paper 3/17 in run 2
+2025-05-19 14:21:15,318 - __main__ - ERROR - Error processing paper 11181068: cannot unpack non-iterable NoneType object
+2025-05-19 14:21:17,321 - __main__ - INFO - Processing paper 4/17 in run 2
+2025-05-19 14:38:44,275 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 14:38:44,275 - __main__ - INFO - Starting run 2
+2025-05-19 14:38:50,577 - __main__ - ERROR - Error processing paper 137261967: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,597 - __main__ - ERROR - Error processing paper 12841719: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,605 - __main__ - ERROR - Error processing paper 135893324: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,625 - __main__ - ERROR - Error processing paper 10222315: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,640 - __main__ - ERROR - Error processing paper 11093908: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,653 - __main__ - ERROR - Error processing paper 137362119: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,653 - __main__ - ERROR - Error processing paper 2837337: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,664 - __main__ - ERROR - Error processing paper 15804005: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,667 - __main__ - ERROR - Error processing paper 317542: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,696 - __main__ - ERROR - Error processing paper 53519111: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,704 - __main__ - ERROR - Error processing paper 6183251: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,713 - __main__ - ERROR - Error processing paper 17645319: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,716 - __main__ - ERROR - Error processing paper 53384093: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,717 - __main__ - ERROR - Error processing paper 11181068: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,720 - __main__ - ERROR - Error processing paper 68518: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,739 - __main__ - ERROR - Error processing paper 55005437: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:50,811 - __main__ - ERROR - Error processing paper 97574650: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:52,595 - __main__ - INFO - Completed processing for paper 137261967 (1/17) in run 2.
+2025-05-19 14:38:52,611 - __main__ - INFO - Completed processing for paper 12841719 (2/17) in run 2.
+2025-05-19 14:38:52,612 - __main__ - INFO - Completed processing for paper 135893324 (3/17) in run 2.
+2025-05-19 14:38:52,657 - __main__ - INFO - Completed processing for paper 2837337 (4/17) in run 2.
+2025-05-19 14:38:52,658 - __main__ - INFO - Completed processing for paper 10222315 (5/17) in run 2.
+2025-05-19 14:38:52,658 - __main__ - INFO - Completed processing for paper 137362119 (6/17) in run 2.
+2025-05-19 14:38:52,658 - __main__ - INFO - Completed processing for paper 11093908 (7/17) in run 2.
+2025-05-19 14:38:52,673 - __main__ - INFO - Completed processing for paper 317542 (8/17) in run 2.
+2025-05-19 14:38:52,673 - __main__ - INFO - Completed processing for paper 15804005 (9/17) in run 2.
+2025-05-19 14:38:52,703 - __main__ - INFO - Completed processing for paper 53519111 (10/17) in run 2.
+2025-05-19 14:38:52,718 - __main__ - INFO - Completed processing for paper 6183251 (11/17) in run 2.
+2025-05-19 14:38:52,733 - __main__ - INFO - Completed processing for paper 53384093 (12/17) in run 2.
+2025-05-19 14:38:52,733 - __main__ - INFO - Completed processing for paper 11181068 (13/17) in run 2.
+2025-05-19 14:38:52,735 - __main__ - INFO - Completed processing for paper 68518 (14/17) in run 2.
+2025-05-19 14:38:52,735 - __main__ - INFO - Completed processing for paper 17645319 (15/17) in run 2.
+2025-05-19 14:38:52,749 - __main__ - INFO - Completed processing for paper 55005437 (16/17) in run 2.
+2025-05-19 14:38:52,826 - __main__ - INFO - Completed processing for paper 97574650 (17/17) in run 2.
+2025-05-19 14:38:52,831 - __main__ - INFO - Finished run 2.
+2025-05-19 14:38:52,831 - __main__ - INFO - Starting run 3
+2025-05-19 14:38:59,177 - __main__ - ERROR - Error processing paper 10222315: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,208 - __main__ - ERROR - Error processing paper 11093908: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,209 - __main__ - ERROR - Error processing paper 11181068: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,235 - __main__ - ERROR - Error processing paper 137261967: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,236 - __main__ - ERROR - Error processing paper 135893324: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,254 - __main__ - ERROR - Error processing paper 12841719: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,259 - __main__ - ERROR - Error processing paper 17645319: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,287 - __main__ - ERROR - Error processing paper 137362119: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,344 - __main__ - ERROR - Error processing paper 15804005: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,352 - __main__ - ERROR - Error processing paper 53519111: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,371 - __main__ - ERROR - Error processing paper 2837337: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,387 - __main__ - ERROR - Error processing paper 317542: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,414 - __main__ - ERROR - Error processing paper 55005437: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,423 - __main__ - ERROR - Error processing paper 53384093: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,449 - __main__ - ERROR - Error processing paper 6183251: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,472 - __main__ - ERROR - Error processing paper 68518: cannot unpack non-iterable NoneType object
+2025-05-19 14:38:59,505 - __main__ - ERROR - Error processing paper 97574650: cannot unpack non-iterable NoneType object
+2025-05-19 14:39:01,194 - __main__ - INFO - Completed processing for paper 10222315 (1/17) in run 3.
+2025-05-19 14:39:01,225 - __main__ - INFO - Completed processing for paper 11093908 (2/17) in run 3.
+2025-05-19 14:39:01,226 - __main__ - INFO - Completed processing for paper 11181068 (3/17) in run 3.
+2025-05-19 14:39:01,242 - __main__ - INFO - Completed processing for paper 135893324 (4/17) in run 3.
+2025-05-19 14:39:01,242 - __main__ - INFO - Completed processing for paper 137261967 (5/17) in run 3.
+2025-05-19 14:39:01,257 - __main__ - INFO - Completed processing for paper 12841719 (6/17) in run 3.
+2025-05-19 14:39:01,272 - __main__ - INFO - Completed processing for paper 17645319 (7/17) in run 3.
+2025-05-19 14:39:01,302 - __main__ - INFO - Completed processing for paper 137362119 (8/17) in run 3.
+2025-05-19 14:39:01,349 - __main__ - INFO - Completed processing for paper 15804005 (9/17) in run 3.
+2025-05-19 14:39:01,365 - __main__ - INFO - Completed processing for paper 53519111 (10/17) in run 3.
+2025-05-19 14:39:01,380 - __main__ - INFO - Completed processing for paper 2837337 (11/17) in run 3.
+2025-05-19 14:39:01,395 - __main__ - INFO - Completed processing for paper 317542 (12/17) in run 3.
+2025-05-19 14:39:01,426 - __main__ - INFO - Completed processing for paper 55005437 (13/17) in run 3.
+2025-05-19 14:39:01,442 - __main__ - INFO - Completed processing for paper 53384093 (14/17) in run 3.
+2025-05-19 14:39:01,457 - __main__ - INFO - Completed processing for paper 6183251 (15/17) in run 3.
+2025-05-19 14:39:01,487 - __main__ - INFO - Completed processing for paper 68518 (16/17) in run 3.
+2025-05-19 14:39:01,519 - __main__ - INFO - Completed processing for paper 97574650 (17/17) in run 3.
+2025-05-19 14:39:01,524 - __main__ - INFO - Finished run 3.
+2025-05-19 14:39:01,525 - __main__ - INFO - All runs completed for MPVE.
+2025-05-19 14:42:52,644 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 14:42:52,644 - __main__ - INFO - Starting run 2
+2025-05-19 14:42:58,995 - __main__ - ERROR - Error processing paper 11181068: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,002 - __main__ - ERROR - Error processing paper 11093908: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,038 - __main__ - ERROR - Error processing paper 10222315: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,058 - __main__ - ERROR - Error processing paper 2837337: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,063 - __main__ - ERROR - Error processing paper 137261967: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,104 - __main__ - ERROR - Error processing paper 135893324: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,104 - __main__ - ERROR - Error processing paper 17645319: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,105 - __main__ - ERROR - Error processing paper 12841719: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,109 - __main__ - ERROR - Error processing paper 53519111: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,111 - __main__ - ERROR - Error processing paper 15804005: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,170 - __main__ - ERROR - Error processing paper 317542: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,178 - __main__ - ERROR - Error processing paper 137362119: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,184 - __main__ - ERROR - Error processing paper 6183251: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,185 - __main__ - ERROR - Error processing paper 55005437: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,193 - __main__ - ERROR - Error processing paper 97574650: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,193 - __main__ - ERROR - Error processing paper 53384093: cannot unpack non-iterable NoneType object
+2025-05-19 14:42:59,194 - __main__ - ERROR - Error processing paper 68518: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:01,021 - __main__ - INFO - Completed processing for paper 11181068 (1/17) in run 2.
+2025-05-19 14:43:01,021 - __main__ - INFO - Completed processing for paper 11093908 (2/17) in run 2.
+2025-05-19 14:43:01,115 - __main__ - INFO - Completed processing for paper 12841719 (3/17) in run 2.
+2025-05-19 14:43:01,115 - __main__ - INFO - Completed processing for paper 15804005 (4/17) in run 2.
+2025-05-19 14:43:01,115 - __main__ - INFO - Completed processing for paper 135893324 (5/17) in run 2.
+2025-05-19 14:43:01,115 - __main__ - INFO - Completed processing for paper 2837337 (6/17) in run 2.
+2025-05-19 14:43:01,116 - __main__ - INFO - Completed processing for paper 53519111 (7/17) in run 2.
+2025-05-19 14:43:01,116 - __main__ - INFO - Completed processing for paper 10222315 (8/17) in run 2.
+2025-05-19 14:43:01,116 - __main__ - INFO - Completed processing for paper 17645319 (9/17) in run 2.
+2025-05-19 14:43:01,116 - __main__ - INFO - Completed processing for paper 137261967 (10/17) in run 2.
+2025-05-19 14:43:01,177 - __main__ - INFO - Completed processing for paper 317542 (11/17) in run 2.
+2025-05-19 14:43:01,194 - __main__ - INFO - Completed processing for paper 137362119 (12/17) in run 2.
+2025-05-19 14:43:01,195 - __main__ - INFO - Completed processing for paper 6183251 (13/17) in run 2.
+2025-05-19 14:43:01,195 - __main__ - INFO - Completed processing for paper 55005437 (14/17) in run 2.
+2025-05-19 14:43:01,210 - __main__ - INFO - Completed processing for paper 53384093 (15/17) in run 2.
+2025-05-19 14:43:01,211 - __main__ - INFO - Completed processing for paper 97574650 (16/17) in run 2.
+2025-05-19 14:43:01,211 - __main__ - INFO - Completed processing for paper 68518 (17/17) in run 2.
+2025-05-19 14:43:01,216 - __main__ - INFO - Finished run 2.
+2025-05-19 14:43:01,217 - __main__ - INFO - Starting run 3
+2025-05-19 14:43:07,568 - __main__ - ERROR - Error processing paper 11181068: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,577 - __main__ - ERROR - Error processing paper 137261967: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,577 - __main__ - ERROR - Error processing paper 10222315: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,579 - __main__ - ERROR - Error processing paper 135893324: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,583 - __main__ - ERROR - Error processing paper 137362119: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,592 - __main__ - ERROR - Error processing paper 11093908: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,615 - __main__ - ERROR - Error processing paper 12841719: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,621 - __main__ - ERROR - Error processing paper 17645319: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,648 - __main__ - ERROR - Error processing paper 2837337: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,648 - __main__ - ERROR - Error processing paper 15804005: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,664 - __main__ - ERROR - Error processing paper 317542: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,673 - __main__ - ERROR - Error processing paper 53384093: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,694 - __main__ - ERROR - Error processing paper 53519111: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,705 - __main__ - ERROR - Error processing paper 55005437: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,808 - __main__ - ERROR - Error processing paper 68518: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,818 - __main__ - ERROR - Error processing paper 97574650: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:07,851 - __main__ - ERROR - Error processing paper 6183251: cannot unpack non-iterable NoneType object
+2025-05-19 14:43:09,576 - __main__ - INFO - Completed processing for paper 11181068 (1/17) in run 3.
+2025-05-19 14:43:09,591 - __main__ - INFO - Completed processing for paper 137261967 (2/17) in run 3.
+2025-05-19 14:43:09,591 - __main__ - INFO - Completed processing for paper 10222315 (3/17) in run 3.
+2025-05-19 14:43:09,591 - __main__ - INFO - Completed processing for paper 135893324 (4/17) in run 3.
+2025-05-19 14:43:09,592 - __main__ - INFO - Completed processing for paper 137362119 (5/17) in run 3.
+2025-05-19 14:43:09,607 - __main__ - INFO - Completed processing for paper 11093908 (6/17) in run 3.
+2025-05-19 14:43:09,622 - __main__ - INFO - Completed processing for paper 17645319 (7/17) in run 3.
+2025-05-19 14:43:09,623 - __main__ - INFO - Completed processing for paper 12841719 (8/17) in run 3.
+2025-05-19 14:43:09,653 - __main__ - INFO - Completed processing for paper 15804005 (9/17) in run 3.
+2025-05-19 14:43:09,654 - __main__ - INFO - Completed processing for paper 2837337 (10/17) in run 3.
+2025-05-19 14:43:09,668 - __main__ - INFO - Completed processing for paper 317542 (11/17) in run 3.
+2025-05-19 14:43:09,684 - __main__ - INFO - Completed processing for paper 53384093 (12/17) in run 3.
+2025-05-19 14:43:09,699 - __main__ - INFO - Completed processing for paper 53519111 (13/17) in run 3.
+2025-05-19 14:43:09,715 - __main__ - INFO - Completed processing for paper 55005437 (14/17) in run 3.
+2025-05-19 14:43:09,824 - __main__ - INFO - Completed processing for paper 68518 (15/17) in run 3.
+2025-05-19 14:43:09,824 - __main__ - INFO - Completed processing for paper 97574650 (16/17) in run 3.
+2025-05-19 14:43:09,856 - __main__ - INFO - Completed processing for paper 6183251 (17/17) in run 3.
+2025-05-19 14:43:09,859 - __main__ - INFO - Finished run 3.
+2025-05-19 14:43:09,859 - __main__ - INFO - All runs completed for MPVE.
+2025-05-19 14:44:11,043 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 14:44:11,044 - __main__ - INFO - Starting run 2
+2025-05-19 14:44:17,320 - __main__ - ERROR - Error processing paper 10222315: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,323 - __main__ - ERROR - Error processing paper 11093908: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,345 - __main__ - ERROR - Error processing paper 12841719: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,366 - __main__ - ERROR - Error processing paper 11181068: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,388 - __main__ - ERROR - Error processing paper 135893324: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,411 - __main__ - ERROR - Error processing paper 137261967: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,421 - __main__ - ERROR - Error processing paper 15804005: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,460 - __main__ - ERROR - Error processing paper 137362119: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,544 - __main__ - ERROR - Error processing paper 53384093: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,557 - __main__ - ERROR - Error processing paper 17645319: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,558 - __main__ - ERROR - Error processing paper 2837337: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,560 - __main__ - ERROR - Error processing paper 317542: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,587 - __main__ - ERROR - Error processing paper 6183251: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,599 - __main__ - ERROR - Error processing paper 97574650: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,599 - __main__ - ERROR - Error processing paper 53519111: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,602 - __main__ - ERROR - Error processing paper 55005437: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:17,605 - __main__ - ERROR - Error processing paper 68518: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:19,336 - __main__ - INFO - Completed processing for paper 10222315 (1/17) in run 2.
+2025-05-19 14:44:19,337 - __main__ - INFO - Completed processing for paper 11093908 (2/17) in run 2.
+2025-05-19 14:44:19,352 - __main__ - INFO - Completed processing for paper 12841719 (3/17) in run 2.
+2025-05-19 14:44:19,368 - __main__ - INFO - Completed processing for paper 11181068 (4/17) in run 2.
+2025-05-19 14:44:19,400 - __main__ - INFO - Completed processing for paper 135893324 (5/17) in run 2.
+2025-05-19 14:44:19,415 - __main__ - INFO - Completed processing for paper 137261967 (6/17) in run 2.
+2025-05-19 14:44:19,430 - __main__ - INFO - Completed processing for paper 15804005 (7/17) in run 2.
+2025-05-19 14:44:19,477 - __main__ - INFO - Completed processing for paper 137362119 (8/17) in run 2.
+2025-05-19 14:44:19,570 - __main__ - INFO - Completed processing for paper 2837337 (9/17) in run 2.
+2025-05-19 14:44:19,570 - __main__ - INFO - Completed processing for paper 17645319 (10/17) in run 2.
+2025-05-19 14:44:19,571 - __main__ - INFO - Completed processing for paper 53384093 (11/17) in run 2.
+2025-05-19 14:44:19,571 - __main__ - INFO - Completed processing for paper 317542 (12/17) in run 2.
+2025-05-19 14:44:19,601 - __main__ - INFO - Completed processing for paper 6183251 (13/17) in run 2.
+2025-05-19 14:44:19,616 - __main__ - INFO - Completed processing for paper 53519111 (14/17) in run 2.
+2025-05-19 14:44:19,616 - __main__ - INFO - Completed processing for paper 68518 (15/17) in run 2.
+2025-05-19 14:44:19,617 - __main__ - INFO - Completed processing for paper 97574650 (16/17) in run 2.
+2025-05-19 14:44:19,617 - __main__ - INFO - Completed processing for paper 55005437 (17/17) in run 2.
+2025-05-19 14:44:19,621 - __main__ - INFO - Finished run 2.
+2025-05-19 14:44:19,622 - __main__ - INFO - Starting run 3
+2025-05-19 14:44:25,903 - __main__ - ERROR - Error processing paper 10222315: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:25,943 - __main__ - ERROR - Error processing paper 11093908: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:25,967 - __main__ - ERROR - Error processing paper 11181068: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,001 - __main__ - ERROR - Error processing paper 12841719: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,022 - __main__ - ERROR - Error processing paper 137261967: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,029 - __main__ - ERROR - Error processing paper 15804005: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,076 - __main__ - ERROR - Error processing paper 135893324: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,081 - __main__ - ERROR - Error processing paper 17645319: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,081 - __main__ - ERROR - Error processing paper 137362119: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,090 - __main__ - ERROR - Error processing paper 53519111: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,093 - __main__ - ERROR - Error processing paper 317542: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,100 - __main__ - ERROR - Error processing paper 53384093: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,105 - __main__ - ERROR - Error processing paper 2837337: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,150 - __main__ - ERROR - Error processing paper 55005437: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,157 - __main__ - ERROR - Error processing paper 68518: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,158 - __main__ - ERROR - Error processing paper 97574650: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:26,159 - __main__ - ERROR - Error processing paper 6183251: cannot unpack non-iterable NoneType object
+2025-05-19 14:44:27,913 - __main__ - INFO - Completed processing for paper 10222315 (1/17) in run 3.
+2025-05-19 14:44:27,958 - __main__ - INFO - Completed processing for paper 11093908 (2/17) in run 3.
+2025-05-19 14:44:27,975 - __main__ - INFO - Completed processing for paper 11181068 (3/17) in run 3.
+2025-05-19 14:44:28,006 - __main__ - INFO - Completed processing for paper 12841719 (4/17) in run 3.
+2025-05-19 14:44:28,038 - __main__ - INFO - Completed processing for paper 137261967 (5/17) in run 3.
+2025-05-19 14:44:28,038 - __main__ - INFO - Completed processing for paper 15804005 (6/17) in run 3.
+2025-05-19 14:44:28,099 - __main__ - INFO - Completed processing for paper 53519111 (7/17) in run 3.
+2025-05-19 14:44:28,099 - __main__ - INFO - Completed processing for paper 137362119 (8/17) in run 3.
+2025-05-19 14:44:28,100 - __main__ - INFO - Completed processing for paper 17645319 (9/17) in run 3.
+2025-05-19 14:44:28,100 - __main__ - INFO - Completed processing for paper 317542 (10/17) in run 3.
+2025-05-19 14:44:28,100 - __main__ - INFO - Completed processing for paper 135893324 (11/17) in run 3.
+2025-05-19 14:44:28,114 - __main__ - INFO - Completed processing for paper 53384093 (12/17) in run 3.
+2025-05-19 14:44:28,115 - __main__ - INFO - Completed processing for paper 2837337 (13/17) in run 3.
+2025-05-19 14:44:28,160 - __main__ - INFO - Completed processing for paper 55005437 (14/17) in run 3.
+2025-05-19 14:44:28,176 - __main__ - INFO - Completed processing for paper 6183251 (15/17) in run 3.
+2025-05-19 14:44:28,177 - __main__ - INFO - Completed processing for paper 68518 (16/17) in run 3.
+2025-05-19 14:44:28,177 - __main__ - INFO - Completed processing for paper 97574650 (17/17) in run 3.
+2025-05-19 14:44:28,182 - __main__ - INFO - Finished run 3.
+2025-05-19 14:44:28,183 - __main__ - INFO - All runs completed for MPVE.
+2025-05-19 14:47:27,797 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 14:47:27,797 - __main__ - INFO - Starting run 2
+2025-05-19 14:47:34,023 - __main__ - ERROR - Error processing paper 10222315: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,044 - __main__ - ERROR - Error processing paper 11093908: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,090 - __main__ - ERROR - Error processing paper 11181068: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,100 - __main__ - ERROR - Error processing paper 12841719: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,100 - __main__ - ERROR - Error processing paper 137261967: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,151 - __main__ - ERROR - Error processing paper 137362119: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,194 - __main__ - ERROR - Error processing paper 17645319: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,229 - __main__ - ERROR - Error processing paper 2837337: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,465 - __main__ - ERROR - Error processing paper 97574650: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,468 - __main__ - ERROR - Error processing paper 53384093: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,468 - __main__ - ERROR - Error processing paper 55005437: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,469 - __main__ - ERROR - Error processing paper 317542: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,469 - __main__ - ERROR - Error processing paper 68518: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,471 - __main__ - ERROR - Error processing paper 6183251: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,483 - __main__ - ERROR - Error processing paper 53519111: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,489 - __main__ - ERROR - Error processing paper 15804005: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:34,519 - __main__ - ERROR - Error processing paper 135893324: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:36,030 - __main__ - INFO - Completed processing for paper 10222315 (1/17) in run 2.
+2025-05-19 14:47:36,060 - __main__ - INFO - Completed processing for paper 11093908 (2/17) in run 2.
+2025-05-19 14:47:36,106 - __main__ - INFO - Completed processing for paper 11181068 (3/17) in run 2.
+2025-05-19 14:47:36,107 - __main__ - INFO - Completed processing for paper 12841719 (4/17) in run 2.
+2025-05-19 14:47:36,107 - __main__ - INFO - Completed processing for paper 137261967 (5/17) in run 2.
+2025-05-19 14:47:36,168 - __main__ - INFO - Completed processing for paper 137362119 (6/17) in run 2.
+2025-05-19 14:47:36,214 - __main__ - INFO - Completed processing for paper 17645319 (7/17) in run 2.
+2025-05-19 14:47:36,246 - __main__ - INFO - Completed processing for paper 2837337 (8/17) in run 2.
+2025-05-19 14:47:36,479 - __main__ - INFO - Completed processing for paper 97574650 (9/17) in run 2.
+2025-05-19 14:47:36,479 - __main__ - INFO - Completed processing for paper 55005437 (10/17) in run 2.
+2025-05-19 14:47:36,480 - __main__ - INFO - Completed processing for paper 317542 (11/17) in run 2.
+2025-05-19 14:47:36,480 - __main__ - INFO - Completed processing for paper 68518 (12/17) in run 2.
+2025-05-19 14:47:36,480 - __main__ - INFO - Completed processing for paper 6183251 (13/17) in run 2.
+2025-05-19 14:47:36,481 - __main__ - INFO - Completed processing for paper 53384093 (14/17) in run 2.
+2025-05-19 14:47:36,493 - __main__ - INFO - Completed processing for paper 53519111 (15/17) in run 2.
+2025-05-19 14:47:36,493 - __main__ - INFO - Completed processing for paper 15804005 (16/17) in run 2.
+2025-05-19 14:47:36,524 - __main__ - INFO - Completed processing for paper 135893324 (17/17) in run 2.
+2025-05-19 14:47:36,525 - __main__ - INFO - Finished run 2.
+2025-05-19 14:47:36,525 - __main__ - INFO - Starting run 3
+2025-05-19 14:47:42,802 - __main__ - ERROR - Error processing paper 10222315: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:42,809 - __main__ - ERROR - Error processing paper 11093908: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:42,883 - __main__ - ERROR - Error processing paper 12841719: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:42,892 - __main__ - ERROR - Error processing paper 11181068: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:42,944 - __main__ - ERROR - Error processing paper 137362119: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:42,967 - __main__ - ERROR - Error processing paper 135893324: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:42,971 - __main__ - ERROR - Error processing paper 137261967: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:42,986 - __main__ - ERROR - Error processing paper 15804005: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:42,990 - __main__ - ERROR - Error processing paper 17645319: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:42,990 - __main__ - ERROR - Error processing paper 2837337: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:43,003 - __main__ - ERROR - Error processing paper 317542: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:43,014 - __main__ - ERROR - Error processing paper 97574650: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:43,028 - __main__ - ERROR - Error processing paper 55005437: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:43,034 - __main__ - ERROR - Error processing paper 53519111: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:43,040 - __main__ - ERROR - Error processing paper 68518: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:43,045 - __main__ - ERROR - Error processing paper 6183251: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:43,121 - __main__ - ERROR - Error processing paper 53384093: cannot unpack non-iterable NoneType object
+2025-05-19 14:47:44,830 - __main__ - INFO - Completed processing for paper 10222315 (1/17) in run 3.
+2025-05-19 14:47:44,830 - __main__ - INFO - Completed processing for paper 11093908 (2/17) in run 3.
+2025-05-19 14:47:44,892 - __main__ - INFO - Completed processing for paper 12841719 (3/17) in run 3.
+2025-05-19 14:47:44,907 - __main__ - INFO - Completed processing for paper 11181068 (4/17) in run 3.
+2025-05-19 14:47:44,954 - __main__ - INFO - Completed processing for paper 137362119 (5/17) in run 3.
+2025-05-19 14:47:44,970 - __main__ - INFO - Completed processing for paper 135893324 (6/17) in run 3.
+2025-05-19 14:47:44,986 - __main__ - INFO - Completed processing for paper 137261967 (7/17) in run 3.
+2025-05-19 14:47:45,001 - __main__ - INFO - Completed processing for paper 2837337 (8/17) in run 3.
+2025-05-19 14:47:45,001 - __main__ - INFO - Completed processing for paper 17645319 (9/17) in run 3.
+2025-05-19 14:47:45,001 - __main__ - INFO - Completed processing for paper 15804005 (10/17) in run 3.
+2025-05-19 14:47:45,017 - __main__ - INFO - Completed processing for paper 317542 (11/17) in run 3.
+2025-05-19 14:47:45,017 - __main__ - INFO - Completed processing for paper 97574650 (12/17) in run 3.
+2025-05-19 14:47:45,032 - __main__ - INFO - Completed processing for paper 55005437 (13/17) in run 3.
+2025-05-19 14:47:45,047 - __main__ - INFO - Completed processing for paper 6183251 (14/17) in run 3.
+2025-05-19 14:47:45,047 - __main__ - INFO - Completed processing for paper 53519111 (15/17) in run 3.
+2025-05-19 14:47:45,048 - __main__ - INFO - Completed processing for paper 68518 (16/17) in run 3.
+2025-05-19 14:47:45,127 - __main__ - INFO - Completed processing for paper 53384093 (17/17) in run 3.
+2025-05-19 14:47:45,127 - __main__ - INFO - Finished run 3.
+2025-05-19 14:47:45,128 - __main__ - INFO - All runs completed for MPVE.
+2025-05-19 14:48:12,635 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 14:48:12,635 - __main__ - INFO - Starting run 2
+2025-05-19 14:48:18,325 - __main__ - INFO - Completed processing for paper 137362119 (1/17) in run 2.
+2025-05-19 14:48:18,447 - __main__ - INFO - Completed processing for paper 15804005 (2/17) in run 2.
+2025-05-19 14:48:18,542 - __main__ - INFO - Completed processing for paper 6183251 (3/17) in run 2.
+2025-05-19 14:48:18,652 - __main__ - INFO - Completed processing for paper 97574650 (4/17) in run 2.
+2025-05-19 14:48:19,278 - __main__ - INFO - Completed processing for paper 11093908 (5/17) in run 2.
+2025-05-19 14:48:20,630 - __main__ - INFO - Completed processing for paper 17645319 (6/17) in run 2.
+2025-05-19 14:48:20,656 - __main__ - INFO - Completed processing for paper 11181068 (7/17) in run 2.
+2025-05-19 14:48:20,671 - __main__ - INFO - Completed processing for paper 135893324 (8/17) in run 2.
+2025-05-19 14:48:21,590 - __main__ - INFO - Completed processing for paper 137261967 (9/17) in run 2.
+2025-05-19 14:48:22,309 - __main__ - INFO - Completed processing for paper 55005437 (10/17) in run 2.
+2025-05-19 14:48:23,020 - __main__ - INFO - Completed processing for paper 12841719 (11/17) in run 2.
+2025-05-19 14:48:23,452 - __main__ - INFO - Completed processing for paper 317542 (12/17) in run 2.
+2025-05-19 14:48:23,749 - __main__ - INFO - Completed processing for paper 53519111 (13/17) in run 2.
+2025-05-19 14:48:24,594 - __main__ - INFO - Completed processing for paper 53384093 (14/17) in run 2.
+2025-05-19 14:48:25,184 - __main__ - INFO - Completed processing for paper 10222315 (15/17) in run 2.
+2025-05-19 14:48:25,929 - __main__ - INFO - Completed processing for paper 2837337 (16/17) in run 2.
+2025-05-19 14:48:27,813 - __main__ - INFO - Completed processing for paper 68518 (17/17) in run 2.
+2025-05-19 14:48:27,819 - __main__ - INFO - Finished run 2.
+2025-05-19 14:48:27,820 - __main__ - INFO - Starting run 3
+2025-05-19 14:48:34,345 - __main__ - INFO - Completed processing for paper 137261967 (1/17) in run 3.
+2025-05-19 14:48:34,825 - __main__ - INFO - Completed processing for paper 68518 (2/17) in run 3.
+2025-05-19 14:48:35,110 - __main__ - INFO - Completed processing for paper 317542 (3/17) in run 3.
+2025-05-19 14:48:35,457 - __main__ - INFO - Completed processing for paper 11093908 (4/17) in run 3.
+2025-05-19 14:48:35,952 - __main__ - INFO - Completed processing for paper 11181068 (5/17) in run 3.
+2025-05-19 14:48:35,992 - __main__ - INFO - Completed processing for paper 137362119 (6/17) in run 3.
+2025-05-19 14:48:36,189 - __main__ - INFO - Completed processing for paper 2837337 (7/17) in run 3.
+2025-05-19 14:48:36,319 - __main__ - INFO - Completed processing for paper 10222315 (8/17) in run 3.
+2025-05-19 14:48:36,805 - __main__ - INFO - Completed processing for paper 53384093 (9/17) in run 3.
+2025-05-19 14:48:36,915 - __main__ - INFO - Completed processing for paper 135893324 (10/17) in run 3.
+2025-05-19 14:48:37,086 - __main__ - INFO - Completed processing for paper 17645319 (11/17) in run 3.
+2025-05-19 14:48:37,098 - __main__ - INFO - Completed processing for paper 6183251 (12/17) in run 3.
+2025-05-19 14:48:37,994 - __main__ - INFO - Completed processing for paper 15804005 (13/17) in run 3.
+2025-05-19 14:48:38,146 - __main__ - INFO - Completed processing for paper 97574650 (14/17) in run 3.
+2025-05-19 14:48:38,860 - __main__ - INFO - Completed processing for paper 53519111 (15/17) in run 3.
+2025-05-19 14:48:38,991 - __main__ - INFO - Completed processing for paper 55005437 (16/17) in run 3.
+2025-05-19 14:48:39,468 - __main__ - INFO - Completed processing for paper 12841719 (17/17) in run 3.
+2025-05-19 14:48:39,469 - __main__ - INFO - Finished run 3.
+2025-05-19 14:48:39,470 - __main__ - INFO - All runs completed for MPVE.
+2025-05-19 14:52:35,447 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 14:52:35,447 - __main__ - INFO - Starting run 2
+2025-05-19 14:52:40,563 - __main__ - INFO - Completed processing for paper 135893324 (1/17) in run 2.
+2025-05-19 14:52:42,061 - __main__ - INFO - Completed processing for paper 137362119 (2/17) in run 2.
+2025-05-19 14:52:42,067 - __main__ - INFO - Completed processing for paper 17645319 (3/17) in run 2.
+2025-05-19 14:52:42,218 - __main__ - INFO - Completed processing for paper 137261967 (4/17) in run 2.
+2025-05-19 14:52:42,432 - __main__ - INFO - Completed processing for paper 53519111 (5/17) in run 2.
+2025-05-19 14:52:42,673 - __main__ - INFO - Completed processing for paper 10222315 (6/17) in run 2.
+2025-05-19 14:52:43,049 - __main__ - INFO - Completed processing for paper 53384093 (7/17) in run 2.
+2025-05-19 14:52:43,413 - __main__ - INFO - Completed processing for paper 15804005 (8/17) in run 2.
+2025-05-19 14:52:43,484 - __main__ - INFO - Completed processing for paper 11181068 (9/17) in run 2.
+2025-05-19 14:52:43,726 - __main__ - INFO - Completed processing for paper 2837337 (10/17) in run 2.
+2025-05-19 14:52:44,003 - __main__ - INFO - Completed processing for paper 317542 (11/17) in run 2.
+2025-05-19 14:52:44,156 - __main__ - INFO - Completed processing for paper 97574650 (12/17) in run 2.
+2025-05-19 14:52:44,223 - __main__ - INFO - Completed processing for paper 55005437 (13/17) in run 2.
+2025-05-19 14:52:45,325 - __main__ - INFO - Completed processing for paper 6183251 (14/17) in run 2.
+2025-05-19 14:52:46,071 - __main__ - INFO - Completed processing for paper 12841719 (15/17) in run 2.
+2025-05-19 14:52:46,361 - __main__ - INFO - Completed processing for paper 11093908 (16/17) in run 2.
+2025-05-19 14:52:51,739 - __main__ - INFO - Completed processing for paper 68518 (17/17) in run 2.
+2025-05-19 14:52:51,745 - __main__ - INFO - Finished run 2.
+2025-05-19 14:52:51,746 - __main__ - INFO - Starting run 3
+2025-05-19 14:52:56,838 - __main__ - INFO - Completed processing for paper 55005437 (1/17) in run 3.
+2025-05-19 14:52:57,951 - __main__ - INFO - Completed processing for paper 135893324 (2/17) in run 3.
+2025-05-19 14:52:58,024 - __main__ - INFO - Completed processing for paper 317542 (3/17) in run 3.
+2025-05-19 14:52:58,428 - __main__ - INFO - Completed processing for paper 2837337 (4/17) in run 3.
+2025-05-19 14:52:58,434 - __main__ - INFO - Completed processing for paper 137261967 (5/17) in run 3.
+2025-05-19 14:52:59,129 - __main__ - INFO - Completed processing for paper 15804005 (6/17) in run 3.
+2025-05-19 14:52:59,429 - __main__ - INFO - Completed processing for paper 6183251 (7/17) in run 3.
+2025-05-19 14:52:59,542 - __main__ - INFO - Completed processing for paper 10222315 (8/17) in run 3.
+2025-05-19 14:52:59,585 - __main__ - INFO - Completed processing for paper 97574650 (9/17) in run 3.
+2025-05-19 14:52:59,989 - __main__ - INFO - Completed processing for paper 11181068 (10/17) in run 3.
+2025-05-19 14:53:00,162 - __main__ - INFO - Completed processing for paper 137362119 (11/17) in run 3.
+2025-05-19 14:53:00,395 - __main__ - INFO - Completed processing for paper 53519111 (12/17) in run 3.
+2025-05-19 14:53:00,406 - __main__ - INFO - Completed processing for paper 17645319 (13/17) in run 3.
+2025-05-19 14:53:01,111 - __main__ - INFO - Completed processing for paper 12841719 (14/17) in run 3.
+2025-05-19 14:53:01,198 - __main__ - INFO - Completed processing for paper 11093908 (15/17) in run 3.
+2025-05-19 14:53:01,329 - __main__ - INFO - Completed processing for paper 53384093 (16/17) in run 3.
+2025-05-19 14:53:03,883 - __main__ - INFO - Completed processing for paper 68518 (17/17) in run 3.
+2025-05-19 14:53:03,889 - __main__ - INFO - Finished run 3.
+2025-05-19 14:53:03,889 - __main__ - INFO - All runs completed for MPVE.
+2025-05-19 15:00:07,985 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 15:00:07,986 - __main__ - INFO - Starting run 2
+2025-05-19 15:01:52,729 - __main__ - INFO - Completed processing for paper 137261967 (1/17) in run 2.
+2025-05-19 15:02:14,697 - __main__ - INFO - Completed processing for paper 68518 (2/17) in run 2.
+2025-05-19 15:02:16,702 - __main__ - INFO - Completed processing for paper 15804005 (3/17) in run 2.
+2025-05-19 15:02:40,825 - __main__ - INFO - Completed processing for paper 17645319 (4/17) in run 2.
+2025-05-19 15:03:04,146 - __main__ - INFO - Completed processing for paper 97574650 (5/17) in run 2.
+2025-05-19 15:03:13,040 - __main__ - INFO - Completed processing for paper 6183251 (6/17) in run 2.
+2025-05-19 15:03:41,008 - __main__ - INFO - Completed processing for paper 12841719 (7/17) in run 2.
+2025-05-19 15:03:46,399 - __main__ - INFO - Completed processing for paper 135893324 (8/17) in run 2.
+2025-05-19 15:03:48,145 - __main__ - INFO - Completed processing for paper 2837337 (9/17) in run 2.
+2025-05-19 15:03:49,589 - __main__ - INFO - Completed processing for paper 10222315 (10/17) in run 2.
+2025-05-19 15:03:52,347 - __main__ - INFO - Completed processing for paper 53519111 (11/17) in run 2.
+2025-05-19 15:04:17,225 - __main__ - INFO - Completed processing for paper 11181068 (12/17) in run 2.
+2025-05-19 15:04:25,429 - __main__ - INFO - Completed processing for paper 53384093 (13/17) in run 2.
+2025-05-19 15:04:47,878 - __main__ - INFO - Completed processing for paper 137362119 (14/17) in run 2.
+2025-05-19 15:04:50,707 - __main__ - INFO - Completed processing for paper 55005437 (15/17) in run 2.
+2025-05-19 15:05:19,982 - __main__ - INFO - Completed processing for paper 11093908 (16/17) in run 2.
+2025-05-19 15:07:11,027 - __main__ - INFO - Completed processing for paper 317542 (17/17) in run 2.
+2025-05-19 15:07:11,032 - __main__ - INFO - Finished run 2.
+2025-05-19 15:07:11,033 - __main__ - INFO - Starting run 3
+2025-05-19 15:09:08,151 - __main__ - INFO - Completed processing for paper 15804005 (1/17) in run 3.
+2025-05-19 15:09:10,334 - __main__ - INFO - Completed processing for paper 17645319 (2/17) in run 3.
+2025-05-19 15:09:16,179 - __main__ - INFO - Completed processing for paper 6183251 (3/17) in run 3.
+2025-05-19 15:09:45,281 - __main__ - INFO - Completed processing for paper 97574650 (4/17) in run 3.
+2025-05-19 15:09:56,468 - __main__ - INFO - Completed processing for paper 137261967 (5/17) in run 3.
+2025-05-19 15:10:00,733 - __main__ - INFO - Completed processing for paper 135893324 (6/17) in run 3.
+2025-05-19 15:10:07,109 - __main__ - INFO - Completed processing for paper 10222315 (7/17) in run 3.
+2025-05-19 15:10:31,433 - __main__ - INFO - Completed processing for paper 53384093 (8/17) in run 3.
+2025-05-19 15:10:55,671 - __main__ - INFO - Completed processing for paper 11181068 (9/17) in run 3.
+2025-05-19 15:11:06,554 - __main__ - INFO - Completed processing for paper 12841719 (10/17) in run 3.
+2025-05-19 15:11:11,615 - __main__ - INFO - Completed processing for paper 137362119 (11/17) in run 3.
+2025-05-19 15:11:14,023 - __main__ - INFO - Completed processing for paper 68518 (12/17) in run 3.
+2025-05-19 15:11:33,599 - __main__ - INFO - Completed processing for paper 2837337 (13/17) in run 3.
+2025-05-19 15:11:58,068 - __main__ - INFO - Completed processing for paper 11093908 (14/17) in run 3.
+2025-05-19 15:11:59,550 - __main__ - INFO - Completed processing for paper 53519111 (15/17) in run 3.
+2025-05-19 15:13:02,903 - __main__ - INFO - Completed processing for paper 55005437 (16/17) in run 3.
+2025-05-19 15:14:13,529 - __main__ - INFO - Completed processing for paper 317542 (17/17) in run 3.
+2025-05-19 15:14:13,533 - __main__ - INFO - Finished run 3.
+2025-05-19 15:14:13,533 - __main__ - INFO - All runs completed for MPVE.
+2025-05-19 16:06:55,055 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 16:06:55,056 - __main__ - INFO - Starting run 2
+2025-05-19 16:08:57,759 - __main__ - INFO - Completed processing for paper 137362119 (1/17) in run 2.
+2025-05-19 16:09:10,323 - __main__ - INFO - Completed processing for paper 2837337 (2/17) in run 2.
+2025-05-19 16:09:17,134 - __main__ - INFO - Completed processing for paper 15804005 (3/17) in run 2.
+2025-05-19 16:09:19,854 - __main__ - INFO - Completed processing for paper 137261967 (4/17) in run 2.
+2025-05-19 16:09:29,752 - __main__ - INFO - Completed processing for paper 11181068 (5/17) in run 2.
+2025-05-19 16:09:58,209 - __main__ - INFO - Completed processing for paper 10222315 (6/17) in run 2.
+2025-05-19 16:09:59,530 - __main__ - INFO - Completed processing for paper 53384093 (7/17) in run 2.
+2025-05-19 16:10:45,391 - __main__ - INFO - Completed processing for paper 97574650 (8/17) in run 2.
+2025-05-19 16:10:49,404 - __main__ - INFO - Completed processing for paper 55005437 (9/17) in run 2.
+2025-05-19 16:10:54,805 - __main__ - INFO - Completed processing for paper 68518 (10/17) in run 2.
+2025-05-19 16:10:58,336 - __main__ - INFO - Completed processing for paper 6183251 (11/17) in run 2.
+2025-05-19 16:11:23,710 - __main__ - INFO - Completed processing for paper 17645319 (12/17) in run 2.
+2025-05-19 16:11:30,796 - __main__ - INFO - Completed processing for paper 11093908 (13/17) in run 2.
+2025-05-19 16:11:46,502 - __main__ - INFO - Completed processing for paper 53519111 (14/17) in run 2.
+2025-05-19 16:12:05,328 - __main__ - INFO - Completed processing for paper 12841719 (15/17) in run 2.
+2025-05-19 16:14:00,726 - __main__ - INFO - Completed processing for paper 135893324 (16/17) in run 2.
+2025-05-19 16:33:51,391 - __main__ - INFO - Completed processing for paper 317542 (17/17) in run 2.
+2025-05-19 16:33:51,393 - __main__ - INFO - Finished run 2.
+2025-05-19 16:33:51,393 - __main__ - INFO - Starting run 3
+2025-05-19 16:35:59,819 - __main__ - INFO - Completed processing for paper 10222315 (1/17) in run 3.
+2025-05-19 16:36:30,290 - __main__ - INFO - Completed processing for paper 137261967 (2/17) in run 3.
+2025-05-19 16:36:37,446 - __main__ - INFO - Completed processing for paper 2837337 (3/17) in run 3.
+2025-05-19 16:36:47,138 - __main__ - INFO - Completed processing for paper 11181068 (4/17) in run 3.
+2025-05-19 16:36:50,316 - __main__ - INFO - Completed processing for paper 17645319 (5/17) in run 3.
+2025-05-19 16:37:15,329 - __main__ - INFO - Completed processing for paper 68518 (6/17) in run 3.
+2025-05-19 16:37:20,672 - __main__ - INFO - Completed processing for paper 137362119 (7/17) in run 3.
+2025-05-19 16:37:36,049 - __main__ - INFO - Completed processing for paper 135893324 (8/17) in run 3.
+2025-05-19 16:37:44,297 - __main__ - INFO - Completed processing for paper 97574650 (9/17) in run 3.
+2025-05-19 16:37:45,114 - __main__ - INFO - Completed processing for paper 15804005 (10/17) in run 3.
+2025-05-19 16:37:47,519 - __main__ - INFO - Completed processing for paper 53384093 (11/17) in run 3.
+2025-05-19 16:38:01,977 - __main__ - INFO - Completed processing for paper 6183251 (12/17) in run 3.
+2025-05-19 16:38:03,544 - __main__ - INFO - Completed processing for paper 53519111 (13/17) in run 3.
+2025-05-19 16:39:00,547 - __main__ - INFO - Completed processing for paper 12841719 (14/17) in run 3.
+2025-05-19 16:39:30,643 - __main__ - INFO - Completed processing for paper 11093908 (15/17) in run 3.
+2025-05-19 16:39:52,819 - __main__ - INFO - Completed processing for paper 55005437 (16/17) in run 3.
+2025-05-19 16:41:49,316 - __main__ - INFO - Completed processing for paper 317542 (17/17) in run 3.
+2025-05-19 16:41:49,321 - __main__ - INFO - Finished run 3.
+2025-05-19 16:41:49,321 - __main__ - INFO - All runs completed for MPVE.
+2025-05-19 16:46:12,669 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 16:46:12,669 - __main__ - INFO - Starting run 2
+2025-05-19 16:47:11,204 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-19 16:47:11,204 - __main__ - INFO - Starting run 2
+2025-05-19 16:48:16,478 - __main__ - INFO - Completed processing for paper 15804005 (1/17) in run 2.
+2025-05-19 16:48:44,232 - __main__ - INFO - Completed processing for paper 137261967 (2/17) in run 2.
+2025-05-19 16:49:05,386 - __main__ - INFO - Completed processing for paper 10222315 (3/17) in run 2.
+2025-05-19 16:49:20,134 - __main__ - INFO - Completed processing for paper 17645319 (4/17) in run 2.
+2025-05-19 16:49:44,047 - __main__ - INFO - Completed processing for paper 53384093 (5/17) in run 2.
+2025-05-19 16:49:56,306 - __main__ - INFO - Completed processing for paper 135893324 (6/17) in run 2.
+2025-05-19 16:49:57,838 - __main__ - INFO - Completed processing for paper 6183251 (7/17) in run 2.
+2025-05-19 16:50:07,481 - __main__ - INFO - Completed processing for paper 11181068 (8/17) in run 2.
+2025-05-19 16:50:11,123 - __main__ - INFO - Completed processing for paper 2837337 (9/17) in run 2.
+2025-05-19 16:50:13,051 - __main__ - INFO - Completed processing for paper 11093908 (10/17) in run 2.
+2025-05-19 16:50:18,066 - __main__ - INFO - Completed processing for paper 68518 (11/17) in run 2.
+2025-05-19 16:50:30,252 - __main__ - INFO - Completed processing for paper 137362119 (12/17) in run 2.
+2025-05-19 16:51:37,332 - __main__ - INFO - Completed processing for paper 53519111 (13/17) in run 2.
+2025-05-19 16:52:04,582 - __main__ - INFO - Completed processing for paper 97574650 (14/17) in run 2.
+2025-05-19 16:53:26,972 - __main__ - INFO - Completed processing for paper 317542 (15/17) in run 2.
+2025-05-19 16:53:30,450 - __main__ - INFO - Completed processing for paper 12841719 (16/17) in run 2.
+2025-05-19 17:04:15,074 - __main__ - INFO - Completed processing for paper 55005437 (17/17) in run 2.
+2025-05-19 17:04:15,077 - __main__ - INFO - Finished run 2.
+2025-05-19 17:04:15,078 - __main__ - INFO - Starting run 3
+2025-05-19 17:05:50,302 - __main__ - INFO - Completed processing for paper 15804005 (1/17) in run 3.
+2025-05-19 17:06:10,990 - __main__ - INFO - Completed processing for paper 137261967 (2/17) in run 3.
+2025-05-19 17:06:11,288 - __main__ - INFO - Completed processing for paper 17645319 (3/17) in run 3.
+2025-05-19 17:06:43,022 - __main__ - INFO - Completed processing for paper 97574650 (4/17) in run 3.
+2025-05-19 17:07:10,669 - __main__ - INFO - Completed processing for paper 6183251 (5/17) in run 3.
+2025-05-19 17:07:40,526 - __main__ - INFO - Completed processing for paper 68518 (6/17) in run 3.
+2025-05-19 17:07:53,380 - __main__ - INFO - Completed processing for paper 11093908 (7/17) in run 3.
+2025-05-19 17:08:08,569 - __main__ - INFO - Completed processing for paper 53384093 (8/17) in run 3.
+2025-05-19 17:08:25,582 - __main__ - INFO - Completed processing for paper 10222315 (9/17) in run 3.
+2025-05-19 17:08:44,946 - __main__ - INFO - Completed processing for paper 137362119 (10/17) in run 3.
+2025-05-19 17:08:49,961 - __main__ - INFO - Completed processing for paper 53519111 (11/17) in run 3.
+2025-05-19 17:08:56,724 - __main__ - INFO - Completed processing for paper 55005437 (12/17) in run 3.
+2025-05-19 17:08:57,544 - __main__ - INFO - Completed processing for paper 12841719 (13/17) in run 3.
+2025-05-19 17:09:31,414 - __main__ - INFO - Completed processing for paper 11181068 (14/17) in run 3.
+2025-05-19 17:09:43,511 - __main__ - INFO - Completed processing for paper 135893324 (15/17) in run 3.
+2025-05-19 17:10:08,694 - __main__ - INFO - Completed processing for paper 317542 (16/17) in run 3.
+2025-05-19 17:10:49,220 - __main__ - INFO - Completed processing for paper 2837337 (17/17) in run 3.
+2025-05-19 17:10:49,223 - __main__ - INFO - Finished run 3.
+2025-05-19 17:10:49,223 - __main__ - INFO - All runs completed for MPVE.
+2025-05-20 16:02:44,326 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-20 16:02:44,327 - __main__ - INFO - Starting run 2
+2025-05-20 17:17:35,597 - __main__ - INFO - Starting processing 74 papers for DFT
+2025-05-20 17:17:35,597 - __main__ - INFO - Starting run 2
+2025-05-20 17:17:55,595 - __main__ - INFO - Completed processing for paper 2023_09_22_1a3a4803f9d9cec16d38g (1/74) in run 2.
+2025-05-20 17:18:01,760 - __main__ - INFO - Completed processing for paper 2023_09_22_109a6cd5d015ce89e7f3g (2/74) in run 2.
+2025-05-20 17:18:05,968 - __main__ - INFO - Completed processing for paper 2023_09_22_63a752c620bbc784200cg (3/74) in run 2.
+2025-05-20 17:18:06,048 - __main__ - INFO - Completed processing for paper 2023_09_22_2e9b1b9bffe7fd47b18fg (4/74) in run 2.
+2025-05-20 17:18:07,098 - __main__ - INFO - Completed processing for paper 2023_09_22_48fb54662c601e035a91g (5/74) in run 2.
+2025-05-20 17:18:07,701 - __main__ - INFO - Completed processing for paper 2023_09_22_2e5b7c3f50b6a643e33ag (6/74) in run 2.
+2025-05-20 17:18:08,782 - __main__ - INFO - Completed processing for paper 2023_09_22_22c19cfc32d2575f9a52g (7/74) in run 2.
+2025-05-20 17:18:08,786 - __main__ - INFO - Completed processing for paper 2023_09_22_182e0132c513bc81a414g (8/74) in run 2.
+2025-05-20 17:18:09,090 - __main__ - INFO - Completed processing for paper 2023_09_22_13bcf90c3ef43f1413deg (9/74) in run 2.
+2025-05-20 17:18:11,405 - __main__ - INFO - Completed processing for paper 2023_09_22_430c3ddffa99af6a2545g (10/74) in run 2.
+2025-05-20 17:18:12,450 - __main__ - INFO - Completed processing for paper 2023_09_22_1def59bea80d6e9f67ccg (11/74) in run 2.
+2025-05-20 17:18:12,497 - __main__ - INFO - Completed processing for paper 2023_09_22_2d35eebe2e85cecf4103g (12/74) in run 2.
+2025-05-20 17:18:13,888 - __main__ - INFO - Completed processing for paper 2023_09_22_1af7e6342ebcf1ce3ea5g (13/74) in run 2.
+2025-05-20 17:18:15,537 - __main__ - INFO - Completed processing for paper 2023_09_22_01b9cdba467fd7882e42g (14/74) in run 2.
+2025-05-20 17:18:22,763 - __main__ - INFO - Completed processing for paper 2023_09_22_1b00ed3a142a7a1b2582g (15/74) in run 2.
+2025-05-20 17:18:26,140 - __main__ - INFO - Completed processing for paper 2023_09_22_49d6cc9c5e7a469afee0g (16/74) in run 2.
+2025-05-20 17:18:26,550 - __main__ - INFO - Completed processing for paper 2023_09_22_07b4d66e23971ccb85c0g (17/74) in run 2.
+2025-05-20 17:18:30,120 - __main__ - INFO - Completed processing for paper 2023_09_22_54050a76c33463a8157fg (18/74) in run 2.
+2025-05-20 17:18:32,081 - __main__ - INFO - Completed processing for paper 2023_09_22_67e874a3c664208e2d2fg (19/74) in run 2.
+2025-05-20 17:18:32,428 - __main__ - INFO - Completed processing for paper 2023_09_22_12cb692c6b82606615a6g (20/74) in run 2.
+2025-05-20 17:18:34,218 - __main__ - INFO - Completed processing for paper 2023_09_22_14ab0a44fc8fc33fa338g (21/74) in run 2.
+2025-05-20 17:18:38,787 - __main__ - INFO - Completed processing for paper 2023_09_22_0ce1b5ea9a8637db5435g (22/74) in run 2.
+2025-05-20 17:18:42,665 - __main__ - INFO - Completed processing for paper 2023_09_22_87d405f182ae3706ea0cg (23/74) in run 2.
+2025-05-20 17:18:43,709 - __main__ - INFO - Completed processing for paper 2023_09_22_433b6bb3bfc2391f7300g (24/74) in run 2.
+2025-05-20 17:18:44,249 - __main__ - INFO - Completed processing for paper 2023_09_22_8df0b56e310badc55de3g (25/74) in run 2.
+2025-05-20 17:18:46,982 - __main__ - INFO - Completed processing for paper 2023_09_22_5237e17b3b341fecc9d9g (26/74) in run 2.
+2025-05-20 17:18:48,510 - __main__ - INFO - Completed processing for paper 2023_09_22_4eeeb89f0a6f52e58610g (27/74) in run 2.
+2025-05-20 17:18:48,634 - __main__ - INFO - Completed processing for paper 2023_09_22_7433a6c7542334063731g (28/74) in run 2.
+2025-05-20 17:18:50,332 - __main__ - INFO - Completed processing for paper 2023_09_22_81b3dfeb3597db5200c5g (29/74) in run 2.
+2025-05-20 17:18:54,164 - __main__ - INFO - Completed processing for paper 2023_09_22_70326f83ce0dcec87b50g (30/74) in run 2.
+2025-05-20 17:18:55,348 - __main__ - INFO - Completed processing for paper 2023_09_22_77a765fcab6029c666b4g (31/74) in run 2.
+2025-05-20 17:18:56,730 - __main__ - INFO - Completed processing for paper 2023_09_22_799ee1c298d190145c70g (32/74) in run 2.
+2025-05-20 17:18:57,596 - __main__ - INFO - Completed processing for paper 2023_09_22_24d7d9ed97e042af9f29g (33/74) in run 2.
+2025-05-20 17:18:57,716 - __main__ - INFO - Completed processing for paper 2023_09_22_984f5b905c02b6f21733g (34/74) in run 2.
+2025-05-20 17:18:58,610 - __main__ - INFO - Completed processing for paper 2023_09_22_3ae1fab1e33569c30b8dg (35/74) in run 2.
+2025-05-20 17:18:58,737 - __main__ - INFO - Completed processing for paper 2023_09_22_2d44dda253969d6ce7f6g (36/74) in run 2.
+2025-05-20 17:18:59,636 - __main__ - INFO - Completed processing for paper 2023_09_22_55f975d508230ef05caeg (37/74) in run 2.
+2025-05-20 17:19:04,026 - __main__ - INFO - Completed processing for paper 2023_09_22_4ef39bb4116ac1dad9e9g (38/74) in run 2.
+2025-05-20 17:19:04,848 - __main__ - INFO - Completed processing for paper 2023_09_22_9e2bc88db643c6ba8aa0g (39/74) in run 2.
+2025-05-20 17:19:06,611 - __main__ - INFO - Completed processing for paper 2023_09_22_7c76b066edb1f6f53739g (40/74) in run 2.
+2025-05-20 17:19:06,976 - __main__ - INFO - Completed processing for paper 2023_09_22_980121c407cbdaa46afdg (41/74) in run 2.
+2025-05-20 17:19:10,513 - __main__ - INFO - Completed processing for paper 2023_09_22_9a007c3865721f379b39g (42/74) in run 2.
+2025-05-20 17:19:10,901 - __main__ - INFO - Completed processing for paper 2023_09_22_a0271d2dc7b0f2506498g (43/74) in run 2.
+2025-05-20 17:19:11,363 - __main__ - INFO - Completed processing for paper 2023_09_22_14ddd903c0b77b5e50c2g (44/74) in run 2.
+2025-05-20 17:19:11,723 - __main__ - INFO - Completed processing for paper 2023_09_22_cc792b66f9a5779f9798g (45/74) in run 2.
+2025-05-20 17:19:12,753 - __main__ - INFO - Completed processing for paper 2023_09_22_900c617369212d6bc72fg (46/74) in run 2.
+2025-05-20 17:19:13,199 - __main__ - INFO - Completed processing for paper 2023_09_22_bba019fc933fc84ad347g (47/74) in run 2.
+2025-05-20 17:19:13,461 - __main__ - INFO - Completed processing for paper 2023_09_22_6ac063e0fb85cfc10dd0g (48/74) in run 2.
+2025-05-20 17:19:14,793 - __main__ - INFO - Completed processing for paper 2023_09_22_7dab45b11a3ede362147g (49/74) in run 2.
+2025-05-20 17:19:15,114 - __main__ - INFO - Completed processing for paper 2023_09_22_995805c76f676dddab4fg (50/74) in run 2.
+2025-05-20 17:19:15,319 - __main__ - INFO - Completed processing for paper 2023_09_22_910aca2a500d3bf9bf47g (51/74) in run 2.
+2025-05-20 17:19:18,302 - __main__ - INFO - Completed processing for paper 2023_09_22_7c5bbe7e076779b790ccg (52/74) in run 2.
+2025-05-20 17:19:24,154 - __main__ - INFO - Completed processing for paper 2023_09_22_8b46d7b3e561e7f28495g (53/74) in run 2.
+2025-05-20 17:19:25,148 - __main__ - INFO - Completed processing for paper 2023_09_22_cff3389f103b8f7971d0g (54/74) in run 2.
+2025-05-20 17:19:25,903 - __main__ - INFO - Completed processing for paper 2023_09_22_b0501f9057db320b8ad9g (55/74) in run 2.
+2025-05-20 17:19:26,305 - __main__ - INFO - Completed processing for paper 2023_09_22_d90e94cbd96e4b6ddb8bg (56/74) in run 2.
+2025-05-20 17:19:33,506 - __main__ - INFO - Completed processing for paper 2023_09_22_dd9f0f77c116dc99583ag (57/74) in run 2.
+2025-05-20 17:19:37,488 - __main__ - INFO - Completed processing for paper 2023_09_22_ddfb75e0fb765dc682bbg (58/74) in run 2.
+2025-05-20 17:19:38,197 - __main__ - INFO - Completed processing for paper 2023_09_22_cb81fee8faa69f4d7078g (59/74) in run 2.
+2025-05-20 17:19:38,357 - __main__ - INFO - Completed processing for paper 2023_09_22_9a591ebf98377fd0ebe2g (60/74) in run 2.
+2025-05-20 17:19:38,914 - __main__ - INFO - Completed processing for paper 2023_09_22_e06d11a6e698afe5f2d7g (61/74) in run 2.
+2025-05-20 17:19:39,440 - __main__ - INFO - Completed processing for paper 2023_09_22_8181c4d6fa78a2ea82dag (62/74) in run 2.
+2025-05-20 17:19:40,216 - __main__ - INFO - Completed processing for paper 2023_09_22_efbe854b8da1545fbe9bg (63/74) in run 2.
+2025-05-20 17:19:42,640 - __main__ - INFO - Completed processing for paper 2023_09_22_39b7d4444fd6ff852b12g (64/74) in run 2.
+2025-05-20 17:19:43,139 - __main__ - INFO - Completed processing for paper 2023_09_22_b2865949a80ad08a2835g (65/74) in run 2.
+2025-05-20 17:19:43,190 - __main__ - INFO - Completed processing for paper 2023_09_22_e8d1bc2fb9f3dce5f341g (66/74) in run 2.
+2025-05-20 17:19:43,222 - __main__ - INFO - Completed processing for paper 2023_09_22_f752dc9d5ac72657e3f5g (67/74) in run 2.
+2025-05-20 17:19:54,412 - __main__ - INFO - Completed processing for paper 2023_09_22_e32d0198a1f3dddb5ba2g (68/74) in run 2.
+2025-05-20 17:19:56,994 - __main__ - INFO - Completed processing for paper 2023_09_22_84af4abb781aeead403eg (69/74) in run 2.
+2025-05-20 17:19:57,398 - __main__ - INFO - Completed processing for paper 2023_09_22_d84d81c022c4b2981048g (70/74) in run 2.
+2025-05-20 17:19:58,334 - __main__ - INFO - Completed processing for paper 2023_09_22_edae82c7fbe0c4062118g (71/74) in run 2.
+2025-05-20 17:20:15,833 - __main__ - INFO - Completed processing for paper 2023_09_22_f7714e3a468c91c6f56ag (72/74) in run 2.
+2025-05-20 17:20:47,624 - __main__ - INFO - Completed processing for paper 2023_09_22_e69f3d7ce6c4ff487115g (73/74) in run 2.
+2025-05-20 17:21:31,171 - __main__ - INFO - Completed processing for paper 2023_09_22_f8875eb68affb0a6cb2bg (74/74) in run 2.
+2025-05-20 17:21:31,174 - __main__ - INFO - Finished run 2.
+2025-05-20 17:21:31,174 - __main__ - INFO - All runs completed for DFT.
