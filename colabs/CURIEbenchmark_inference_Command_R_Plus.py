@@ -30,8 +30,8 @@ import concurrent.futures
 # # @title API Configuration
 API_KEY = "YOUR_API_KEY"
 MODEL_PATH = 'command-r-plus'
-MODEL_NAME = "doubao-1.5-thinking-pro"
-file_root_path="."
+# MODEL_NAME = "doubao-1.5-thinking-pro"
+file_root_path= os.path.join(os.path.dirname(__file__), "..")
 
 # %%
 # @title Mount Google Drive
@@ -374,7 +374,7 @@ class PaperProcessor:
 
 # %%
 # @title Main Execution
-def main():
+def infer(task_name, infer_model_name):
     """Main execution function"""
     experiment_manager = ExperimentManager()
 
@@ -382,14 +382,34 @@ def main():
         api_key=API_KEY,
         model_path=MODEL_PATH
     )
-
+    MODEL_NAME = infer_model_name
     # Select experiment type
-    experiment_type = ExperimentType.MPVE  # CHANGE THIS to process different experiments
+    if task_name == "MPVE":
+        experiment_type = ExperimentType.MPVE
+    elif task_name == "DFT":
+        experiment_type = ExperimentType.DFT
+    # experiment_type = ExperimentType.MPVE  # CHANGE THIS to process different experiments
     config = experiment_manager.get_config(experiment_type)
 
     processor.process_papers(config)
 
-if __name__ == "__main__":
-    main()
+model_list=[
+    "deepseek-r1",
+    "doubao-1.5-thinking-pro",
+    "DeepSeek-R1-Distill-Qwen-32B",
+    "DeepSeek-R1-Distill-Qwen-7B",
+    
+    
+]
+task_list=[
+    "MPVE",
+    "DFT" 
+]
+
+for task_name in task_list:
+  # task_name= "MPVE"
+  for infer_model_name in model_list:
+    # run_evaluation("MPVE", infer_model_name)
+    infer(task_name, infer_model_name)
 
 
