@@ -1,8 +1,4 @@
-# %% [markdown]
-# ## Notebook for processesing CURIE-benchmark tasks using the **Cohere Command-R Plus model**.
-# 
 
-# %%
 # @title Import Required Libraries
 import os
 import json
@@ -19,26 +15,32 @@ from dataclasses import dataclass
 from typing import Optional, Dict, List
 from enum import Enum
 import concurrent.futures
+from model import call_huoshan,call_server
 
 
-# %%
-# # @title Install and import Cohere
-# ! pip install -U cohere
-# import cohere
 
-# %%
 # # @title API Configuration
 API_KEY = "YOUR_API_KEY"
 MODEL_PATH = 'command-r-plus'
-# MODEL_NAME = "doubao-1.5-thinking-pro"
-file_root_path= os.path.join(os.path.dirname(__file__), "..")
+# MODEL_NAME = "deepseek-r1"
+# "DeepSeek-R1-Distill-Qwen-7B"
+# "DeepSeek-R1-Distill-Qwen-32B"
+# MODEL_NAME = "deepseek-r1"
+# "doubao-1.5-thinking-pro"
 
-# %%
-# @title Mount Google Drive
-# drive.mount('/content/drive', force_remount=True)
-# os.chdir("/content/drive/My Drive")
+if "__file__" in globals():
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-# %%
+# 命令行读取模型名、模型url、并发数，其中并发数为可选项
+import sys
+if len(sys.argv) > 1:
+    model_name = sys.argv[1]  # 模型名
+    model_url = sys.argv[2]  # 模型URL
+    if len(sys.argv) > 3:
+        concurrency = int(sys.argv[3])  # 可选的并发数
+    else:
+        concurrency = 32  # 默认并发数为1
+
 # @title Configuration Classes
 @dataclass
 class ExperimentConfig:
@@ -63,7 +65,7 @@ class ExperimentType(Enum):
 # @title Experiment Manager Class
 class ExperimentManager:
     """Manages different experiment configurations"""
-    def __init__(self, base_path: str = file_root_path):
+    def __init__(self, base_path: str = ".."):
         self.base_path = base_path
         self.experiments = self._initialize_experiments()
 
@@ -133,7 +135,7 @@ def specialize_prompt(template: str, tag: str, infil: str) -> str:
         return template.replace(tag, infil)
     raise ValueError(f'{tag} absent in template.')
 
-def prepare_task_for_paper(paper: str, config: ExperimentConfig, model_id: str) -> dict:
+def prepare_task_for_paper(paper: str, config: ExperimentConfig, model_id: str,MODEL_NAME) -> dict:
     """Prepare the task information for a given paper."""
     paper_input = os.path.join(config.base_dir, 'inputs', f'{paper}.json')
     paper_gt = os.path.join(config.base_dir, 'ground_truth', f'{paper}.json')
@@ -159,94 +161,15 @@ def prepare_task_for_paper(paper: str, config: ExperimentConfig, model_id: str) 
     }
 
 # %%
-import time
-import yaml
-import requests
-import traceback
-def call_huoshan(messages, model_name="doubao-1.5-thinking-pro", config_path="./colabs/api_config.yaml"):
-        """
-        调用豆包模型接口，支持从配置文件中读取全部参数和带重试机制。
-        import time
-        import yaml
-        import requests
-        """
-        # 加载模型配置
-        try:
-            with open(config_path, "r", encoding="utf-8") as file:
-                api_config = yaml.safe_load(file)
-        except FileNotFoundError as e:
-            raise FileNotFoundError(f"Config file {config_path} not found.") from e
-        except yaml.YAMLError as e:
-            raise ValueError(f"Failed to parse YAML file: {e}") from e
-        model_cfg = api_config.get(model_name)
-        if not model_cfg:
-            raise ValueError(f"模型 '{model_name}' 的配置信息未找到。")
-
-        # 提取配置参数
-        url = model_cfg.get("base_url")
-        key = model_cfg.get("api_key")
-        model = model_cfg.get("model_name")
-        temperature = model_cfg.get("temperature", 0.2)
-        top_p = model_cfg.get("top_p", 0.95)
-        max_tokens = model_cfg.get("max_tokens", 4096)
-        max_retries = model_cfg.get("max_retries", 3)
-        retry_delay = model_cfg.get("retry_delay", 1.0)
-
-        # 重试逻辑
-        attempt = 0
-        while attempt < max_retries:
-            attempt += 1
-            try:
-                data_json = {
-                        "model": model,
-                        "messages": messages,
-                        "temperature": temperature,
-                        "top_p": top_p,
-                        "max_tokens": max_tokens
-                    }
-                response = requests.post(
-                    url=url,
-                    json=data_json,
-                    headers={
-                    "Authorization": f"Bearer {key}",
-                    "x-ark-moderation-scene": "skip-ark-moderation"
-                })
-                response.raise_for_status()  # 捕捉非 2xx 状态码
-                response_json = response.json()
-
-                choice = response_json["choices"][0]
-                finish_reason = choice["finish_reason"]
-                reasoning_content = choice["message"].get("reasoning_content", None)
-                content = choice["message"].get("content", None)
-
-                if finish_reason == "stop":
-                    if reasoning_content:
-                        formatted_content = f"<think>\n{reasoning_content.strip()}\n</think>\n\n{content.strip()}"
-                    else:
-                        formatted_content = content.strip()
-                else:
-                    formatted_content = None
-
-                return reasoning_content, content
-
-            except Exception as e:
-                traceback.print_exc()
-                if attempt >= max_retries:
-                    print(f"[Warning] get_llm_result_r1_full failed after {max_retries} attempts: {e}")
-                    return None
-                print(f"第 {attempt} 次调用失败：{e}")
-                time.sleep(retry_delay)
-                retry_delay *= 2  # 指数退避
-
-# %%
 # @title Paper Processor Class
 class PaperProcessor:
     """Handles the processing of scientific papers"""
 
-    def __init__(self, api_key: str, model_path: str):
+    def __init__(self, api_key: str, model_path: str,MODEL_NAME=None):
         # self.co_v2 = cohere.ClientV2(api_key=api_key)
         self.model_path = model_path
         self._setup_logging()
+        self.MODEL_NAME=MODEL_NAME
 
     def _setup_logging(self):
         """Configure logging settings"""
@@ -287,7 +210,7 @@ class PaperProcessor:
     def _save_result(self, task_info: dict, inference_dir: str, run_id: int, success: bool = True):
         """Save processing results"""
         status = 'success' if success else 'failure'
-        output_dir = os.path.join(inference_dir, MODEL_NAME, f'run_{run_id}', status)
+        output_dir = os.path.join(inference_dir, self.MODEL_NAME, f'run_{run_id}', status)
         os.makedirs(output_dir, exist_ok=True)
 
         serializable_task_info = {
@@ -312,13 +235,14 @@ class PaperProcessor:
 
         for run_id in run_range:
             self.logger.info(f"Starting run {run_id + 1}")
+            print(f"Starting run {run_id + 1}, using model:{self.MODEL_NAME}")
             # for i, paper in enumerate(papers, 1):
             #     self.logger.info(f"Processing paper {i}/{len(papers)} in run {run_id + 1}")
             #     self._process_single_paper(paper, config, run_id)
-            with concurrent.futures.ThreadPoolExecutor(max_workers=32) as executor:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=concurrency) as executor:
                 # 提交所有任务
                 future_to_paper = {
-                    executor.submit(self._process_single_paper, paper, config, run_id): paper
+                    executor.submit(self._process_single_paper, paper, config, run_id,self.MODEL_NAME): paper
                     for paper in papers
                 }
 
@@ -330,8 +254,9 @@ class PaperProcessor:
                         # 获取结果，如果任务中发生未捕获的异常，这里会重新抛出
                         # _process_single_paper 内部已经有异常处理和日志记录，所以这里通常不会抛出
                         future.result()
-                        # 你可以在这里记录成功完成，但 _process_single_paper 内部的日志可能已经足够
+                        # 在这里记录成功完成
                         self.logger.info(f"Completed processing for paper {paper_name} ({processed_count}/{len(papers)}) in run {run_id + 1}.")
+                        print(f"Completed processing for paper {paper_name} ({processed_count}/{len(papers)}) in run {run_id + 1}.")
                     except Exception as exc:
                         # 这个异常通常不应该发生，因为 _process_single_paper 内部会捕获
                         self.logger.error(f"An unexpected error occurred for paper {paper_name} in run {run_id + 1} during future processing: {exc}")
@@ -340,10 +265,10 @@ class PaperProcessor:
 
         self.logger.info(f"All runs completed for {config.name}.")
 
-    def _process_single_paper(self, paper: str, config: ExperimentConfig, run_id: int):
+    def _process_single_paper(self, paper: str, config: ExperimentConfig, run_id: int,MODEL_NAME):
         """Process a single paper"""
         try:
-            task_info = prepare_task_for_paper(paper, config, self.model_path)
+            task_info = prepare_task_for_paper(paper, config, self.model_path,MODEL_NAME)
 
             if len(task_info['prompt_text'].split()) > 128000:
                 raise ValueError("Input text exceeds token limit")
@@ -354,10 +279,18 @@ class PaperProcessor:
             # }])
             # print(f"Processing paper {paper} ")
             # task_info['prompt_text'] = '你是谁' # 4000 tokens
-            reasoning_content, response = call_huoshan([{
-                "role": "user",
-                "content": task_info['prompt_text']
-            }], model_name=MODEL_NAME)
+
+            if MODEL_NAME == "doubao-1.5-thinking-pro" or MODEL_NAME == "deepseek-r1":
+                reasoning_content, response = call_huoshan([{
+                    "role": "user",
+                    "content": task_info['prompt_text']
+                }], model_name=MODEL_NAME)
+            else:
+                reasoning_content, response = call_server(messages=task_info['prompt_text'],
+                                                          model_name=MODEL_NAME,
+                                                          model_url=model_url
+                                                          )
+                
             print(f"paper {paper} finished, response: {response[:100]}...",end='')
             task_info['record_id'] = paper
             task_info['reasoning_content'] = reasoning_content
@@ -373,16 +306,17 @@ class PaperProcessor:
             time.sleep(2)
 
 # %%
-# @title Main Execution
 def infer(task_name, infer_model_name):
     """Main execution function"""
+    MODEL_NAME = infer_model_name
     experiment_manager = ExperimentManager()
-
+    
     processor = PaperProcessor(
         api_key=API_KEY,
-        model_path=MODEL_PATH
+        model_path=MODEL_PATH,
+        MODEL_NAME= MODEL_NAME
     )
-    MODEL_NAME = infer_model_name
+    
     # Select experiment type
     if task_name == "MPVE":
         experiment_type = ExperimentType.MPVE
@@ -391,25 +325,47 @@ def infer(task_name, infer_model_name):
     # experiment_type = ExperimentType.MPVE  # CHANGE THIS to process different experiments
     config = experiment_manager.get_config(experiment_type)
 
-    processor.process_papers(config)
+    processor.process_papers(config,range(1, 2))
 
 model_list=[
     "deepseek-r1",
-    "doubao-1.5-thinking-pro",
-    "DeepSeek-R1-Distill-Qwen-32B",
-    "DeepSeek-R1-Distill-Qwen-7B",
-    
-    
+    # "doubao-1.5-thinking-pro",
+    # "DeepSeek-R1-Distill-Qwen-32B",
+    # "DeepSeek-R1-Distill-Qwen-7B",
+    # "chem_0320_phy_0324_2to1_math_ckpt_step624_ep2",
+    # "chem_0320_phy_0324_2to1_math_add_r1_reasoning_ep1",
+    # "chemistry_physics_math_7B_16k_rejection_sample_bs256_lr5e-6_roll16_on_aime_gpqa_scibench_global_step_50",
+    # "our32b_s1math70w_code57w_liucong10w_ch_py_6k_32k"
+     
 ]
 task_list=[
     "MPVE",
     "DFT" 
 ]
 
-for task_name in task_list:
+# for task_name in task_list:
+#   # task_name= "MPVE"
+#   for infer_model_name in model_list:
+#     # run_evaluation("MPVE", infer_model_name)
+#     infer(task_name, infer_model_name)
+
+# # # 使用threadPool调用不同模型
+# for task_name in task_list:
   # task_name= "MPVE"
-  for infer_model_name in model_list:
-    # run_evaluation("MPVE", infer_model_name)
-    infer(task_name, infer_model_name)
+with concurrent.futures.ThreadPoolExecutor() as executor:
+    futures = {executor.submit(infer, task_name, model_name): task_name for task_name in task_list}
+    for future in concurrent.futures.as_completed(futures):
+        task_name = futures[future]
+        try:
+            future.result()
+        except Exception as exc:
+            print(f"{task_name} generated an exception: {exc}")
+        else:
+            print(f"{task_name} completed successfully.")
+
+
+import curie_run_eval
+for task_name in task_list:
+    curie_run_eval.run_evaluation_signal_model(task_name,model_name,)
 
 

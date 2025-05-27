@@ -4,34 +4,40 @@ import requests
 import traceback
 import json
 def call_server(messages,
-                model_name="DeepSeek-R1-Distill-Qwen-32B"
+                model_name,
+                model_url
                 ):
 
 
-        # 提取配置参数
-        if model_name == "DeepSeek-R1-Distill-Qwen-32B":
-            url = 'http://10.20.4.5:8082/v1/chat/completions'
-        elif model_name == "DeepSeek-R1-Distill-Qwen-7B":
-            url = 'http://10.20.4.5:8081/v1/chat/completions' 
-        elif model_name== "chem_0320_phy_0324_2to1_math_ckpt_step624_ep2":
-            url= 'http://10.20.4.2:8002/v1/chat/completions'
-        elif model_name== "chem_0320_phy_0324_2to1_math_add_r1_reasoning_ep1":
-            url= "http://10.20.4.10:8004/v1/chat/completions"
-        elif model_name == "chemistry_physics_math_7B_16k_rejection_sample_bs256_lr5e-6_roll16_on_aime_gpqa_scibench_global_step_50":
-            url= "http://10.20.4.14:8006/v1/chat/completions"
-        elif model_name == "our32b_s1math70w_code57w_liucong10w_ch_py_6k_32k":
-            url = "http://wg-4-11:55320/v1/chat/completions"
-        else:
-            raise ValueError(f"模型 '{model_name}' 的配置信息未找到。")
+        # # 提取配置参数
+        # if model_name == "DeepSeek-R1-Distill-Qwen-32B":
+        #     url = 'http://10.20.4.5:8082/v1/chat/completions'
+        # elif model_name == "DeepSeek-R1-Distill-Qwen-7B":
+        #     url = 'http://10.20.4.5:8081/v1/chat/completions' 
+        # elif model_name== "chem_0320_phy_0324_2to1_math_ckpt_step624_ep2":
+        #     url= 'http://10.20.4.2:8002/v1/chat/completions'
+        # elif model_name== "chem_0320_phy_0324_2to1_math_add_r1_reasoning_ep1":
+        #     url= "http://10.20.4.10:8004/v1/chat/completions"
+        # elif model_name == "chemistry_physics_math_7B_16k_rejection_sample_bs256_lr5e-6_roll16_on_aime_gpqa_scibench_global_step_50":
+        #     url= "http://10.20.4.14:8006/v1/chat/completions"
+        # elif model_name == "our32b_s1math70w_code57w_liucong10w_ch_py_6k_32k":
+        #     url = "http://wg-4-11:55320/v1/chat/completions"
+        # else:
+        #     raise ValueError(f"模型 '{model_name}' 的配置信息未找到。")
         max_retries=3
         # model = "DeepSeek-R1-Distill-Qwen-32B"
         # 重试逻辑
+        if model_name == "test":
+            import time
+            time.sleep(5)
+            return "test", "test"
+            
+        retry_delay
         
         attempt = 0
         while attempt < max_retries:
             attempt += 1
             try:
-                header = 'Content-Type: application/json'
                 data_json = {
                     "model": model_name,
                     "messages": [
@@ -44,7 +50,7 @@ def call_server(messages,
                     "top_p": 0.95
                     }
                 response = requests.post(
-                    url=url,
+                    url=model_url,
                     data=json.dumps(data_json),
                     headers = {'Content-Type': 'application/json'}
                     )

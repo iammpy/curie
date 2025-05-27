@@ -5848,3 +5848,168 @@
 2025-05-24 23:20:37,398 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
 2025-05-24 23:20:39,167 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
 2025-05-24 23:20:40,315 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:08:56,045 - __main__ - INFO - Starting processing 17 papers for MPVE
+2025-05-27 10:08:56,045 - __main__ - INFO - Starting run 2
+2025-05-27 10:08:56,046 - __main__ - INFO - Starting processing 74 papers for DFT
+2025-05-27 10:08:56,046 - __main__ - INFO - Starting run 2
+2025-05-27 10:09:01,055 - __main__ - INFO - Completed processing for paper 17645319 (1/17) in run 2.
+2025-05-27 10:09:01,057 - __main__ - INFO - Completed processing for paper 53519111 (2/17) in run 2.
+2025-05-27 10:09:01,059 - __main__ - INFO - Completed processing for paper 317542 (3/17) in run 2.
+2025-05-27 10:09:01,062 - __main__ - INFO - Completed processing for paper 97574650 (4/17) in run 2.
+2025-05-27 10:09:01,064 - __main__ - INFO - Completed processing for paper 53384093 (5/17) in run 2.
+2025-05-27 10:09:01,065 - __main__ - INFO - Completed processing for paper 135893324 (6/17) in run 2.
+2025-05-27 10:09:01,066 - __main__ - INFO - Completed processing for paper 68518 (7/17) in run 2.
+2025-05-27 10:09:01,068 - __main__ - INFO - Completed processing for paper 6183251 (8/17) in run 2.
+2025-05-27 10:09:01,069 - __main__ - INFO - Completed processing for paper 2837337 (9/17) in run 2.
+2025-05-27 10:09:01,070 - __main__ - INFO - Completed processing for paper 137362119 (10/17) in run 2.
+2025-05-27 10:09:01,072 - __main__ - INFO - Completed processing for paper 10222315 (11/17) in run 2.
+2025-05-27 10:09:01,074 - __main__ - INFO - Completed processing for paper 11093908 (12/17) in run 2.
+2025-05-27 10:09:01,075 - __main__ - INFO - Completed processing for paper 137261967 (13/17) in run 2.
+2025-05-27 10:09:01,078 - __main__ - INFO - Completed processing for paper 12841719 (14/17) in run 2.
+2025-05-27 10:09:01,079 - __main__ - INFO - Completed processing for paper 15804005 (15/17) in run 2.
+2025-05-27 10:09:01,081 - __main__ - INFO - Completed processing for paper 55005437 (16/17) in run 2.
+2025-05-27 10:09:01,083 - __main__ - INFO - Completed processing for paper 11181068 (17/17) in run 2.
+2025-05-27 10:09:01,087 - __main__ - INFO - Completed processing for paper 2023_09_22_1def59bea80d6e9f67ccg (1/74) in run 2.
+2025-05-27 10:09:01,097 - __main__ - INFO - Completed processing for paper 2023_09_22_14ddd903c0b77b5e50c2g (2/74) in run 2.
+2025-05-27 10:09:01,106 - __main__ - INFO - Completed processing for paper 2023_09_22_1a3a4803f9d9cec16d38g (3/74) in run 2.
+2025-05-27 10:09:01,119 - __main__ - INFO - Completed processing for paper 2023_09_22_b0501f9057db320b8ad9g (4/74) in run 2.
+2025-05-27 10:09:01,119 - __main__ - INFO - Completed processing for paper 2023_09_22_430c3ddffa99af6a2545g (5/74) in run 2.
+2025-05-27 10:09:01,119 - __main__ - INFO - Completed processing for paper 2023_09_22_54050a76c33463a8157fg (6/74) in run 2.
+2025-05-27 10:09:01,119 - __main__ - INFO - Completed processing for paper 2023_09_22_e06d11a6e698afe5f2d7g (7/74) in run 2.
+2025-05-27 10:09:01,120 - __main__ - INFO - Completed processing for paper 2023_09_22_55f975d508230ef05caeg (8/74) in run 2.
+2025-05-27 10:09:01,125 - __main__ - INFO - Completed processing for paper 2023_09_22_799ee1c298d190145c70g (9/74) in run 2.
+2025-05-27 10:09:01,130 - __main__ - INFO - Completed processing for paper 2023_09_22_1af7e6342ebcf1ce3ea5g (10/74) in run 2.
+2025-05-27 10:09:01,140 - __main__ - INFO - Completed processing for paper 2023_09_22_01b9cdba467fd7882e42g (11/74) in run 2.
+2025-05-27 10:09:01,145 - __main__ - INFO - Completed processing for paper 2023_09_22_7c5bbe7e076779b790ccg (12/74) in run 2.
+2025-05-27 10:09:01,162 - __main__ - INFO - Finished run 2.
+2025-05-27 10:09:01,172 - __main__ - INFO - Completed processing for paper 2023_09_22_22c19cfc32d2575f9a52g (13/74) in run 2.
+2025-05-27 10:09:01,179 - __main__ - INFO - All runs completed for MPVE.
+2025-05-27 10:09:01,189 - __main__ - INFO - Completed processing for paper 2023_09_22_84af4abb781aeead403eg (14/74) in run 2.
+2025-05-27 10:09:01,229 - __main__ - INFO - Completed processing for paper 2023_09_22_9a007c3865721f379b39g (15/74) in run 2.
+2025-05-27 10:09:01,229 - __main__ - INFO - Completed processing for paper 2023_09_22_109a6cd5d015ce89e7f3g (16/74) in run 2.
+2025-05-27 10:09:01,229 - __main__ - INFO - Completed processing for paper 2023_09_22_24d7d9ed97e042af9f29g (17/74) in run 2.
+2025-05-27 10:09:01,230 - __main__ - INFO - Completed processing for paper 2023_09_22_12cb692c6b82606615a6g (18/74) in run 2.
+2025-05-27 10:09:01,231 - __main__ - INFO - Completed processing for paper 2023_09_22_dd9f0f77c116dc99583ag (19/74) in run 2.
+2025-05-27 10:09:01,231 - __main__ - INFO - Completed processing for paper 2023_09_22_4eeeb89f0a6f52e58610g (20/74) in run 2.
+2025-05-27 10:09:01,232 - __main__ - INFO - Completed processing for paper 2023_09_22_900c617369212d6bc72fg (21/74) in run 2.
+2025-05-27 10:09:01,235 - __main__ - INFO - Completed processing for paper 2023_09_22_995805c76f676dddab4fg (22/74) in run 2.
+2025-05-27 10:09:01,236 - __main__ - INFO - Completed processing for paper 2023_09_22_4ef39bb4116ac1dad9e9g (23/74) in run 2.
+2025-05-27 10:09:01,237 - __main__ - INFO - Completed processing for paper 2023_09_22_2d44dda253969d6ce7f6g (24/74) in run 2.
+2025-05-27 10:09:01,237 - __main__ - INFO - Completed processing for paper 2023_09_22_5237e17b3b341fecc9d9g (25/74) in run 2.
+2025-05-27 10:09:01,237 - __main__ - INFO - Completed processing for paper 2023_09_22_f7714e3a468c91c6f56ag (26/74) in run 2.
+2025-05-27 10:09:01,237 - __main__ - INFO - Completed processing for paper 2023_09_22_b2865949a80ad08a2835g (27/74) in run 2.
+2025-05-27 10:09:01,237 - __main__ - INFO - Completed processing for paper 2023_09_22_77a765fcab6029c666b4g (28/74) in run 2.
+2025-05-27 10:09:01,237 - __main__ - INFO - Completed processing for paper 2023_09_22_efbe854b8da1545fbe9bg (29/74) in run 2.
+2025-05-27 10:09:01,237 - __main__ - INFO - Completed processing for paper 2023_09_22_f752dc9d5ac72657e3f5g (30/74) in run 2.
+2025-05-27 10:09:01,237 - __main__ - INFO - Completed processing for paper 2023_09_22_8b46d7b3e561e7f28495g (31/74) in run 2.
+2025-05-27 10:09:01,237 - __main__ - INFO - Completed processing for paper 2023_09_22_81b3dfeb3597db5200c5g (32/74) in run 2.
+2025-05-27 10:09:06,096 - __main__ - INFO - Completed processing for paper 2023_09_22_edae82c7fbe0c4062118g (33/74) in run 2.
+2025-05-27 10:09:06,108 - __main__ - INFO - Completed processing for paper 2023_09_22_e32d0198a1f3dddb5ba2g (34/74) in run 2.
+2025-05-27 10:09:06,112 - __main__ - INFO - Completed processing for paper 2023_09_22_d90e94cbd96e4b6ddb8bg (35/74) in run 2.
+2025-05-27 10:09:06,136 - __main__ - INFO - Completed processing for paper 2023_09_22_d84d81c022c4b2981048g (36/74) in run 2.
+2025-05-27 10:09:06,140 - __main__ - INFO - Completed processing for paper 2023_09_22_2d35eebe2e85cecf4103g (37/74) in run 2.
+2025-05-27 10:09:06,155 - __main__ - INFO - Completed processing for paper 2023_09_22_0ce1b5ea9a8637db5435g (38/74) in run 2.
+2025-05-27 10:09:06,179 - __main__ - INFO - Completed processing for paper 2023_09_22_2e9b1b9bffe7fd47b18fg (39/74) in run 2.
+2025-05-27 10:09:06,188 - __main__ - INFO - Completed processing for paper 2023_09_22_49d6cc9c5e7a469afee0g (40/74) in run 2.
+2025-05-27 10:09:06,191 - __main__ - INFO - Completed processing for paper 2023_09_22_7dab45b11a3ede362147g (41/74) in run 2.
+2025-05-27 10:09:06,193 - __main__ - INFO - Completed processing for paper 2023_09_22_6ac063e0fb85cfc10dd0g (42/74) in run 2.
+2025-05-27 10:09:06,196 - __main__ - INFO - Completed processing for paper 2023_09_22_910aca2a500d3bf9bf47g (43/74) in run 2.
+2025-05-27 10:09:06,201 - __main__ - INFO - Completed processing for paper 2023_09_22_cb81fee8faa69f4d7078g (44/74) in run 2.
+2025-05-27 10:09:06,204 - __main__ - INFO - Completed processing for paper 2023_09_22_182e0132c513bc81a414g (45/74) in run 2.
+2025-05-27 10:09:06,204 - __main__ - INFO - Completed processing for paper 2023_09_22_2e5b7c3f50b6a643e33ag (46/74) in run 2.
+2025-05-27 10:09:06,208 - __main__ - INFO - Completed processing for paper 2023_09_22_e8d1bc2fb9f3dce5f341g (47/74) in run 2.
+2025-05-27 10:09:06,209 - __main__ - INFO - Completed processing for paper 2023_09_22_13bcf90c3ef43f1413deg (48/74) in run 2.
+2025-05-27 10:09:06,213 - __main__ - INFO - Completed processing for paper 2023_09_22_14ab0a44fc8fc33fa338g (49/74) in run 2.
+2025-05-27 10:09:06,217 - __main__ - INFO - Completed processing for paper 2023_09_22_7433a6c7542334063731g (50/74) in run 2.
+2025-05-27 10:09:06,221 - __main__ - INFO - Completed processing for paper 2023_09_22_433b6bb3bfc2391f7300g (51/74) in run 2.
+2025-05-27 10:09:06,224 - __main__ - INFO - Completed processing for paper 2023_09_22_cff3389f103b8f7971d0g (52/74) in run 2.
+2025-05-27 10:09:06,229 - __main__ - INFO - Completed processing for paper 2023_09_22_980121c407cbdaa46afdg (53/74) in run 2.
+2025-05-27 10:09:06,236 - __main__ - INFO - Completed processing for paper 2023_09_22_39b7d4444fd6ff852b12g (54/74) in run 2.
+2025-05-27 10:09:06,240 - __main__ - INFO - Completed processing for paper 2023_09_22_7c76b066edb1f6f53739g (55/74) in run 2.
+2025-05-27 10:09:06,241 - __main__ - INFO - Completed processing for paper 2023_09_22_f8875eb68affb0a6cb2bg (56/74) in run 2.
+2025-05-27 10:09:06,242 - __main__ - INFO - Completed processing for paper 2023_09_22_cc792b66f9a5779f9798g (57/74) in run 2.
+2025-05-27 10:09:06,246 - __main__ - INFO - Completed processing for paper 2023_09_22_ddfb75e0fb765dc682bbg (58/74) in run 2.
+2025-05-27 10:09:06,247 - __main__ - INFO - Completed processing for paper 2023_09_22_8181c4d6fa78a2ea82dag (59/74) in run 2.
+2025-05-27 10:09:06,257 - __main__ - INFO - Completed processing for paper 2023_09_22_bba019fc933fc84ad347g (60/74) in run 2.
+2025-05-27 10:09:06,257 - __main__ - INFO - Completed processing for paper 2023_09_22_9a591ebf98377fd0ebe2g (61/74) in run 2.
+2025-05-27 10:09:06,258 - __main__ - INFO - Completed processing for paper 2023_09_22_70326f83ce0dcec87b50g (62/74) in run 2.
+2025-05-27 10:09:06,258 - __main__ - INFO - Completed processing for paper 2023_09_22_67e874a3c664208e2d2fg (63/74) in run 2.
+2025-05-27 10:09:06,259 - __main__ - INFO - Completed processing for paper 2023_09_22_e69f3d7ce6c4ff487115g (64/74) in run 2.
+2025-05-27 10:09:11,109 - __main__ - INFO - Completed processing for paper 2023_09_22_48fb54662c601e035a91g (65/74) in run 2.
+2025-05-27 10:09:11,118 - __main__ - INFO - Completed processing for paper 2023_09_22_1b00ed3a142a7a1b2582g (66/74) in run 2.
+2025-05-27 10:09:11,123 - __main__ - INFO - Completed processing for paper 2023_09_22_63a752c620bbc784200cg (67/74) in run 2.
+2025-05-27 10:09:11,148 - __main__ - INFO - Completed processing for paper 2023_09_22_a0271d2dc7b0f2506498g (68/74) in run 2.
+2025-05-27 10:09:11,148 - __main__ - INFO - Completed processing for paper 2023_09_22_3ae1fab1e33569c30b8dg (69/74) in run 2.
+2025-05-27 10:09:11,181 - __main__ - INFO - Completed processing for paper 2023_09_22_07b4d66e23971ccb85c0g (70/74) in run 2.
+2025-05-27 10:09:11,192 - __main__ - INFO - Completed processing for paper 2023_09_22_9e2bc88db643c6ba8aa0g (71/74) in run 2.
+2025-05-27 10:09:11,195 - __main__ - INFO - Completed processing for paper 2023_09_22_984f5b905c02b6f21733g (72/74) in run 2.
+2025-05-27 10:09:11,201 - __main__ - INFO - Completed processing for paper 2023_09_22_87d405f182ae3706ea0cg (73/74) in run 2.
+2025-05-27 10:09:11,201 - __main__ - INFO - Completed processing for paper 2023_09_22_8df0b56e310badc55de3g (74/74) in run 2.
+2025-05-27 10:09:11,205 - __main__ - INFO - Finished run 2.
+2025-05-27 10:09:11,206 - __main__ - INFO - All runs completed for DFT.
+2025-05-27 10:09:26,488 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,501 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,621 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,706 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,749 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,767 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,777 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,808 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,819 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,852 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,876 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,921 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,939 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,966 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:26,982 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:27,006 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:27,018 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:27,399 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:27,613 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:27,762 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:27,772 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:27,832 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:27,843 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:27,855 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:27,873 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:29,137 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:29,325 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:29,366 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:29,500 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:29,548 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:29,557 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:29,593 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:29,625 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:29,648 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:30,292 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:30,315 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:30,357 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:30,365 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:30,391 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:30,503 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:30,658 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:30,865 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:30,921 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:31,034 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:31,056 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:31,095 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:31,284 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:31,957 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:32,161 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:32,181 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:32,188 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:32,210 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:32,306 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:32,354 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:32,372 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:32,417 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:32,505 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:32,511 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:32,544 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:32,554 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:33,636 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:33,940 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:33,959 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:33,966 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:34,115 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 10:09:34,139 - httpx - INFO - HTTP Request: POST https://api.apikey.vip/v1/chat/completions "HTTP/1.1 200 OK"

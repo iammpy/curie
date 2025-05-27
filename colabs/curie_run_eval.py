@@ -408,7 +408,7 @@ def parse_ground_truth_dft(ground_truth: str, client: Any) -> list[dict[str, Any
     if json_ground_truth and isinstance(json_ground_truth[0], str):
       json_ground_truth = [json5.loads(item) for item in json_ground_truth]
   except Exception:  # pylint: disable=broad-except
-    print("***using llm to parse")
+    # print("***using llm to parse")
     _ , ground_truth = call_openai(
         messages=[
             {
@@ -475,7 +475,7 @@ def parse_model_response_dft(
       print("Response_text is empty")
     json_model_response = json5.loads(formatted_text)
   except Exception as e:  # pylint: disable=broad-except
-    print("using llm to parse model output because: ", e)
+    # print("using llm to parse model output because: ", e)
     return parse_model_response_dft(model_response, client, use_llm=True) if not use_llm else []
   return json_model_response
 
@@ -636,7 +636,7 @@ def parse_model_response_mpve(model_response: str) -> list[dict[str, Any]]:
     # print("Skipping incomplete last item: ", e)
     # ind = [m.start() for m in re.finditer(r",\s*\{", response_text)][-1]
     # json_model_response = json_repair.repair_json(response_text,return_objects=True)
-    print("using llm to parse")
+    # print("using llm to parse")
     _ , response_text = call_openai(
         messages=[
             {
