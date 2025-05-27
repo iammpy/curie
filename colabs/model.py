@@ -3,6 +3,7 @@ import yaml
 import requests
 import traceback
 import json
+from openai import OpenAI
 def call_server(messages,
                 model_name,
                 model_url
@@ -165,12 +166,7 @@ def call_huoshan(messages, model_name="deepseek-r1", config_path="../colabs/api_
                 time.sleep(retry_delay)
                 retry_delay *= 2  # 指数退避
                 
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime
-import logging
-from openai import OpenAI
-import os
-from typing import Any, Optional, List
+
 
 
 
