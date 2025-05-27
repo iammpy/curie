@@ -4,6 +4,7 @@
 
 conda create -n curie python=3.10  
 conda activate curie  
+切换到项目根目录
 pip install -r requirements.txt
 
 ## 2、启动评测

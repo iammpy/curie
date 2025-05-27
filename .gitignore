@@ -1,6 +1,7 @@
-*.json
+# *.json
 *.png
 *.zip
 data/data.zip
 *.pyc
 **/__pycache__/
+inference/
