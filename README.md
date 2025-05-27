@@ -10,17 +10,17 @@ pip install -r requirements.txt
 ## 2、启动评测
 
 ### 启动脚本位置 
-curie/colabs/CURIEbenchmark_inference_Command_R_Plus.py
+./colabs/CURIEbenchmark_inference_Command_R_Plus.py
 
 ### 命令行参数传递：
-python colabs/CURIEbenchmark_inference_Command_R_Plus.py 模型名 模型url 并发数(可选，默认32)  
+python ./CURIEbenchmark_inference_Command_R_Plus.py 模型名 模型url 并发数(可选，默认32)  
 
 
 ### 输出结果 
 mpve任务：
-curie/inference/multi_runs/current/mpve/mat_paper_to_property_1_shot_exclude_trivia/模型名
+./inference/multi_runs/current/mpve/mat_paper_to_property_1_shot_exclude_trivia/模型名
 dft任务：
-curie/inference/multi_runs/current/dft/extract_dft_metadata_1_shot/模型名
+./inference/multi_runs/current/dft/extract_dft_metadata_1_shot/模型名
 
 后缀为ave_accuracy的json文件中存储整体的accuracy、recall、f1分数，这里面的f1分数是最终的指标
 
